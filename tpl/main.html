@@ -2,7 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Котов Виталий Игоревич">
+
     <link href="/css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+
     <title>Школа Кимберг</title>
 </head>
 <body>
@@ -17,17 +22,28 @@
 
     <table class="content">
         <tr>
-            <td>
+            <td class="image">
                 <img class="content-photo shadow" src="/images/main-yan.jpg" alt="Yan">
             </td>
-            <td>
+            <td class="description">
                 <p><strong>Школа им. Яна Кимберга</strong> - это место, где Вас научат решать задачи по физике.</p>
                 <p>Мы обучаем школьников старших классов небольшими группами, где они могут:</p>
                 <ul>
-                    <li>научиться решать задачи олимпиадного уровня</li>
-                    <li>найти друзей и единомышленников</li>
-                    <li>сформулировать свои цели и научиться добиваться их</li>
+                    <li><span>Научиться решать задачи олимпиадного уровня</span></li>
+                    <li><span>Найти друзей и единомышленников</span></li>
+                    <li><span>Сформулировать свои цели и научиться добиваться их</span></li>
                 </ul>
+            </td>
+            <td class="form">
+                <div class="sign-form-wrapper">
+                    <table class="sign-form-table">
+                        <tr><td><span>Имя: </span></td><td><input class="js-registration-input js-registration-name" type="text" /></td></tr>
+                        <tr><td><span>Фамилия: </span></td><td><input class="js-registration-input js-registration-fname" type="text" /></td></tr>
+                        <tr><td><span>Email: </span></td><td><input class="js-registration-input js-registration-email" type="text" /></td></tr>
+                        <tr><td><span>Пароль: </span></td><td><input class="js-registration-input js-registration-password" type="password" /></td></tr>
+                        <tr class="submit"><td></td><td><button class="js-registration-button" type="button"><span>Регистрация</span></button></td></tr>
+                    </table>
+                </div>
             </td>
         </tr>
     </table>
