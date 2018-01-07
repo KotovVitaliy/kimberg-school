@@ -1,0 +1,34 @@
+RewriteEngine on
+
+# Protect files
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files .config>
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files alters.txt>
+Order Allow,Deny
+Deny from all
+</Files>
+
+RewriteCond %{REQUEST_URI} ^/ajax/(.+)/(.+)/$
+RewriteRule ^ajax/(.+)$ /index.php?model=%1&action=%2 [QSA,L]
+
+RewriteCond %{REQUEST_URI} ^/ajax/(.+)/(.+)$
+RewriteRule ^ajax/(.+)$ /index.php?model=%1&action=%2 [QSA,L]
+
+RewriteCond %{REQUEST_URI} ^/confirm/(.+)$
+RewriteRule ^confirm/(.+)$ /index.php?confirm=%1 [QSA,L]
+
+RewriteCond %{REQUEST_URI} ^/forgot/(.+)$
+RewriteRule ^forgot/(.+)$ /index.php?forgot=%1 [QSA,L]
+
+RewriteCond %{REQUEST_URI} ^/photo/(.+)$
+RewriteRule ^photo/(.+)$ /index.php?photo=%1 [QSA,L]
+
+ErrorDocument 404 /404.php

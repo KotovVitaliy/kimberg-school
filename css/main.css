@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "MyFont";
+    src: url(/css/sans.woff2) format("truetype");
+}
+
+body, html {
+    font-family: 'MyFont';
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    font-size: 20px;
+}
+
+div.header-line {
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    display: inline-block;
+    border-radius: 0 0 25px 25px;
+    vertical-align: middle;
+    color: white;
+}
+
+div.header-title-wrapper {
+    margin-top: 15px;
+    display: inline-block;
+}
+
+span.header-title {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+img.header-logo-img {
+    width: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: 1px;
+}
+
+hr.header-delimiter {
+    margin: 15px 25px 25px 15px;
+    background-color: black;
+    height: 3px;
+}
+
+table.content {
+    width: 100%;
+    height: 100%;
+}
+
+table.content>tbody>tr>td {
+    vertical-align: top;
+}
+
+table.content>tbody>tr>td:nth-child(1) {
+    width: 20%;
+    padding: 3px;
+    text-align: center;
+}
+
+img.content-photo {
+    width: 80%;
+}
+
+.shadow {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
