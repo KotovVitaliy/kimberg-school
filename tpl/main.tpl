@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Котов Виталий Игоревич">
-
+    <link rel="icon" type="image/x-icon" href="/fav.ico" />
     <link href="/css/main.css" rel="stylesheet">
     <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>

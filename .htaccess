@@ -16,11 +16,8 @@ Order Allow,Deny
 Deny from all
 </Files>
 
-RewriteCond %{REQUEST_URI} ^/ajax/(.+)/(.+)/$
-RewriteRule ^ajax/(.+)$ /index.php?model=%1&action=%2 [QSA,L]
-
-RewriteCond %{REQUEST_URI} ^/ajax/(.+)/(.+)$
-RewriteRule ^ajax/(.+)$ /index.php?model=%1&action=%2 [QSA,L]
+RewriteCond %{REQUEST_URI} ^/ajax/(.+)/([^/]+)[/]?$
+RewriteRule ^ajax/(.+)$ /index.php?controller=%1&action=%2 [QSA,L]
 
 RewriteCond %{REQUEST_URI} ^/confirm/(.+)$
 RewriteRule ^confirm/(.+)$ /index.php?confirm=%1 [QSA,L]

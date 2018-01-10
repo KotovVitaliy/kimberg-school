@@ -101,6 +101,10 @@ table.sign-form-table>tbody>tr input, .sign-form-table>tbody>tr textarea, .sign-
     font-size: 20px;
 }
 
+.sign-form-table>tbody>tr button {
+    cursor: pointer;
+}
+
 table.sign-form-table>tbody>tr button:hover {
     background-color: black;
     color: white;
