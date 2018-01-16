@@ -2,7 +2,12 @@
 
 class UserController extends Controller
 {
-    public function register()
+    public function registration()
+    {
+
+    }
+
+    public function enter()
     {
 
     }

@@ -28,6 +28,7 @@ class Ajax
             || !isset($map[$controller][$action])
             || !isset($map[$controller][$action]['class'])
             || !isset($map[$controller][$action]['method'])) {
+            var_dump(3);
             sendTo404();
         }
 
@@ -38,6 +39,7 @@ class Ajax
 
         // check method exists
         if (!method_exists($Controller, $action)) {
+            var_dump(2);
             sendTo404();
         }
 
@@ -45,6 +47,7 @@ class Ajax
         if (isset($map[$controller][$action]['data'])) {
             foreach ($map[$controller][$action]['data'] as $param) {
                 if (!isset($_REQUEST[$param])) {
+                    var_dump(1);
                     sendTo404();
                 }
             }
@@ -60,10 +63,15 @@ class AjaxMap
     {
         return [
             'user' => [
-                'register' => [
+                'registration' => [
                     'class' => UserController::class,
-                    'method' => 'register',
+                    'method' => 'registration',
                     'data' => ['name', 'fname', 'email', 'password']
+                ],
+                'enter' => [
+                    'class' => UserController::class,
+                    'method' => 'enter',
+                    'data' => ['email', 'password']
                 ]
             ]
         ];
