@@ -1,5 +1,7 @@
 images/users_photos/*
 secret/
 .idea
+.config
+.alters.txt
 .DS_Store
 ._.DS_Store
