@@ -57,7 +57,12 @@ $(document).on('click', '.js-registration-button', function() {
         password: element_password.val()
     };
 
-    $.post('/ajax/user/registration', data);
+    $.post('/ajax/user/registration', data, function(data) {
+        data = getDataFromResponse(data);
+        if (data) {
+            location.reload();
+        }
+    });
 
 });
 
@@ -85,6 +90,12 @@ $(document).on('click', '.js-auth-button', function() {
     };
 
     $.post('/ajax/user/enter', data);
+});
+
+$(document).on('click', '.js-exit', function() {
+    $.post('/ajax/user/logout', function() {
+        location.reload();
+    })
 });
 
 $(document).on('keydown', '.js-registration-input', function() {
@@ -128,4 +139,27 @@ function rotateQutesImgs() {
 
 function getRandomNumber(to) {
     return Math.floor(Math.random() * to);
+}
+
+function getDataFromResponse(data) {
+    try {
+        data = JSON.parse(data);
+        if (data.error) {
+            console.error(data.error);
+            return false;
+        } else if (!data.success) {
+            console.error('Cannot get success field in response.');
+            return false;
+        } else if (!data.data) {
+            console.error('Cannot get data field in response.');
+            return false;
+        } else {
+            return data.data;
+        }
+    } catch (e) {
+        console.error(e);
+        return false;
+    }
+
+    return false;
 }

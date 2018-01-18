@@ -109,9 +109,17 @@ table.header_wrapper>tbody>tr>td:nth-child(1) {
     text-align: left;
 }
 
+table.header_wrapper>tbody>tr>td:nth-child(3) {
+    text-align: center;
+}
+
 table.header_wrapper img.header-logo-img {
     margin-left: 50px;
     height: 70px;
+}
+
+span.js-exit {
+    cursor: pointer;
 }
 
 hr.header-delimiter {

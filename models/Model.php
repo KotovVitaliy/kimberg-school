@@ -1,10 +1,14 @@
 <?php
 
-class Controller
+class Model
 {
     protected static $instance;
+    protected $DB;
 
-    protected function __construct() {}
+    protected function __construct()
+    {
+        $this->DB = DB::getInstance();
+    }
 
     /**
      * @return static

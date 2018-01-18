@@ -16,8 +16,13 @@ Order Allow,Deny
 Deny from all
 </Files>
 
+<Files .alters.txt>
+Order Allow,Deny
+Deny from all
+</Files>
+
 RewriteCond %{REQUEST_URI} ^/ajax/(.+)/([^/]+)[/]?$
-RewriteRule ^ajax/(.+)$ /index.php?controller=%1&action=%2 [QSA,L]
+RewriteRule ^ajax/(.+)$ /index.php?ajax=1&controller=%1&action=%2 [QSA,L]
 
 RewriteCond %{REQUEST_URI} ^/confirm/(.+)$
 RewriteRule ^confirm/(.+)$ /index.php?confirm=%1 [QSA,L]
