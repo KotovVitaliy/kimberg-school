@@ -27,4 +27,3 @@ function isAjaxRequest()
 {
     return isset($_REQUEST['ajax']) && ($_REQUEST['ajax']) == 1 && ($_POST || $_GET);
 }
-

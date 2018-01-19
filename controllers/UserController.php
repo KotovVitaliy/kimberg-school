@@ -2,6 +2,8 @@
 
 class UserController extends Controller
 {
+    protected static $instance;
+
     public function registration()
     {
         $name = $_REQUEST['name'];

@@ -2,6 +2,8 @@
 
 class UserModel extends Model
 {
+    protected static $instance;
+
     const TABLE = 'accounts';
 
     public function addStudent($name, $fname, $email, $password)
