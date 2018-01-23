@@ -69,9 +69,9 @@ class AjaxMap
                     'method' => 'registration',
                     'data' => ['name', 'fname', 'email', 'password']
                 ],
-                'enter' => [
+                'login' => [
                     'class' => UserController::class,
-                    'method' => 'enter',
+                    'method' => 'login',
                     'data' => ['email', 'password']
                 ],
                 'logout' => [

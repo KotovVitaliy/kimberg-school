@@ -6,8 +6,8 @@ class UserController extends Controller
 
     public function registration()
     {
-        $name = $_REQUEST['name'];
-        $fname = $_REQUEST['fname'];
+        $name = htmlspecialchars($_REQUEST['name']);
+        $fname = htmlspecialchars($_REQUEST['fname']);
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
 
@@ -24,6 +24,11 @@ class UserController extends Controller
             return;
         }
 
+        if (strpos($email, '<') !== false || strpos($email, '>') !== false) {
+            Viewer::echoError("Email содержит недопустимые символы.");
+            return;
+        }
+
         if (UserModel::getInstance()->isEmailExists($email)) {
             Viewer::echoError("Email '{$email}' уже существует в системе.");
             return;
@@ -36,14 +41,24 @@ class UserController extends Controller
         return;
     }
 
-    public function enter()
+    public function login()
     {
+        $email = $_REQUEST['email'];
+        $password = $_REQUEST['password'];
 
+        foreach ([$email, $password] as $data) {
+            if (strlen($data) < 1) {
+                Viewer::echoError('Некоторые поля пустые!');
+                return;
+            }
+        }
+        
+        $user = UserModel::getInstance()->getUserByEmailAndPassword($email, $password);
     }
 
     public function logout()
     {
-        Authorizer::deleteAuth();
+        Authorizer::logout();
     }
 
     public function whoAmI($data)

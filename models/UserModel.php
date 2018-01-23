@@ -19,25 +19,37 @@ class UserModel extends Model
     public function getUserByEmail($email)
     {
         $result = $this->DB->selectAsAssoc("select * from " . self::TABLE . " where `email`=:email", ['email' => $email]);
-        if (count($result) !== 1) {
-            return false;
-        }
-        return $result[0];
+        return self::getFirstResultIfSingleOrFalse($result);
     }
 
     public function getUserById($user_id)
     {
         $result = $this->DB->selectAsAssoc("select * from " . self::TABLE . " where `id`=:id", ['id' => (int)$user_id]);
-        if (count($result) !== 1) {
-            return false;
-        }
-        return $result[0];
+        return self::getFirstResultIfSingleOrFalse($result);
+    }
+
+    public function getUserByEmailAndPassword($email, $password)
+    {
+        $password = self::getHashForPassword($password);
+        $data = ['email' => $email, 'password' => $password];
+        $q = 'select * from ' . self::TABLE . ' where `email`=:email and `password`=:password';
+        $result = $this->DB->selectAsAssoc($q, $data);
+        return self::getFirstResultIfSingleOrFalse($result);
     }
 
     public function isEmailExists($email)
     {
         $result = $this->DB->selectAsAssoc("select `email` from " . self::TABLE . " where `email`=:email", ['email' => $email]);
         return (bool)count($result);
+    }
+
+    private static function getFirstResultIfSingleOrFalse(array $result)
+    {
+        if (count($result) != 1) {
+            return false;
+        }
+
+        return $result[0];
     }
 
     private static function getHashForPassword($password)

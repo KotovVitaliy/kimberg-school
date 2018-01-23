@@ -16,7 +16,7 @@ class Authorizer
         ]);
     }
 
-    public static function deleteAuth()
+    public static function logout()
     {
         $user_id = self::getUserIdOrFalse();
         $hash = Cookie::getAuthCookie();
