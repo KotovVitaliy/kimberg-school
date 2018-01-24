@@ -59,7 +59,9 @@ function sendAuthRequest() {
         password: element_password.val()
     };
 
-    $.post('/ajax/user/enter', data);
+    $.post('/ajax/user/login', data, function() {
+        location.reload();
+    });
 }
 
 function sendLogoutRequest() {

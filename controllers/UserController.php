@@ -54,6 +54,12 @@ class UserController extends Controller
         }
         
         $user = UserModel::getInstance()->getUserByEmailAndPassword($email, $password);
+        if (!$user) {
+            Viewer::echoError('Нет пользователя с такими данными!');
+            return;
+        }
+
+        Authorizer::authUser($user['id']);
     }
 
     public function logout()
