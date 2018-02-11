@@ -6,13 +6,14 @@ class UserModel extends Model
 
     const TABLE = 'accounts';
 
-    public function addStudent($name, $fname, $email, $password)
+    public function addStudent($name, $fname, $email, $password, $phone)
     {
         return $this->DB->insert(self::TABLE, [
             'name' => $name,
             'fname' => $fname,
             'email' => $email,
-            'password' => self::getHashForPassword($password)
+            'password' => self::getHashForPassword($password),
+            'phone' => $phone
         ]);
     }
 

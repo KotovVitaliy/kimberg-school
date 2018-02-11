@@ -8,10 +8,11 @@ class UserController extends Controller
     {
         $name = htmlspecialchars($_REQUEST['name']);
         $fname = htmlspecialchars($_REQUEST['fname']);
+        $phone = $_REQUEST['phone'];
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
 
-        foreach ([$name, $fname, $email, $password] as $data) {
+        foreach ([$name, $fname, $email, $password, $phone] as $data) {
             if (strlen($data) < 1) {
                 Viewer::echoError('Некоторые поля пустые!');
                 return;
@@ -34,7 +35,7 @@ class UserController extends Controller
             return;
         }
 
-        $user_id = UserModel::getInstance()->addStudent($name, $fname, $email, $password);
+        $user_id = UserModel::getInstance()->addStudent($name, $fname, $email, $password, $phone);
         Authorizer::authUser($user_id);
 
         Viewer::echoSuccess('Регистрация прошла успешно!');
