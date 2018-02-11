@@ -86,7 +86,6 @@ textarea {
 #first-block {
 	background-image: url('/img/bg3.jpg');
 	background-size: cover;
-	background-position: top center;
 }
 
 	#menu-block {
@@ -761,6 +760,10 @@ footer {
 		flex-basis: 100%;
 		margin-bottom: 20px;
 	}
+
+	#first-block {
+		background-position: 10px;
+	}
 }
 
 @media screen and (max-width: 680px)
@@ -973,4 +976,13 @@ footer {
 	.teacher-container {
 		margin: 20px 0 0;
 	}
+
+	#first-block {
+		background-position: -200px;
+	}
+}
+
+@media screen and (max-width: 400px)
+{
+
 }
