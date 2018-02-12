@@ -35,7 +35,10 @@ class UserController extends Controller
             return;
         }
 
-        $user_id = UserModel::getInstance()->addStudent($name, $fname, $email, $password, $phone);
+        $token = $this->generateConfirmToken();
+        $user_id = UserModel::getInstance()->addStudent($name, $fname, $email, $password, $phone, $token);
+
+        Mailer::getInstance()->sendConfirmMail($email, $token);
         Authorizer::authUser($user_id);
 
         Viewer::echoSuccess('Регистрация прошла успешно!');
@@ -62,6 +65,19 @@ class UserController extends Controller
 
         Authorizer::authUser($user['id']);
     }
+    
+    public function confirm()
+    {
+        $token = $_REQUEST['confirm'];
+        $user = UserModel::getInstance()->getUserByConfirmToken($token);
+        $result = UserModel::getInstance()->confirmUserByToken($token);
+        if ($result && $user) {
+            Mailer::getInstance()->sendGreetingsMailMail($user['email']);
+            Authorizer::authUser($user['id']);
+            return true;
+        }
+        return false;
+    }
 
     public function logout()
     {
@@ -82,5 +98,10 @@ class UserController extends Controller
         }
 
         return $user;
+    }
+
+    private function generateConfirmToken()
+    {
+        return md5(time() * rand(1, 44));
     }
 }

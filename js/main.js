@@ -181,8 +181,8 @@ $(function(){
 			return;
 		}
 
-		var formData = form.serialize() + "&formId=" + formId + "&ajax=1";
-		$.post(url, formData, function(response) {
+		var formData = form.serialize() + "&formId=" + formId;
+        $.post(url, formData, function(response) {
 				/**
 				 * Обработка данных response. В случае ошибок -
 				 * их отображение (см. выше образец)

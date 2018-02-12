@@ -6,14 +6,15 @@ class UserModel extends Model
 
     const TABLE = 'accounts';
 
-    public function addStudent($name, $fname, $email, $password, $phone)
+    public function addStudent($name, $fname, $email, $password, $phone, $token)
     {
         return $this->DB->insert(self::TABLE, [
             'name' => $name,
             'fname' => $fname,
             'email' => $email,
             'password' => self::getHashForPassword($password),
-            'phone' => $phone
+            'phone' => $phone,
+            'confirm_token' => $token
         ]);
     }
 
@@ -29,6 +30,12 @@ class UserModel extends Model
         return self::getFirstResultIfSingleOrFalse($result);
     }
 
+    public function getUserByConfirmToken($token)
+    {
+        $result = $this->DB->selectAsAssoc("select * from " . self::TABLE . " where `confirm_token`=:token", ['token' => $token]);
+        return self::getFirstResultIfSingleOrFalse($result);
+    }
+
     public function getUserByEmailAndPassword($email, $password)
     {
         $password = self::getHashForPassword($password);
@@ -36,6 +43,11 @@ class UserModel extends Model
         $q = 'select * from ' . self::TABLE . ' where `email`=:email and `password`=:password';
         $result = $this->DB->selectAsAssoc($q, $data);
         return self::getFirstResultIfSingleOrFalse($result);
+    }
+
+    public function confirmUserByToken($token)
+    {
+        return $this->DB->update('update ' . self::TABLE . ' set `is_confirmed`=1 where `confirm_token`=:token', ['token' => $token]);
     }
 
     public function isEmailExists($email)

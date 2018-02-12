@@ -73,12 +73,14 @@ class DB
     {
         $stm = $this->connect->prepare($query);
         $stm->execute($params);
+        return $stm->rowCount();
     }
 
     public function delete($query, array $params = array())
     {
         $stm = $this->connect->prepare($query);
         $stm->execute($params);
+        return $stm->rowCount();
     }
 
     private static function loadConnectDataFromConfig()
