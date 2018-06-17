@@ -15,10 +15,9 @@ $(function(){
 
 	var hideForm = function(){
 		var container = $('.form-container');
-		container.find('input, textarea')
-			//.removeAttr('required')
-			.val('');
+		container.find('input, textarea, select').val('');
 		container.find('.form-error').empty();
+		container.find('.form-success').empty();
 		container.find('.warn').removeClass('warn');
 		container.css('display', 'none');
 		enableScrolling();
@@ -32,11 +31,7 @@ $(function(){
 			})
 			.animate(
 				{'opacity': 1},
-				300,
-				function(){
-					// container.find('.required')
-					// 	.attr('required', 'required');
-				}
+				300
 			);
 		disableScrolling();
 	};
@@ -76,6 +71,27 @@ $(function(){
 			} else if(value.length < 2) {
 				warnField(field);
 				return 'Фамилия слишком короткое';
+			}
+			unwarnField(field);
+			return true;
+		},
+		'surname': function(field) {
+			var value = field.val();
+			if(value == '') {
+				warnField(field);
+				return 'Фамилия не указано';
+			} else if(value.length < 2) {
+				warnField(field);
+				return 'Фамилия слишком короткое';
+			}
+			unwarnField(field);
+			return true;
+		},
+		'class': function(field) {
+			var value = field.val();
+			if(value == '') {
+				warnField(field);
+				return 'Класс не указан';
 			}
 			unwarnField(field);
 			return true;
@@ -146,26 +162,27 @@ $(function(){
 	};
 
 	var revalidateField = function(field) {
-		var fieldName = field.attr('name');
-		if(typeof fieldName === 'undefined' ||
-			field.hasClass('novalidate')) {
+		let fieldName = field.attr('name');
+		let value = field.val();
+		console.log(fieldName);
+		if(typeof fieldName === 'undefined' || (field.hasClass('novalidate') && value === "")) {
 			return true;
 		}
 		var result = fieldValidators[fieldName](field);
 		return result;
 	};
 
-	var revalidateForm = function(form) {
-		var errorMessages = [];
-		var fields = form.find('input, textarea').toArray();
-		for(i in fields) {
-			var result = revalidateField($(fields[i]));
+	let revalidateForm = function(form) {
+		let errorMessages = [];
+		let fields = form.find('input, textarea, select').toArray();
+		for(let i in fields) {
+			let result = revalidateField($(fields[i]));
 			if (result === true) {
 				continue;
 			}
 			errorMessages.push(result);
 		}
-		var errorsField = form.find('.form-error');
+		let errorsField = form.find('.form-error');
 		if ( errorMessages.length == 0) {
 			errorsField.empty();
 			return true;
@@ -175,23 +192,27 @@ $(function(){
 	};
 
 	var sendFormData = function(form) {
-		var formId = form.attr('id');
-        var url = '/ajax' + form.data('url');
+		let formId = form.attr('id');
+        let url = '/subscribe' + form.data('url');
+
 		if (!revalidateForm(form)) {
 			return;
 		}
 
 		var formData = form.serialize() + "&formId=" + formId;
         $.post(url, formData, function(response) {
-				/**
-				 * Обработка данных response. В случае ошибок -
-				 * их отображение (см. выше образец)
-				 */
-				hideForm();
+            	form.find('.form-error').html('');
+            	form.find('.form-success').html('Ваше сообщение получено.<br>Мы свяжемся с вами с ближайшее время!');
+				setTimeout(hideForm, 2501);
 			}
 		).fail(function(){
-			form.find('.form-error').html('К сожалению, произошла ошибка.<br>' +
-				'Пожалуйста, попробуйте ещё раз!');
+			form.find('.form-error').html(
+				'К сожалению, произошла ошибка.<br>'
+				+ 'Пожалуйста, попробуйте ещё раз!<br>'
+				+ 'Или свяжитесь с нами<br>'
+				+ 'по номеру телефона:<br>'
+				+ '+7 (926) 886-54-97'
+			);
 		});
 	};
 
@@ -218,6 +239,13 @@ $(function(){
 	$('form').submit(function(e) {
 		e.preventDefault();
 		sendFormData($(this));
+	});
+
+	$('.subscribe-link').click(function() {
+		let text = $(this).text();
+		let container = $('#subscribe-container');
+        showForm(container);
+		return false;
 	});
 
 	$('#sign-in-link').click(function(){
@@ -273,9 +301,20 @@ $(function(){
 		var field = $(this);
 		if(!field.hasClass('warn')) {
 			return;
+		} else {
+			if (field.hasClass('novalidate') && field.val() === "") {
+				field.removeClass('warn');
+			}
 		}
-		var form = field.parents('form');
-		revalidateForm(form);
+		revalidateField(field);
+	});
+
+	$('.form-container select').on('change', function() {
+        var field = $(this);
+        if(!field.hasClass('warn')) {
+            return;
+        }
+        revalidateField(field);
 	});
 
 	//Main menu smooth scrolling

@@ -27,6 +27,9 @@ RewriteRule ^ajax/(.+)$ /index.php?ajax=1&controller=%1&action=%2 [QSA,L]
 RewriteCond %{REQUEST_URI} ^/confirm/(.+)$
 RewriteRule ^confirm/(.+)$ /index.php?confirm=%1 [QSA,L]
 
+RewriteCond %{REQUEST_URI} ^/subscribe/(.+)$
+RewriteRule ^subscribe/(.+)$ /index.php?subscribe=%1 [QSA,L]
+
 RewriteCond %{REQUEST_URI} ^/forgot/(.+)$
 RewriteRule ^forgot/(.+)$ /index.php?forgot=%1 [QSA,L]
 

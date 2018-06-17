@@ -10,6 +10,8 @@ require_once __DIR__ . '/config/autoload.php';
 //session_start();
 if (isAjaxRequest()) {
     Ajax::getInstance()->makeRequest();
+} else if (isSubscribeRequest()) {
+    Mailer::getInstance()->sendSubscribeMail($_REQUEST);
 } else if (isConfirmRequest()) {
     $result = UserController::getInstance()->confirm();
     if (!$result) sendTo404();
@@ -38,4 +40,9 @@ function isAjaxRequest()
 function isConfirmRequest()
 {
     return isset($_REQUEST['confirm']) && $_REQUEST['confirm'];
+}
+
+function isSubscribeRequest()
+{
+    return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'];
 }

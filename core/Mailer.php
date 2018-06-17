@@ -2,6 +2,7 @@
 class Mailer
 {
     const CONFIRM_EMAIL = 'confirm@' . Config::DOMAIN;
+    const SUBSCRIBE_EMAIL = 'subscribe@' . Config::DOMAIN;
     const NO_REPLY_EMAIL = 'no-reply@' . Config::DOMAIN;
 
     private static $instance;
@@ -33,6 +34,29 @@ class Mailer
         $subject = 'Добро пожаловать на портал Школа Кимберг';
         $from = self::CONFIRM_EMAIL;
         return $this->_sendMail($email, $subject, $message, $from);
+    }
+
+    public function sendSubscribeMail($data)
+    {
+        $surname = $data['surname'] ?? 'нет';
+        $name = $data['name'] ?? 'нет';
+        $class = $data['class'] ?? 'нет';
+        $email = $data['email'] ?? 'нет';
+        $phone = isset($data['phone']) && $data['phone'] ? $data['phone'] : 'нет';
+        $text = isset($data['question']) && $data['question'] ? ("<< " . $data['question'] . " >>") : 'нет';
+
+        $message = 'С портала Школа Кимберг пришла новая заявка:' . PHP_EOL;
+        $message .= "Фамилия: {$surname}" . PHP_EOL;
+        $message .= "Имя: {$name}" . PHP_EOL;
+        $message .= "Класс: {$class}" . PHP_EOL;
+        $message .= "Email: {$email}" . PHP_EOL;
+        $message .= "Номер телефона: {$phone}" . PHP_EOL;
+        $message .= "Сообщение: {$text}" . PHP_EOL;
+        $message .= PHP_EOL . 'Не забудь связаться с человеком. Твой дружелюбный сосед, Email Robot.' . PHP_EOL;
+        $subject = 'Новое сообщение с сайта Kimberg School';
+        $from = self::SUBSCRIBE_EMAIL;
+        $this->_sendMail("kimberg.school@gmail.com", $subject, $message, $from);
+        return $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
     }
 
     private function _sendMail($to, $subject, $message, $from)

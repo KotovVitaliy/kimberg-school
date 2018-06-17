@@ -29,6 +29,10 @@ a.nolink:hover {
 	cursor: auto;
 }
 
+input:focus, textarea:focus, select:focus {
+	outline:0;
+}
+
 button {
 	background-color: #ffcd00;
 	color: white;
@@ -65,6 +69,14 @@ h3 {
 
 textarea {
 	overflow: auto;
+}
+
+i.necessarily:after {
+	content: '*';
+}
+
+i.necessarily {
+	color: red;
 }
 
 /* Screen widths from 320px to 1260px */
@@ -125,6 +137,7 @@ textarea {
 				}
 
 				#sign-links a {
+					text-align: center;
 					display: block;
 					font-size: 14px;
 				}
@@ -246,7 +259,7 @@ textarea {
 	#account-contents .in-block {
 		position: relative;
 		background-color: #f5f5f5;
-		min-height: 420px;
+		min-height: 500px;
 		padding-top: 50px;
 	}
 
@@ -475,6 +488,13 @@ footer {
 					margin-bottom: 10px;
 				}
 
+				.form-success {
+					font-weight: bold;
+					color: green;
+					font-size: 14px;
+					margin-bottom: 10px;
+				}
+
 				.form-row {
 					margin-bottom: 10px;
 				}
@@ -509,7 +529,20 @@ footer {
 					    box-shadow: 0 1px 2px -1px rgba(0,0,0,.2) inset, 0 0 transparent;
 					}
 
+					.form-row select {
+						display: block;
+						width: 100%;
+						margin: 2% 0 2% 0;
+						padding: 2%;
+						border: 1px solid rgba(0,0,0,.1);
+						border-radius: 3px;
+						font-size: 16px;
+						box-shadow: 0 1px 2px -1px rgba(0,0,0,.2) inset, 0 0 transparent;
+						background-color: white;
+					}
+
 					.form-row input.warn,
+					.form-row select.warn,
 					.form-row textarea.warn {
 						border: 2px solid red;
 					}

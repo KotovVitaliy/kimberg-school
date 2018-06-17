@@ -30,10 +30,7 @@
 					</div>
 					<div id="phone-container">
 						<div id="phone"><a class="nolink" href="tel:+7 (926) 886-54-97">+7 (926) 886-54-97</a></div>
-						<div id="sign-links">
-							<a href="#" id="sign-in-link">Войти</a>
-							<a href="#" id="sign-up-link" class="register-link">Зарегистрироваться</a>
-						</div>
+						<!--<div id="sign-links"> текст под телефоном </div>-->
 					</div>
 				</header>
 			</div>
@@ -52,7 +49,7 @@
 						<div>Подготовка к поступлению в&nbsp;ведущие&nbsp;ВУЗы&nbsp;страны</div>
 					</div>
 					<div class="button-container">
-						<button class="register-link">Зарегистрироваться</button>
+						<button class="subscribe-link">Записаться</button>
 					</div>
 				</div>
 			</div>
@@ -63,31 +60,40 @@
 			<h2>Как начать обучение</h2>
 			<div id="stages-list">
 				<div id="stage-container-1">
-					<div id="stage-1">Зарегистрируйтесь и&nbsp;войдите в&nbsp;личный кабинет</div>
+					<div id="stage-1">Выберите педагога</div>
 				</div>
 				<div id="stage-container-2">
-					<div id="stage-2">Выберите занятие и&nbsp;запишитесь</div>
+					<div id="stage-2">Запишитесь на занятия</div>
 				</div>
 				<div id="stage-container-3">
-					<div id="stage-3">Оплатите обучение</div>
+					<div id="stage-3">
+						<span>Оплатите обучение</span>
+						<br />
+						<span>(4 занятия &ndash; 10 000₽)</span>
+					</div>
 				</div>
 				<div id="stage-container-4">
-					<div id="stage-4">Приходите на&nbsp;занятия</div>
+					<div id="stage-4">
+						<span>Приходите на занятия</span>
+						<br />
+						<span>(1 занятие &ndash; 120 мин.)</span>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div id="account-contents">
 		<div class="in-block">
-			<h2>В личном кабинете будут:</h2>
+			<h2>В процессе обучения вас ждет:</h2>
 			<div id="contents-list">
-				<div><span>1.</span>История и видеозаписи прошедших&nbsp;занятий</div>
-				<div><span>2.</span>Возможность записываться на&nbsp;занятия</div>
-				<div><span>3.</span>Возможность просматривать домашние&nbsp;задания</div>
-				<div><span>4.</span>Возможность отправлять домашние задания на&nbsp;проверку&nbsp;преподавателям</div>
+				<div><span>1.</span>Интенсивные занятия в маленьких группах, где каждый получает море внимания</div>
+				<div><span>2.</span>Структурированный план для штурма самых крутых олимпиад</div>
+				<div><span>3.</span>Доступ к видео-лекциям, чтобы наверняка не упустить ни крохи знаний</div>
+				<div><span>4.</span>Домашние задания,чтобы не скучать в перерывах между занятиями</div>
+				<div><span>5.</span>Станешь частью тусовки таких же «ненормальных» как ты</div>
 			</div>
 			<div id="start-learning">
-				<button class="register-link">Начать обучение</button>
+				<button class="subscribe-link">Начать обучение</button>
 			</div>
 			<div id="notebook-container">
 				<img src="/img/notebook.png" alt="" />
@@ -100,39 +106,60 @@
 			<div class="teacher-container left-oriented">
 				<div class="photo-container">
 					<!-- Фотография должна быть квадратная, размером не менее 165*165px -->
-					<img src="/img/photo.jpg" alt="Ян Кимберг" />
+					<img src="/img/photo_kimberg.jpg" alt="Ян Кимберг" />
 					<div class="photo-mask"></div>
 				</div>
 				<div class="text-container">
 					<h3>Ян Кимберг</h3>
 					<div class="description">
-                        <p>Скоро будет описание...</p>
+                        <p>Если ты хочешь научиться решать действительно интересные, олимпиадные задачи, то ты по адресу. Ты не только постигнешь «Джедайские» приемы, позволяющие щелкать задачи в пару строчек, но и сделаешь это в непринужденной атмосфере дружеского общения и шуток-прибауток.</p>
+
+						<p>Пару слов о себе: Выпускник физического факультета МГУ, тренер сборной Москвы по физике, лауреат Гранта правительства Москвы в сфере образования. Руководитель сборной Москвы на Румынской физической олимпиаде (Romanian masters of Physics), на международной Жаутыковской олимпиаде (IZho), на международной олимпиаде по экспериментальной физике (IEpho). Член жюри Московской городской олимпиады. Преподаватель образовательных программ «Путь к Олимпу». Сотрудник Центра педагогического мастерства. Обладатель жима лежа в 160 кг.</p>
+
+						<p>Опыт преподавания: 7 лет, в том числе в СУНЦ МГУ, школе №1329, лицее Воробьевы Горы. Подготовка Московской сборной к Всероссийской олимпиаде школьников, преподавание в олимпиадных выездных школах (Сочи, Истра, Беларусь, Иркутск).</p>
+
+						<p>Записывайся, стань машиной по решению задач!</p>
                     </div>
 
-                    <p><a href="https://www.youtube.com/watch?v=2BmtKeF06qE" target="_blank"><button>Смотреть интервью Яна</button></a></p>
+                    <p><a href="https://www.youtube.com/watch?v=2BmtKeF06qE" target="_blank"><button>Интервью Яна</button></a></p>
 				</div>
 			</div>
 
 			<div class="teacher-container right-oriented">
 				<div class="photo-container">
 					<!-- Фотография должна быть квадратная, размером не менее 165*165px -->
-					<img src="/img/photo2.jpg" alt="Данила Паринов" />
+					<img src="/img/photo_parinov.jpg" alt="Данила Паринов" />
 					<div class="photo-mask"></div>
 				</div>
 				<div class="text-container">
 					<h3>Данила Паринов</h3>
 					<div class="description">
-                        <p>Скоро будет описание...</p>
+                        <p>На мой взгляд, для успешного решения задач по физике (а это точно нужно уметь, если хочешь 100 баллов на экзамене или «затащить» пару-тройку олимпиад) нужно «видеть» задачу: хорошо понимать суть физических явлений, положенных в её основу.</p>
+
+						<p>Я хочу, чтобы после моих занятий ученики получали удовольствие от решения сложных и нестандартных задач. Ведь если ты понимаешь «суть» физики, то ни одна незнакомая задача не вызовет ступор или панику.</p>
+
+						<p>Коротко о себе: выпускник ФОПФ МФТИ (бакалавриат) и физического факультета МГУ (магистратура). Победитель всероссийских олимпиад школьников по физике (2009-2011), медалист международных олимпиад (золото на WoPhO-2012 и APhO-2011, серебро на IPhO-2011).</p>
+
+						<p>Член жюри:</p>
+
+						<ul>
+							<li>Всероссийской олимпиады школьников;</li>
+							<li>Московской олимпиады школьников;</li>
+							<li>Международной олимпиады по экспериментальной физике;</li>
+							<li>Международной олимпиады мегаполисов.</li>
+						</ul>
+
+						<p>Опыт преподавания: 7 лет, в том числе в СУНЦ МГУ, школе №1329, подготовка Московской сборной к Всероссийской олимпиаде школьников, преподавание в олимпиадных выездных школах (Сочи, Истра, Беларусь).</p>
                     </div>
 
-                    <p><a href="https://www.youtube.com/watch?v=1WJuQyJn6lg" target="_blank"><button>Смотреть интервью Данила</button></a></p>
+                    <p><a href="https://www.youtube.com/watch?v=1WJuQyJn6lg" target="_blank"><button>Интервью Данила</button></a></p>
 				</div>
 			</div>
 
 			<div class="teacher-container left-oriented">
 				<div class="photo-container">
 					<!-- Фотография должна быть квадратная, размером не менее 165*165px -->
-					<img src="/img/photo3.jpg" alt="Николай Трушников" />
+					<img src="/img/photo_trushinikov.jpg" alt="Николай Трушников" />
 					<div class="photo-mask"></div>
 				</div>
 				<div class="text-container">
@@ -146,7 +173,7 @@
 
                         <p>Записывайтесь, увидимся на занятиях!</p>
 
-                        <p><a href="https://www.youtube.com/watch?v=e3FmWhuqspo" target="_blank"><button>Смотреть интервью Николая</button></a></p>
+                        <p><a href="https://www.youtube.com/watch?v=e3FmWhuqspo" target="_blank"><button>Интервью Николая</button></a></p>
                     </div>
 				</div>
 			</div>
@@ -160,7 +187,7 @@
 				<div id="contact-phone"><a class="black-link nolink" href="tel:+7 (926) 886-54-97">+7 (926) 886-54-97</a></div>
 			</div>
 			<div id="contacts-button">
-				<button id="ask-question">Задать вопрос</button>
+				<button class="subscribe-link">Задать вопрос</button>
 			</div>
 		</div>
 	</div>
@@ -170,13 +197,58 @@
 				© Школа Кимберг<span class="nowrap">, 2017-<span id="currentYear"></span></span>
 			</div>
 			<div id="social-links">
-				<a href="#"><img src="/img/social-vk.png" alt=""></a>
-				<a href="#"><img src="/img/social-im.png" alt=""></a>
+				<a href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"></a>
+				<a href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"></a>
+				<a href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"></a>
 				<a href="#first-block" id="up-button" title="Наверх"><img src="/img/arrow-up-2.png" alt="Наверх"></a>
 			</div>
 		</div>
 	</footer>
-	<div id="auth-form-container" class="form-container">
+
+	<div id="subscribe-container" class="form-container">
+		<div class="form">
+			<div class="close"></div>
+			<h1>Заполните форму</h1>
+			<form id="subscribe-form" data-url="/user/subscribe">
+				<div class="form-error"></div>
+				<div class="form-success"></div>
+				<div class="form-row">
+					<label>Фамилия<i class="necessarily"></i> :</label>
+					<input name="surname" type="text" value="">
+				</div>
+				<div class="form-row">
+					<label>Имя<i class="necessarily"></i> :</label>
+					<input name="name" type="text" value="">
+				</div>
+				<div class="form-row">
+					<label>Класс<i class="necessarily"></i> :</label>
+					<select name="class">
+						<option value="">Выбрать</option>
+						<option value="7">7 класс</option>
+						<option value="8">8 класс</option>
+						<option value="9">9 класс</option>
+						<option value="10">10 класс</option>
+						<option value="11">11 класс</option>
+					</select>
+				</div>
+				<div class="form-row">
+					<label>E-mail<i class="necessarily"></i> :</label>
+					<input name="email" type="text" value="">
+				</div>
+				<div class="form-row">
+					<label>Номер телефона:</label>
+					<input name="phone" type="tel" placeholder="+7 (900) 123-4567" value="" class="novalidate">
+				</div>
+				<div class="form-row">
+					<label>Комментарий:</label>
+					<textarea name="question" class="novalidate"></textarea>
+				</div>
+				<button type="submit">ОТПРАВИТЬ</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- <div id="auth-form-container" class="form-container">
 		<div class="form">
 			<div class="close"></div>
 			<h1>Авторизация</h1>
@@ -264,11 +336,12 @@
 				</div>
 				<div class="form-row">
 					<label>Вопрос:</label>
-					<textarea name="question" class="required"></textarea>
+					<textarea name="question"></textarea>
 				</div>
 				<button type="submit">ОТПРАВИТЬ</button>
 			</form>
 		</div>
-	</div>
+	</div> -->
+
 </body>
 </html>

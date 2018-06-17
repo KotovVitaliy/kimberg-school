@@ -29,7 +29,6 @@ class Ajax
             || !isset($map[$controller][$action])
             || !isset($map[$controller][$action]['class'])
             || !isset($map[$controller][$action]['method'])) {
-            var_dump(2);
             sendTo404();
         }
 
