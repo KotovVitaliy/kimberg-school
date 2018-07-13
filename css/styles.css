@@ -17,7 +17,7 @@ a {
 }
 
 a:hover {
-	text-decoration: underline;
+	cursor: pointer;
 }
 
 a.black-link {
@@ -35,7 +35,6 @@ input:focus, textarea:focus, select:focus {
 
 button {
 	background-color: #ffcd00;
-	color: white;
 	border: 0;
 	cursor: pointer;
 	color: black;
@@ -123,6 +122,14 @@ i.necessarily {
 					justify-content: space-around;
 					align-items: center;
 				}
+
+				nav.social-nav {
+					display: none;
+				}
+
+					nav.social-nav img {
+						width: 20px;
+					}
 
 			#phone-container {
 				flex: 0 0 195px;
@@ -429,8 +436,8 @@ footer {
 }
 
 	.form {
-		width: 305px;
-		/*max-width: 305px;*/
+		width: 350px;
+		max-width: 355px;
 		top: 25px;
 	    margin: 0 auto;
 	    position: relative;
@@ -940,10 +947,11 @@ footer {
 
 	nav {
 		font-size: 16px;
+		padding: 5px;
 	}
 
 	#menu-block {
-		height: 190px;
+		height: auto;
 	}
 
 	#nav-container {

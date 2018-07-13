@@ -2,6 +2,9 @@
 <html lang="ru">
 <head>
 	<title>Школа Кимберг</title>
+    <meta name="author" content="Котов Виталий Игоревич">
+    <meta name="description" content="Школа олимпиадной физики">
+    <meta name="keywords" content="олимпиады физика подготовка к олимпиадам егэ сдать репититор">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="format-detection" content="telephone=no">
@@ -22,10 +25,18 @@
 			<div class="in-block">
 				<header>
 					<div id="nav-container">
-						<nav>
+						<nav class="common-nav">
 							<a href="#how-to-start">Как начать обучение</a>
 							<a href="#teachers">Преподаватели</a>
 							<a href="#contacts">Контакты</a>
+							<a id="social_menu">Соцсети</a>
+						</nav>
+						<nav class="social-nav">
+							<a href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"> ВКонтакте</a>
+							<a href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"> Instagram</a>
+							<a href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"> YouTube</a>
+
+							<a id="back_social_menu">Меню</a>
 						</nav>
 					</div>
 					<div id="phone-container">
@@ -169,7 +180,16 @@
 
                         <p>Моя цель &ndash; помочь ученику «глубоко» разобраться в теме, научить осознанно решать разнообразные задачи и, как следствие, добиться хороших результатов на олимпиадах и экзаменах.</p>
 
-                        <p>Немного о себе: тренер сборной г. Москвы, член жюри и автор задач МОШ по физике, член жюри региональных этапов ВсОШ и олимпиады «Максвелл», член жюри Азиатской физической олимпиады (APhO), член жюри международной экспериментальной физической олимпиады (IEPhO), член жюри и автор задач международной олимпиады Мегаполисов.</p>
+                        <p>Немного о себе:
+						<ul>
+							<li>Закончил физический факультет МГУ;</li>
+							<li>Тренер сборной г. Москвы;</li>
+							<li>Член жюри и автор задач МОШ по физик;</li>
+							<li>Член жюри региональных этапов ВсОШ и олимпиады «Максвелл»;</li>
+							<li>Член жюри Азиатской физической олимпиады (APhO);</li>
+							<li>Член жюри международной экспериментальной физической олимпиады (IEPhO);</li>
+							<li>Член жюри и автор задач международной олимпиады Мегаполисов.</li>
+						</ul>
 
                         <p>Записывайтесь, увидимся на занятиях!</p>
 
@@ -223,7 +243,7 @@
 				<div class="form-row">
 					<label>Класс<i class="necessarily"></i> :</label>
 					<select name="class">
-						<option value="">Выбрать</option>
+						<option value="">Летом укажите будущий класс</option>
 						<option value="7">7 класс</option>
 						<option value="8">8 класс</option>
 						<option value="9">9 класс</option>

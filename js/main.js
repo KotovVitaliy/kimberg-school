@@ -318,7 +318,7 @@ $(function(){
 	});
 
 	//Main menu smooth scrolling
-	$('nav a, #up-button').click(function(){
+	$('nav a:not(#social_menu, #back_social_menu), #up-button').click(function(){
 		var hash = $(this).attr('href');
 		var topPosition = $(hash).offset().top;
 		var duration = topPosition / 4 + 300;
@@ -333,6 +333,16 @@ $(function(){
 		);
 
 		return false;
+	});
+
+    $('nav a#social_menu').click(function () {
+        $('.common-nav').hide(1);
+        $('.social-nav').show(1);
+    });
+
+    $('nav a#back_social_menu').click(function() {
+        $('.social-nav').hide(1);
+        $('.common-nav').show(1);
 	});
 
 	$('#currentYear').html((new Date()).getFullYear());
