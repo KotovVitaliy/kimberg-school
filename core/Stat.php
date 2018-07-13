@@ -3,7 +3,7 @@
 class Stat
 {
     const TABLE = 'visitors';
-    const GET_DATA_SQL = "select count(*) as amount, action from " . self::TABLE . " where `timestamp` > now() - interval {INTERVAL} group by action order by action";
+    const GET_DATA_SQL = "select count(*) as amount, action from " . self::TABLE . " where `timestamp` > now() - interval {INTERVAL} group by action order by amount desc";
 
     const ACTION_OPEN_SITE = "open site";
     const ACTION_OPEN_VK = "open VK";

@@ -74,20 +74,22 @@
 					<div id="stage-1">Выберите педагога</div>
 				</div>
 				<div id="stage-container-2">
-					<div id="stage-2">Запишитесь на занятия</div>
+					<div id="stage-2">
+						<span>Запишитесь на занятия</span>
+						<br />
+						<span>(1 занятие &ndash; 120 мин.)</span>
+					</div>
 				</div>
 				<div id="stage-container-3">
 					<div id="stage-3">
 						<span>Оплатите обучение</span>
 						<br />
-						<span>(4 занятия &ndash; 10 000₽)</span>
+						<span>(1 занятие - 2 500 ₽)</span>
 					</div>
 				</div>
 				<div id="stage-container-4">
 					<div id="stage-4">
 						<span>Приходите на занятия</span>
-						<br />
-						<span>(1 занятие &ndash; 120 мин.)</span>
 					</div>
 				</div>
 			</div>
