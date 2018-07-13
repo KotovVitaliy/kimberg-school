@@ -16,6 +16,53 @@ if (isAjaxRequest()) {
     $result = UserController::getInstance()->confirm();
     if (!$result) sendTo404();
     else header("Location:/");
+} else if (isStatRequest()) {
+    $action = $_REQUEST['stat'];
+    switch ($action) {
+        case "instagram":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_INSTAGRAM);
+            break;
+
+        case "vk":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_VK);
+            break;
+
+        case "youtube":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_YOUTUBE_OF_GROUP);
+            break;
+
+        case "youtube-yan":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_YOUTUBE_ABOUT_YAN);
+            break;
+
+        case "youtube-nick":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_YOUTUBE_ABOUT_NICKOLAY);
+            break;
+
+        case "youtube-dan":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_YOUTUBE_ABOUT_DANILA);
+            break;
+
+        case "subscribe1":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_SUBSCRIBE1);
+            break;
+
+        case "subscribe2":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_SUBSCRIBE2);
+            break;
+
+        case "subscribe3":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_SUBSCRIBE3);
+            break;
+
+        case "view":
+            Stat::viewStat();
+            break;
+
+        default:
+            Stat::addVisitorToDB(Stat::ACTION_UNKNOWN);
+            break;
+    }
 } else if ($user = Authorizer::getCurrentUser()) {
     if ($user['is_confirmed']) {
         echo 'step 2';
@@ -23,6 +70,7 @@ if (isAjaxRequest()) {
         Viewer::echoConfirmPage();
     }
 } else {
+    Stat::addVisitorToDB(Stat::ACTION_OPEN_SITE);
     echo file_get_contents(__DIR__ . '/tpl/main.tpl');
 }
 
@@ -46,3 +94,10 @@ function isSubscribeRequest()
 {
     return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'];
 }
+
+function isStatRequest()
+{
+    return isset($_REQUEST['stat']) && $_REQUEST['stat'];
+}
+
+

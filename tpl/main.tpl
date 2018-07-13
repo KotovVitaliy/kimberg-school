@@ -32,9 +32,9 @@
 							<a id="social_menu">Соцсети</a>
 						</nav>
 						<nav class="social-nav">
-							<a href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"> ВКонтакте</a>
-							<a href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"> Instagram</a>
-							<a href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"> YouTube</a>
+							<a onclick="sendStatVK()" href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"> ВКонтакте</a>
+							<a onclick="sendStatInstagram()" href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"> Instagram</a>
+							<a onclick="sendStatYoutube()" href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"> YouTube</a>
 
 							<a id="back_social_menu">Меню</a>
 						</nav>
@@ -60,7 +60,7 @@
 						<div>Подготовка к поступлению в&nbsp;ведущие&nbsp;ВУЗы&nbsp;страны</div>
 					</div>
 					<div class="button-container">
-						<button class="subscribe-link">Записаться</button>
+						<button onclick="sendSubscribe1()" class="subscribe-link">Записаться</button>
 					</div>
 				</div>
 			</div>
@@ -104,7 +104,7 @@
 				<div><span>5.</span>Станешь частью тусовки таких же «ненормальных» как ты</div>
 			</div>
 			<div id="start-learning">
-				<button class="subscribe-link">Начать обучение</button>
+				<button onclick="sendSubscribe2()" class="subscribe-link">Начать обучение</button>
 			</div>
 			<div id="notebook-container">
 				<img src="/img/notebook.png" alt="" />
@@ -132,7 +132,7 @@
 						<p>Записывайся, стань машиной по решению задач!</p>
                     </div>
 
-                    <p><a href="https://www.youtube.com/watch?v=2BmtKeF06qE" target="_blank"><button>Интервью Яна</button></a></p>
+                    <p><a onclick="sendStatYoutubeYan()" href="https://www.youtube.com/watch?v=2BmtKeF06qE" target="_blank"><button>Интервью Яна</button></a></p>
 				</div>
 			</div>
 
@@ -163,7 +163,7 @@
 						<p>Опыт преподавания: 7 лет, в том числе в СУНЦ МГУ, школе №1329, подготовка Московской сборной к Всероссийской олимпиаде школьников, преподавание в олимпиадных выездных школах (Сочи, Истра, Беларусь).</p>
                     </div>
 
-                    <p><a href="https://www.youtube.com/watch?v=1WJuQyJn6lg" target="_blank"><button>Интервью Данила</button></a></p>
+                    <p><a onclick="sendStatYoutubeDan()" href="https://www.youtube.com/watch?v=1WJuQyJn6lg" target="_blank"><button>Интервью Данила</button></a></p>
 				</div>
 			</div>
 
@@ -193,7 +193,7 @@
 
                         <p>Записывайтесь, увидимся на занятиях!</p>
 
-                        <p><a href="https://www.youtube.com/watch?v=e3FmWhuqspo" target="_blank"><button>Интервью Николая</button></a></p>
+                        <p><a onclick="sendStatYoutubeNick()" href="https://www.youtube.com/watch?v=e3FmWhuqspo" target="_blank"><button>Интервью Николая</button></a></p>
                     </div>
 				</div>
 			</div>
@@ -207,7 +207,7 @@
 				<div id="contact-phone"><a class="black-link nolink" href="tel:+7 (926) 886-54-97">+7 (926) 886-54-97</a></div>
 			</div>
 			<div id="contacts-button">
-				<button class="subscribe-link">Задать вопрос</button>
+				<button onclick="sendSubscribe3()" class="subscribe-link">Задать вопрос</button>
 			</div>
 		</div>
 	</div>
@@ -217,9 +217,9 @@
 				© Школа Кимберг<span class="nowrap">, 2017-<span id="currentYear"></span></span>
 			</div>
 			<div id="social-links">
-				<a href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"></a>
-				<a href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"></a>
-				<a href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"></a>
+				<a onclick="sendStatVK()" href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"></a>
+				<a onclick="sendStatInstagram()" href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"></a>
+				<a onclick="sendStatYoutube()" href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"></a>
 				<a href="#first-block" id="up-button" title="Наверх"><img src="/img/arrow-up-2.png" alt="Наверх"></a>
 			</div>
 		</div>

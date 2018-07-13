@@ -36,4 +36,7 @@ RewriteRule ^forgot/(.+)$ /index.php?forgot=%1 [QSA,L]
 RewriteCond %{REQUEST_URI} ^/photo/(.+)$
 RewriteRule ^photo/(.+)$ /index.php?photo=%1 [QSA,L]
 
+RewriteCond %{REQUEST_URI} ^/stat/(.+)$
+RewriteRule ^stat/(.+)$ /index.php?stat=%1 [QSA,L]
+
 ErrorDocument 404 /404.php

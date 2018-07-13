@@ -242,7 +242,6 @@ $(function(){
 	});
 
 	$('.subscribe-link').click(function() {
-		let text = $(this).text();
 		let container = $('#subscribe-container');
         showForm(container);
 		return false;
@@ -318,7 +317,7 @@ $(function(){
 	});
 
 	//Main menu smooth scrolling
-	$('nav a:not(#social_menu, #back_social_menu), #up-button').click(function(){
+	$('nav.common-nav a:not(#social_menu, #back_social_menu), #up-button').click(function(){
 		var hash = $(this).attr('href');
 		var topPosition = $(hash).offset().top;
 		var duration = topPosition / 4 + 300;
@@ -346,5 +345,40 @@ $(function(){
 	});
 
 	$('#currentYear').html((new Date()).getFullYear());
-
 });
+
+function sendStatVK() {
+    $.get('/stat/vk');
+}
+
+function sendStatInstagram() {
+    $.get('/stat/instagram');
+}
+
+function sendStatYoutube() {
+    $.get('/stat/youtube');
+}
+
+function sendStatYoutubeYan() {
+    $.get('/stat/youtube-yan');
+}
+
+function sendStatYoutubeNick() {
+    $.get('/stat/youtube-nick');
+}
+
+function sendStatYoutubeDan() {
+    $.get('/stat/youtube-dan');
+}
+
+function sendSubscribe1() {
+    $.get('/stat/subscribe1');
+}
+
+function sendSubscribe2() {
+    $.get('/stat/subscribe2');
+}
+
+function sendSubscribe3() {
+    $.get('/stat/subscribe3');
+}
