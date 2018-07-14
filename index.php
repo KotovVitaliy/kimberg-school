@@ -60,7 +60,7 @@ if (isAjaxRequest()) {
             break;
 
         default:
-            Stat::addVisitorToDB(Stat::ACTION_UNKNOWN);
+            Stat::addVisitorToDB(Stat::ACTION_UNKNOWN . ": " . $action);
             break;
     }
 } else if ($user = Authorizer::getCurrentUser()) {

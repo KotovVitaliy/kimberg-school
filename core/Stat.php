@@ -3,7 +3,8 @@
 class Stat
 {
     const TABLE = 'visitors';
-    const GET_DATA_SQL = "select count(*) as amount, action from " . self::TABLE . " where `timestamp` > now() - interval {INTERVAL} group by action order by amount desc";
+    const GET_DATA_SQL = "select count(*) as amount, action from " . self::TABLE . " where `timestamp` > now() - interval {INTERVAL} group by action order by amount desc, action";
+    const GET_DATA_UNIQUE_VISITORS_SQL = "SELECT count(distinct ip) as amount from " . self::TABLE . " where `timestamp` > now() - interval {INTERVAL} and action = 'open site' order by amount desc";
 
     const ACTION_OPEN_SITE = "open site";
     const ACTION_OPEN_VK = "open VK";
@@ -28,20 +29,33 @@ class Stat
 
     private static function getStatForDay()
     {
-        $sql = str_replace('{INTERVAL}', '24 hour', self::GET_DATA_SQL);
-        return DB::getInstance()->selectAsAssoc($sql);
+        return self::getStat('24 hour');
     }
 
     private static function getStatForWeek()
     {
-        $sql = str_replace('{INTERVAL}', '1 week', self::GET_DATA_SQL);
-        return DB::getInstance()->selectAsAssoc($sql);
+        return self::getStat('1 week');
     }
 
     private static function getStatForMonth()
     {
-        $sql = str_replace('{INTERVAL}', '1 month', self::GET_DATA_SQL);
-        return DB::getInstance()->selectAsAssoc($sql);
+        return self::getStat('1 month');
+    }
+
+    private static function getStat($for)
+    {
+        $sql = str_replace('{INTERVAL}', $for, self::GET_DATA_SQL);
+        $data = DB::getInstance()->selectAsAssoc($sql);
+
+        $sql = str_replace('{INTERVAL}', $for, self::GET_DATA_UNIQUE_VISITORS_SQL);
+        $unique = DB::getInstance()->selectAsAssoc($sql)[0]['amount'];
+        foreach ($data as $k => &$value) {
+            if ($value['action'] == self::ACTION_OPEN_SITE) {
+                $value['amount'] = "total: " . $value['amount'] . "<br />unique: " . $unique;
+            }
+        }
+
+        return $data;
     }
 
     private static function drawStat($for, array $data)
@@ -49,9 +63,9 @@ class Stat
         echo "<h2>За {$for}:</h2><br><table>";
         foreach ($data as $value) {
             echo "<tr>";
-            $action = ucfirst(strtolower($value['action']));
+            $action = ucfirst(strtolower(htmlentities($value['action'])));
             $amount = $value['amount'];
-            echo "<td>{$action}</td><td>{$amount}</td></tr>";
+            echo "<td style='padding:5px'>{$action}</td><td style='padding:5px;text-align: end'>{$amount}</td></tr>";
         }
         echo "</table>";
     }
@@ -59,7 +73,6 @@ class Stat
     public static function addVisitorToDB($action)
     {
         $ip = self::getUserIP();
-
         DB::getInstance()->insert(
             self::TABLE,
             [
