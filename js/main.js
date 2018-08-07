@@ -382,3 +382,7 @@ function sendSubscribe2() {
 function sendSubscribe3() {
     $.get('/stat/subscribe3');
 }
+
+function sendSeeFeedback() {
+    $.get('/stat/vk_feedback');
+}

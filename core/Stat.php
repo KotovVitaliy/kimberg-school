@@ -8,6 +8,7 @@ class Stat
 
     const ACTION_OPEN_SITE = "open site";
     const ACTION_OPEN_VK = "open VK";
+    const ACTION_OPEN_VK_FEEDBACK = "open VK feedback";
     const ACTION_OPEN_INSTAGRAM = "open Instagram";
     const ACTION_OPEN_YOUTUBE_OF_GROUP = "open YouTube of Group";
     const ACTION_OPEN_YOUTUBE_ABOUT_YAN = "open YouTube about Yan";

@@ -1,7 +1,7 @@
 <?php
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+//ini_set('error_reporting', E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
 
 header('Content-Type: text/html; charset=utf-8');
 
@@ -17,6 +17,50 @@ if (isAjaxRequest()) {
     if (!$result) sendTo404();
     else header("Location:/");
 } else if (isStatRequest()) {
+    addVisitor();
+} else if ($user = Authorizer::getCurrentUser()) {
+    if ($user['is_confirmed']) {
+        echo 'step 2';
+    } else {
+        Viewer::echoConfirmPage();
+    }
+} else {
+    Stat::addVisitorToDB(Stat::ACTION_OPEN_SITE);
+    if (isset($_COOKIE['new_tpl'])) {
+        echo file_get_contents(__DIR__ . '/tpl/main_new.tpl');
+    } else {
+        echo file_get_contents(__DIR__ . '/tpl/main_new.tpl');
+    }
+
+}
+
+function sendTo404() {
+    http_response_code(404);
+    include "404.php";
+    die();
+}
+
+function isAjaxRequest()
+{
+    return isset($_REQUEST['ajax']) && ($_REQUEST['ajax']) == 1 && ($_POST || $_GET);
+}
+
+function isConfirmRequest()
+{
+    return isset($_REQUEST['confirm']) && $_REQUEST['confirm'];
+}
+
+function isSubscribeRequest()
+{
+    return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'];
+}
+
+function isStatRequest()
+{
+    return isset($_REQUEST['stat']) && $_REQUEST['stat'];
+}
+
+function addVisitor() {
     $action = $_REQUEST['stat'];
     switch ($action) {
         case "instagram":
@@ -25,6 +69,10 @@ if (isAjaxRequest()) {
 
         case "vk":
             Stat::addVisitorToDB(Stat::ACTION_OPEN_VK);
+            break;
+
+        case "vk_feedback":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_VK_FEEDBACK);
             break;
 
         case "youtube":
@@ -63,41 +111,6 @@ if (isAjaxRequest()) {
             Stat::addVisitorToDB(Stat::ACTION_UNKNOWN . ": " . $action);
             break;
     }
-} else if ($user = Authorizer::getCurrentUser()) {
-    if ($user['is_confirmed']) {
-        echo 'step 2';
-    } else {
-        Viewer::echoConfirmPage();
-    }
-} else {
-    Stat::addVisitorToDB(Stat::ACTION_OPEN_SITE);
-    echo file_get_contents(__DIR__ . '/tpl/main.tpl');
-}
-
-function sendTo404() {
-    http_response_code(404);
-    include "404.php";
-    die();
-}
-
-function isAjaxRequest()
-{
-    return isset($_REQUEST['ajax']) && ($_REQUEST['ajax']) == 1 && ($_POST || $_GET);
-}
-
-function isConfirmRequest()
-{
-    return isset($_REQUEST['confirm']) && $_REQUEST['confirm'];
-}
-
-function isSubscribeRequest()
-{
-    return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'];
-}
-
-function isStatRequest()
-{
-    return isset($_REQUEST['stat']) && $_REQUEST['stat'];
 }
 
 

@@ -355,6 +355,27 @@ i.necessarily {
 				max-width: 600px;
 			}
 
+#feedback {}
+    #feedback .feedback {
+		max-width: 700px;
+		padding: 10px;
+		margin-top: 10px;
+		margin-left: 5px;
+	}
+	#feedback .feedback>img {
+		width: 51px;
+		margin-right: 7px;
+	}
+	#feedback .feedback .feedback_header {
+		font-weight: bold;
+	}
+	#feedback .feedback .feedback_time {
+		color: grey;
+	}
+	#feedback .feedback .feedback_body {
+
+	}
+
 #contacts {}
 
 	#contacts-container {
