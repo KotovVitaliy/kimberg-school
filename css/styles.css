@@ -116,8 +116,9 @@ i.necessarily {
 			}
 
 				nav {
+					font-size: 18px;
 					margin: 0 auto;
-					max-width: 585px;
+					max-width: 700px;
 					display: flex;
 					justify-content: space-around;
 					align-items: center;
@@ -743,6 +744,10 @@ footer {
 
 @media screen and (max-width: 820px)
 {
+	nav {
+		font-size: 14px;
+	}
+
 	#about-items {
 		margin-bottom: 25px;
 	}
@@ -763,7 +768,7 @@ footer {
 	}
 
 	nav {
-		font-size: 14px;
+		font-size: 12px;
 	}
 
 	#intro-container {
@@ -913,7 +918,7 @@ footer {
 	}
 
 	nav {
-		font-size: 14px;
+		font-size: 16px;
 		margin-right: 0;
 	}
 
