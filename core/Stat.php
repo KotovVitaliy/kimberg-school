@@ -17,6 +17,8 @@ class Stat
     const ACTION_OPEN_SUBSCRIBE1 = "open subsribe form 1";
     const ACTION_OPEN_SUBSCRIBE2 = "open subsribe form 2";
     const ACTION_OPEN_SUBSCRIBE3 = "open subsribe form 3";
+    const ACTION_OPEN_SUBSCRIBE4 = "open subsribe form 4";
+    const ACTION_SHOW_FAQ = "show faq";
     const ACTION_UNKNOWN = "did something";
 
     public static function viewStat()

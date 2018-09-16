@@ -24,6 +24,10 @@ a.black-link {
 	color: black;
 }
 
+a.bold {
+	font-weight: bold;
+}
+
 a.nolink:hover {
 	text-decoration: none;
 	cursor: auto;
@@ -264,7 +268,7 @@ i.necessarily {
 
 #account-contents {}
 
-	#account-contents .in-block {
+	#account-contents .in-block, #faq .in-block {
 		position: relative;
 		background-color: #f5f5f5;
 		min-height: 500px;
@@ -282,14 +286,31 @@ i.necessarily {
 		}
 
 
-			#contents-list > div > span {
+			#contents-list > div span {
 				font-weight: bold;
 				color: #ffcd00;
 				padding-right: 10px;
 			}
 
-	#start-learning {
+	div.faq_item {
+		padding: 5px;
+	}
+
+	div.faq_item.show {
+		display: none;
+	}
+
+	#start-learning, #faq-question {
 		margin: 50px 0;
+		height: 80px;
+	}
+
+	#faq-question, #show-more-question {
+		display: inline-block;
+	}
+
+	#show-more-question {
+		margin-left: 20px;
 	}
 
 	#notebook-container {
@@ -299,8 +320,19 @@ i.necessarily {
 		z-index: 5;
 	}
 
+	#faq-container {
+		position: absolute;
+		top: 0px;
+		right: 10px;
+		z-index: 5;
+	}
+
 		#notebook-container img {
 			height: 100%;
+		}
+
+		#faq-container img {
+			width: 400px;
 		}
 
 
@@ -608,11 +640,16 @@ footer {
 		height: 500px;
 	}
 
-	#start-learning {
- 	   margin: 30px 0;
+	#faq-container>img {
+		width: 300px;
 	}
 
-	#account-contents .in-block {
+	#start-learning, #faq-question {
+ 	    margin: 30px 0;
+		height: 60px;
+	}
+
+	#account-contents .in-block, #faq .in-block {
 	    min-height: 360px;
 	    padding-top: 40px;
 	}
@@ -710,7 +747,7 @@ footer {
 		margin-top: 50px;
 	}
 
-	#notebook-container {
+	#notebook-container, #faq-container {
 		display: none;
 	}
 
@@ -718,7 +755,7 @@ footer {
 		width: auto;
 	}
 
-	#account-contents .in-block {
+	#account-contents .in-block, #faq .in-block {
 	    min-height: auto;
 	    padding-bottom: 15px;
 	}
@@ -836,8 +873,17 @@ footer {
 {
 	nav {
 		font-size: 16px;
+		width: auto;
 		flex-direction: column;
 		align-items: flex-start;
+	}
+
+	#menu-block {
+		height: auto;
+	}
+
+	header {
+		height: auto;
 	}
 
 	#intro-container {
@@ -906,7 +952,7 @@ footer {
 		font-size: 16px;
 	}
 
-	#account-contents .in-block {
+	#account-contents .in-block, #faq .in-block {
 		padding-top: 30px;
 	}
 }
@@ -919,6 +965,7 @@ footer {
 
 	nav {
 		font-size: 16px;
+		width: auto;
 		margin-right: 0;
 	}
 
@@ -973,6 +1020,7 @@ footer {
 
 	nav {
 		font-size: 16px;
+		width: auto;
 		padding: 5px;
 	}
 
@@ -1015,6 +1063,11 @@ footer {
 	#social-links a#up-button {
 		margin-left: 32px;
 	}
+
+	#faq-question, #show-more-question {
+		display: block;
+		margin: 10px;
+	}
 }
 
 @media screen and (max-width: 420px)
@@ -1047,9 +1100,17 @@ footer {
 	#first-block {
 		background-position: -200px;
 	}
+
+	#faq-question, #show-more-question {
+		display: block;
+		margin: 10px;
+	}
 }
 
 @media screen and (max-width: 400px)
 {
-
+	#faq-question, #show-more-question {
+		display: block;
+		margin: 10px;
+	}
 }

@@ -247,6 +247,20 @@ $(function(){
 		return false;
 	});
 
+	$('.show-more-button').click(function () {
+		let $this = $(this);
+
+		if ($this.hasClass('show')) {
+            $this.text("Показать все вопросы");
+			$this.removeClass('show');
+            $('div.faq_item.show').hide(2);
+		} else {
+            $this.text("Скрыть все вопросы");
+			$this.addClass('show');
+            $('div.faq_item.show').show(2);
+		}
+    });
+
 	$('#sign-in-link').click(function(){
 		var container = $('#auth-form-container');
 		showForm(container);
@@ -381,6 +395,14 @@ function sendSubscribe2() {
 
 function sendSubscribe3() {
     $.get('/stat/subscribe3');
+}
+
+function sendSubscribe4() {
+    $.get('/stat/subscribe4');
+}
+
+function sendShowFaq() {
+    $.get('/stat/show_faq');
 }
 
 function sendSeeFeedback() {

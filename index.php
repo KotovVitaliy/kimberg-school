@@ -27,9 +27,9 @@ if (isAjaxRequest()) {
 } else {
     Stat::addVisitorToDB(Stat::ACTION_OPEN_SITE);
     if (isset($_COOKIE['new_tpl'])) {
-        echo file_get_contents(__DIR__ . '/tpl/main_new.tpl');
+        echo file_get_contents(__DIR__ . '/tpl/main.tpl');
     } else {
-        echo file_get_contents(__DIR__ . '/tpl/main_new.tpl');
+        echo file_get_contents(__DIR__ . '/tpl/main.tpl');
     }
 
 }
@@ -101,6 +101,14 @@ function addVisitor() {
 
         case "subscribe3":
             Stat::addVisitorToDB(Stat::ACTION_OPEN_SUBSCRIBE3);
+            break;
+
+        case "subscribe4":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_SUBSCRIBE4);
+            break;
+
+        case "show_faq":
+            Stat::addVisitorToDB(Stat::ACTION_SHOW_FAQ);
             break;
 
         case "view":
