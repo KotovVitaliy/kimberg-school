@@ -252,7 +252,8 @@
         <div id="contents-list">
             <div class="faq_item">
                 <div><span>Q.</span>Где территориально проходят занятия?</div>
-                <div><span>A.</span>Тетеринский пер 4, стр 1, офис 402. Рядом с станции метро Таганская кольцевая.</div>
+                <div><span>A.</span>Тетеринский пер. 4, стр. 1, офис 402. Рядом со станцией метро Таганская кольцевая.</div>
+                <div><span>A.</span><a class="black-link bold" target="_blank" href="https://yandex.ru/maps/213/moscow/?ll=37.654256%2C55.743607&z=17&mode=search&text=%D0%A2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D0%B5%D1%80.%204%2C%20%D1%81%D1%82%D1%80.%201&sll=37.620393%2C55.753960&sspn=1.689148%2C0.662947">Открыть на карте</a>.</div>
             </div>
 
             <div class="faq_item">
@@ -353,7 +354,7 @@
             <div class="form-row">
                 <label>Класс<i class="necessarily"></i> :</label>
                 <select name="class">
-                    <option value="">Летом укажите будущий класс</option>
+                    <option value="">Выбрать</option>
                     <option value="7">7 класс</option>
                     <option value="8">8 класс</option>
                     <option value="9">9 класс</option>
