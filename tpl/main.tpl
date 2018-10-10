@@ -64,6 +64,10 @@
                 <div class="button-container">
                     <button onclick="sendSubscribe1()" class="subscribe-link">Записаться</button>
                 </div>
+                <br />
+                <div class="button-container">
+                    <button onclick="sendOpenSchedule()" class="schedule alternative">Расписание</button>
+                </div>
             </div>
         </div>
     </div>
@@ -376,6 +380,12 @@
             </div>
             <button type="submit">ОТПРАВИТЬ</button>
         </form>
+    </div>
+</div>
+
+<div id="schedule-container" class="form-container">
+    <div class="schedule-wrap">
+        <img class="schedule-img" src="/img/Schedule.png" alt="Расписание">
     </div>
 </div>
 

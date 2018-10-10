@@ -111,6 +111,10 @@ function addVisitor() {
             Stat::addVisitorToDB(Stat::ACTION_SHOW_FAQ);
             break;
 
+        case "open_schedule":
+            Stat::addVisitorToDB(Stat::ACTION_OPEN_SCHEDULE);
+            break;
+
         case "view":
             Stat::viewStat();
             break;

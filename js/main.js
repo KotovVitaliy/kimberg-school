@@ -247,6 +247,12 @@ $(function(){
 		return false;
 	});
 
+	$('.schedule').click(function() {
+		let container = $('#schedule-container');
+        showForm(container);
+		return false;
+	});
+
 	$('.show-more-button').click(function () {
 		let $this = $(this);
 
@@ -407,4 +413,8 @@ function sendShowFaq() {
 
 function sendSeeFeedback() {
     $.get('/stat/vk_feedback');
+}
+
+function sendOpenSchedule() {
+    $.get('/stat/open_schedule');
 }
