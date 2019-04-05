@@ -72,6 +72,23 @@
         </div>
     </div>
 </div>
+
+<div style="background-color: #f5f5f5; text-align: center;">
+    <div class="in-block" style="padding: 20px 0;">
+        <div><h3>Лето со школой Кимберг!</h3></div>
+
+        <div style="display: none; width: 50%; padding: 10px 0 30px 0;" class="js_summer">
+            <div class="summer_text" style="font-size: 18px;"></div>
+        </div>
+
+        <div>
+            <button class="summer-link more">Подробнее</button>
+            <br><br>
+            <span style="display: none;" class="summer as_link">Не интересно</span>
+        </div>
+    </div>
+</div>
+
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
         <h2>Как начать обучение</h2>
@@ -383,106 +400,67 @@
     </div>
 </div>
 
+<div id="summer-container" class="form-container">
+    <div class="form">
+        <div class="close"></div>
+        <h1>Заполните форму</h1>
+        <form id="subscribe-form" data-url="summer">
+            <div class="form-error"></div>
+            <div class="form-success"></div>
+            <div class="form-row">
+                <label>Фамилия<i class="necessarily"></i> :</label>
+                <input name="surname" type="text" value="">
+            </div>
+            <div class="form-row">
+                <label>Имя<i class="necessarily"></i> :</label>
+                <input name="name" type="text" value="">
+            </div>
+            <div class="form-row">
+                <label>Класс<i class="necessarily"></i> :</label>
+                <select name="class">
+                    <option value="">Выбрать</option>
+                    <option value="7">7 класс</option>
+                    <option value="8">8 класс</option>
+                    <option value="9">9 класс</option>
+                    <option value="10">10 класс</option>
+                    <option value="11">11 класс</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label>Номер школы<i class="necessarily"></i> :</label>
+                <input name="school_number" type="text" value="">
+            </div>
+            <div class="form-row">
+                <label>Смена<i class="necessarily"></i> :</label>
+                <select name="smena">
+                    <option value="">Выбрать</option>
+                    <option value="1">Первая (9-15 июня)</option>
+                    <option value="2">Вторая (17-23 июня)</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label>E-mail<i class="necessarily"></i> :</label>
+                <input name="email" type="text" value="">
+            </div>
+            <div class="form-row">
+                <label>Номер телефона:</label>
+                <input name="phone" type="tel" placeholder="+7 (900) 123-4567" value="" class="novalidate">
+            </div>
+            <div class="form-row">
+                <label>Олимпиадные достижения ребенка:</label>
+                <textarea name="question" class="novalidate"></textarea>
+            </div>
+            <button type="submit">ОТПРАВИТЬ</button>
+        </form>
+    </div>
+</div>
+
 <div id="schedule-container" class="form-container">
     <div class="schedule-wrap">
         <img class="schedule-img" src="/img/Schedule.png" alt="Расписание">
     </div>
 </div>
 
-<!-- <div id="auth-form-container" class="form-container">
-    <div class="form">
-        <div class="close"></div>
-        <h1>Авторизация</h1>
-        <form id="auth-form" data-url="/user/login">
-            <div class="form-error"></div>
-            <div class="form-row">
-                <label>E-mail:</label>
-                <input name="email" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Пароль:</label>
-                <input name="password" class="novalidate" type="password" value="">
-            </div>
-            <div class="form-link">
-                <a href="#" id="restore-link">Забыли пароль?</a>
-            </div>
-            <button type="submit">ВОЙТИ</button>
-        </form>
-    </div>
-</div>
-
-<div id="restore-form-container" class="form-container">
-    <div class="form">
-        <div class="close"></div>
-        <h1>Забыли пароль?</h1>
-        <form id="restore-form" data-url="/user/forgot">
-            <div class="form-intro">
-                Введите ваш e-mail в поле ниже.<br>
-                Мы вышлем вам инструкцию по смене пароля
-            </div>
-            <div class="form-error"></div>
-            <div class="form-row">
-                <label>E-mail:</label>
-                <input name="email" type="text" value="">
-            </div>
-            <button type="submit">ОТПРАВИТЬ</button>
-        </form>
-    </div>
-</div>
-
-<div id="register-form-container" class="form-container">
-    <div class="form">
-        <div class="close"></div>
-        <h1>Регистрация</h1>
-        <form id="register-form" data-url="/user/registration">
-            <div class="form-error"></div>
-            <div class="form-row">
-                <label>Имя:</label>
-                <input name="name" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Фамилия:</label>
-                <input name="fname" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Телефон:</label>
-                <input name="phone" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>E-mail:</label>
-                <input name="email" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Пароль:</label>
-                <input name="password" type="password" value="">
-            </div>
-            <button type="submit">ОТПРАВИТЬ</button>
-        </form>
-    </div>
-</div>
-
-<div id="question-form-container" class="form-container">
-    <div class="form">
-        <div class="close"></div>
-        <h1>Задать вопрос</h1>
-        <form id="question-form" data-url="/user/question">
-            <div class="form-error"></div>
-            <div class="form-row">
-                <label>Имя:</label>
-                <input name="name" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>E-mail:</label>
-                <input name="email" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Вопрос:</label>
-                <textarea name="question"></textarea>
-            </div>
-            <button type="submit">ОТПРАВИТЬ</button>
-        </form>
-    </div>
-</div> -->
 
 </body>
 </html>

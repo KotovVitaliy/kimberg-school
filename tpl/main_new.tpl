@@ -82,7 +82,7 @@
         </div>
 
         <div>
-            <button onclick="" class="summer-link more">Подробнее</button>
+            <button class="summer-link more">Подробнее</button>
             <br><br>
             <span style="display: none;" class="summer as_link">Не интересно</span>
         </div>
