@@ -359,7 +359,7 @@ $(function(){
 
 			case 4:
                 button_text = 'Сколько же всё это стоит?';
-                text = 'Занятия проходят в учебных аудиториях<br>В 5 минутах пешком от м. Таганская (кольцевая)<br/>Тетеринский переулок, дом 4 стр 1';
+                text = 'В 5 минутах пешком от м. Таганская (кольцевая)<br/>Тетеринский переулок, дом 4 стр 1';
                 break;
 
 			case 5:
@@ -394,7 +394,7 @@ $(function(){
 	$('.form-container').scroll(function(e){
 		e.stopPropagation();
 	});
-	
+
 	$('.form-container input, .form-container textarea').on('keyup', function(){
 		var field = $(this);
 		if(!field.hasClass('warn')) {

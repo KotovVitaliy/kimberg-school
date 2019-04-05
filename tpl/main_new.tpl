@@ -77,7 +77,7 @@
     <div class="in-block" style="padding: 20px 0;">
         <div><h3>Лето со школой Кимберг!</h3></div>
 
-        <div style="display: none; width: 50%; padding: 10px 0 30px 0;" class="js_summer">
+        <div style="display: none; width: 50%; height: 50px; padding: 10px 0 30px 0;" class="js_summer">
             <div class="summer_text" style="font-size: 18px;"></div>
         </div>
 
