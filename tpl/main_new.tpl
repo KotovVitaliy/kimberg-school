@@ -26,10 +26,11 @@
             <header>
                 <div id="nav-container">
                     <nav class="common-nav">
-                        <a href="#how-to-start">Как начать обучение</a>
+                        <a href="#how-to-start">Обучение</a>
                         <a href="#teachers">Преподаватели</a>
                         <a href="#contacts">Контакты</a>
                         <a href="#feedback">Отзывы</a>
+                        <a href="#faq">Частые вопросы</a>
                         <a id="social_menu">Соцсети</a>
                     </nav>
                     <nav class="social-nav">
@@ -63,10 +64,31 @@
                 <div class="button-container">
                     <button onclick="sendSubscribe1()" class="subscribe-link">Записаться</button>
                 </div>
+                <br />
+                <div class="button-container">
+                    <button onclick="sendOpenSchedule()" class="schedule alternative">Расписание</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<div style="background-color: #f5f5f5; text-align: center;">
+    <div class="in-block" style="padding: 20px 0;">
+        <div><h3>Лето со школой Кимберг!</h3></div>
+
+        <div style="display: none; width: 50%; padding: 10px 0 30px 0;" class="js_summer">
+            <div class="summer_text" style="font-size: 18px;"></div>
+        </div>
+
+        <div>
+            <button onclick="" class="summer-link more">Подробнее</button>
+            <br><br>
+            <span style="display: none;" class="summer as_link">Не интересно</span>
+        </div>
+    </div>
+</div>
+
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
         <h2>Как начать обучение</h2>
@@ -84,8 +106,8 @@
             <div id="stage-container-3">
                 <div id="stage-3">
                     <span>Оплатите обучение</span>
-                    <br />
-                    <span>(1 занятие - 2 500 ₽)</span>
+                    <!--<br />
+                    <span>(1 занятие - 2 500 ₽)</span>-->
                 </div>
             </div>
             <div id="stage-container-4">
@@ -102,9 +124,9 @@
         <div id="contents-list">
             <div><span>1.</span>Интенсивные занятия в маленьких группах, где каждый получает море внимания</div>
             <div><span>2.</span>Структурированный план для штурма самых крутых олимпиад</div>
-            <div><span>3.</span>Доступ к видео-лекциям, чтобы наверняка не упустить ни крохи знаний</div>
-            <div><span>4.</span>Домашние задания,чтобы не скучать в перерывах между занятиями</div>
-            <div><span>5.</span>Станешь частью тусовки таких же «ненормальных» как ты</div>
+            <!-- <div><span>3.</span>Доступ к видео-лекциям, чтобы наверняка не упустить ни крохи знаний</div> -->
+            <div><span>3.</span>Домашние задания,чтобы не скучать в перерывах между занятиями</div>
+            <div><span>4.</span>Станешь частью тусовки таких же «ненормальных» как ты</div>
         </div>
         <div id="start-learning">
             <button onclick="sendSubscribe2()" class="subscribe-link">Начать обучение</button>
@@ -245,6 +267,70 @@
     </div>
 </div>
 
+<div id="faq">
+    <div class="in-block">
+        <h2>Вопросы и ответы:</h2>
+        <div id="contents-list">
+            <div class="faq_item">
+                <div><span>Q.</span>Где территориально проходят занятия?</div>
+                <div><span>A.</span>Тетеринский пер. 4, стр. 1, офис 402. Рядом со станцией метро Таганская кольцевая.</div>
+                <div><span>A.</span><a class="black-link bold" target="_blank" href="https://yandex.ru/maps/213/moscow/?ll=37.654256%2C55.743607&z=17&mode=search&text=%D0%A2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D0%B5%D1%80.%204%2C%20%D1%81%D1%82%D1%80.%201&sll=37.620393%2C55.753960&sspn=1.689148%2C0.662947">Открыть на карте</a>.</div>
+            </div>
+
+            <div class="faq_item">
+                <div><span>Q.</span>Сколько раз в неделю проходят занятия?</div>
+                <div><span>A.</span>Занятие проходят один раз в неделю в выбранной группе. Возможны два занятия в случае необходимости интенсива.</div>
+            </div>
+
+            <div class="faq_item">
+                <div><span>Q.</span>В какие дни и в какое время проходят занятия?</div>
+                <div><span>A.</span>Занятия планируются в выходные дни, но есть возможность набора групп на занятия по будням.</div>
+            </div>
+
+            <div class="faq_item">
+                <div><span>Q.</span>Сгорает ли оплата в случае болезни?</div>
+                <div><span>A.</span>В случае болезни оплаченное занятие переносится на следующий месяц.</div>
+            </div>
+
+            <div class="faq_item show">
+                <div><span>Q.</span>Сколько человек в группе?</div>
+                <div><span>A.</span>В группе от 4 до 6 человек.</div>
+            </div>
+
+            <div class="faq_item show">
+                <div><span>Q.</span>Можно ли присоединиться к группе в любой момент?</div>
+                <div><span>A.</span>Для наибольшей эффективности занятий желательно определиться <strong>к середине сентября</strong>. Но возможность включиться в работу в процессе тоже будет, в случае свободных мест в группах.</div>
+            </div>
+
+            <div class="faq_item show">
+                <div><span>Q.</span>Если группа с прицелом на Всероссийскую олимпиаду, то это подготовка к теоретическому этапу или к практике тоже?</div>
+                <div><span>A.</span>Если группа по подготовке к ВсОШ, то упор на теорию. Но консультация по практическому этапу возможна. Надо будет это персонально обсуждать с педагогом.</div>
+            </div>
+
+            <div class="faq_item show">
+                <div><span>Q.</span>В группе идет подготовка исключительно к выбранному направлению (олимпиада или ЕГЭ) или ко всему сразу?</div>
+                <div><span>A.</span>Подготовка идет только по выбранному направлению. Есть возможность посещать две группы.</div>
+            </div>
+
+            <div class="faq_item show">
+                <div><span>Q.</span>Пока не начались занятия, чем можно заняться, чтобы вспомнить что такое физика?</div>
+                <div><span>A.</span>Вступить в нашу <a class="black-link bold" href="https://vk.com/kimberg.school">группу в VK</a>, где есть интересный материал и будет появляться самая свежая информация.</div>
+                <div><span>A.</span>Подписаться на <a class="black-link bold" href="https://www.youtube.com/c/KimbergSchool">наш канал на Youtube</a> для доступа ко всем имеющимся видеоматериалам.</div>
+            </div>
+
+        </div>
+        <div id="faq-question">
+            <button onclick="sendSubscribe4()" class="subscribe-link">Задать вопрос</button>
+        </div>
+        <div id="show-more-question">
+            <button onclick="sendShowFaq()" class="show-more-button">Показать все вопросы</button>
+        </div>
+        <div id="faq-container">
+            <img src="/img/questions.png" alt="" />
+        </div>
+    </div>
+</div>
+
 <div id="contacts" class="headed-block">
     <div class="in-block" id="contacts-container">
         <h2>Контакты</h2>
@@ -253,7 +339,7 @@
             <div id="contact-phone"><a class="black-link nolink" href="tel:+7 (926) 886-54-97">+7 (926) 886-54-97</a></div>
         </div>
         <div id="contacts-button">
-            <button onclick="sendSubscribe3()" class="subscribe-link">Задать вопрос</button>
+            <button onclick="sendSubscribe3()" class="subscribe-link">Связаться</button>
         </div>
     </div>
 </div>
@@ -275,7 +361,7 @@
     <div class="form">
         <div class="close"></div>
         <h1>Заполните форму</h1>
-        <form id="subscribe-form" data-url="/user/subscribe">
+        <form id="subscribe-form" data-url="user">
             <div class="form-error"></div>
             <div class="form-success"></div>
             <div class="form-row">
@@ -289,7 +375,7 @@
             <div class="form-row">
                 <label>Класс<i class="necessarily"></i> :</label>
                 <select name="class">
-                    <option value="">Летом укажите будущий класс</option>
+                    <option value="">Выбрать</option>
                     <option value="7">7 класс</option>
                     <option value="8">8 класс</option>
                     <option value="9">9 класс</option>
@@ -314,100 +400,67 @@
     </div>
 </div>
 
-<!-- <div id="auth-form-container" class="form-container">
+<div id="summer-container" class="form-container">
     <div class="form">
         <div class="close"></div>
-        <h1>Авторизация</h1>
-        <form id="auth-form" data-url="/user/login">
+        <h1>Заполните форму</h1>
+        <form id="subscribe-form" data-url="summer">
             <div class="form-error"></div>
+            <div class="form-success"></div>
             <div class="form-row">
-                <label>E-mail:</label>
-                <input name="email" type="text" value="">
+                <label>Фамилия<i class="necessarily"></i> :</label>
+                <input name="surname" type="text" value="">
             </div>
             <div class="form-row">
-                <label>Пароль:</label>
-                <input name="password" class="novalidate" type="password" value="">
-            </div>
-            <div class="form-link">
-                <a href="#" id="restore-link">Забыли пароль?</a>
-            </div>
-            <button type="submit">ВОЙТИ</button>
-        </form>
-    </div>
-</div>
-
-<div id="restore-form-container" class="form-container">
-    <div class="form">
-        <div class="close"></div>
-        <h1>Забыли пароль?</h1>
-        <form id="restore-form" data-url="/user/forgot">
-            <div class="form-intro">
-                Введите ваш e-mail в поле ниже.<br>
-                Мы вышлем вам инструкцию по смене пароля
-            </div>
-            <div class="form-error"></div>
-            <div class="form-row">
-                <label>E-mail:</label>
-                <input name="email" type="text" value="">
-            </div>
-            <button type="submit">ОТПРАВИТЬ</button>
-        </form>
-    </div>
-</div>
-
-<div id="register-form-container" class="form-container">
-    <div class="form">
-        <div class="close"></div>
-        <h1>Регистрация</h1>
-        <form id="register-form" data-url="/user/registration">
-            <div class="form-error"></div>
-            <div class="form-row">
-                <label>Имя:</label>
+                <label>Имя<i class="necessarily"></i> :</label>
                 <input name="name" type="text" value="">
             </div>
             <div class="form-row">
-                <label>Фамилия:</label>
-                <input name="fname" type="text" value="">
+                <label>Класс<i class="necessarily"></i> :</label>
+                <select name="class">
+                    <option value="">Выбрать</option>
+                    <option value="7">7 класс</option>
+                    <option value="8">8 класс</option>
+                    <option value="9">9 класс</option>
+                    <option value="10">10 класс</option>
+                    <option value="11">11 класс</option>
+                </select>
             </div>
             <div class="form-row">
-                <label>Телефон:</label>
-                <input name="phone" type="text" value="">
+                <label>Номер школы<i class="necessarily"></i> :</label>
+                <input name="school_number" type="text" value="">
             </div>
             <div class="form-row">
-                <label>E-mail:</label>
+                <label>Смена<i class="necessarily"></i> :</label>
+                <select name="smena">
+                    <option value="">Выбрать</option>
+                    <option value="1">Первая (9-15 июня)</option>
+                    <option value="2">Вторая (17-23 июня)</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label>E-mail<i class="necessarily"></i> :</label>
                 <input name="email" type="text" value="">
             </div>
             <div class="form-row">
-                <label>Пароль:</label>
-                <input name="password" type="password" value="">
+                <label>Номер телефона:</label>
+                <input name="phone" type="tel" placeholder="+7 (900) 123-4567" value="" class="novalidate">
+            </div>
+            <div class="form-row">
+                <label>Олимпиадные достижения ребенка:</label>
+                <textarea name="question" class="novalidate"></textarea>
             </div>
             <button type="submit">ОТПРАВИТЬ</button>
         </form>
     </div>
 </div>
 
-<div id="question-form-container" class="form-container">
-    <div class="form">
-        <div class="close"></div>
-        <h1>Задать вопрос</h1>
-        <form id="question-form" data-url="/user/question">
-            <div class="form-error"></div>
-            <div class="form-row">
-                <label>Имя:</label>
-                <input name="name" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>E-mail:</label>
-                <input name="email" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Вопрос:</label>
-                <textarea name="question"></textarea>
-            </div>
-            <button type="submit">ОТПРАВИТЬ</button>
-        </form>
+<div id="schedule-container" class="form-container">
+    <div class="schedule-wrap">
+        <img class="schedule-img" src="/img/Schedule.png" alt="Расписание">
     </div>
-</div> -->
+</div>
+
 
 </body>
 </html>

@@ -158,13 +158,30 @@ $(function(){
 			}
 			unwarnField(field);
 			return true;
+		},
+		'school_number': (field) => {
+            var value = field.val();
+            if(value == '') {
+                warnField(field);
+                return 'Номер школы не указан';
+            }
+            unwarnField(field);
+            return true;
+		},
+		'smena': (field) => {
+            var value = field.val();
+            if(value == '') {
+                warnField(field);
+                return 'Смена не указана';
+            }
+            unwarnField(field);
+            return true;
 		}
 	};
 
 	var revalidateField = function(field) {
 		let fieldName = field.attr('name');
 		let value = field.val();
-		console.log(fieldName);
 		if(typeof fieldName === 'undefined' || (field.hasClass('novalidate') && value === "")) {
 			return true;
 		}
@@ -193,7 +210,7 @@ $(function(){
 
 	var sendFormData = function(form) {
 		let formId = form.attr('id');
-        let url = '/subscribe' + form.data('url');
+        let url = '/subscribe/' + form.data('url');
 
 		if (!revalidateForm(form)) {
 			return;
@@ -310,6 +327,68 @@ $(function(){
     	if (isEscape && $('.form-container:visible').length > 0) {
         	hideForm();
     	}
+	});
+
+	let summer_state = 0;
+	$('.summer-link.more').click(() => {
+
+		let text = '';
+		let button_text = 'Подробнее';
+		switch(summer_state) {
+			case 0:
+				$('span.summer.as_link').show();
+				$('.js_summer').css({display:'inline-block'});
+				button_text = 'Сколько занятий?';
+				text = 'Школа Кимберг проводит летние интенсивные курсы для учеников 7-10 классов по подготовке к физическим олимпиадам!';
+				break;
+
+			case 1:
+                button_text = 'Когда планируются интенсивы?';
+                text = '8 теоретических занятий (по 1,5 часа)<br>4 практических занятия (по 2 часа)<br>Занятия планируется проводить в течение шести дней.';
+                break;
+
+			case 2:
+                button_text = 'Сколько человек в группе?';
+                text = 'Первая смена: 9 – 15 июня.<br>Вторая смена: 17 – 23 июня.';
+                break;
+
+			case 3:
+                button_text = 'Где проходят занятия?';
+                text = 'В одной группе обучаются не более 6 детей.<br>Это позволяет уделить значительное внимание каждому ребенку.<br>Еще никто не уходил от нас без знаний! :)';
+                break;
+
+			case 4:
+                button_text = 'Сколько же всё это стоит?';
+                text = 'Занятия проходят в учебных аудиториях<br>В 5 минутах пешком от м. Таганская (кольцевая)<br/>Тетеринский переулок, дом 4 стр 1';
+                break;
+
+			case 5:
+                button_text = 'Все круто! Как зарегистрироваться?';
+                text = 'Участие в одной смене стоит 12’000&#8381;';
+                break;
+
+			case 6:
+                let container = $('#summer-container');
+                showForm(container);
+				break;
+		}
+
+        if (summer_state <= 5) {
+            $('div.summer_text').html(text);
+            $('button.summer-link').text(button_text);
+		}
+
+        if (summer_state <= 6) {
+            summer_state++;
+		}
+	});
+
+	$('span.summer.as_link').click(() => {
+		summer_state = 0;
+        $('.js_summer').css({display:'none'});
+        $('span.summer.as_link').hide();
+        $('div.summer_text').text("");
+        $('button.summer-link').text("Подробнее");
 	});
 
 	$('.form-container').scroll(function(e){

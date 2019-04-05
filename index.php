@@ -12,6 +12,8 @@ if (isAjaxRequest()) {
     Ajax::getInstance()->makeRequest();
 } else if (isSubscribeRequest()) {
     Mailer::getInstance()->sendSubscribeMail($_REQUEST);
+} else if (isSummerRequest()) {
+    Mailer::getInstance()->sendSummerMail($_REQUEST);
 } else if (isConfirmRequest()) {
     $result = UserController::getInstance()->confirm();
     if (!$result) sendTo404();
@@ -27,9 +29,9 @@ if (isAjaxRequest()) {
 } else {
     Stat::addVisitorToDB(Stat::ACTION_OPEN_SITE);
     if (isset($_COOKIE['new_tpl'])) {
-        echo file_get_contents(__DIR__ . '/tpl/main.tpl');
+        echo file_get_contents(__DIR__ . '/tpl/main_new.tpl');
     } else {
-        echo file_get_contents(__DIR__ . '/tpl/main.tpl');
+        echo file_get_contents(__DIR__ . '/tpl/main_new.tpl');
     }
 
 }
@@ -52,7 +54,12 @@ function isConfirmRequest()
 
 function isSubscribeRequest()
 {
-    return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'];
+    return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'] === 'user';
+}
+
+function isSummerRequest()
+{
+    return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'] === 'summer';
 }
 
 function isStatRequest()

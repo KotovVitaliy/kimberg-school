@@ -33,6 +33,15 @@ a.nolink:hover {
 	cursor: auto;
 }
 
+span.as_link {
+	text-decoration: underline;
+	margin: 20px;
+}
+
+span.as_link:hover {
+	cursor: pointer;
+}
+
 input:focus, textarea:focus, select:focus {
 	outline:0;
 }
@@ -62,6 +71,11 @@ button:focus {
 button.alternative {
 	color: #ffcd00;
 	background-color: black;
+}
+
+button.summer-link {
+	color: white;
+	background-color: #0074D9;
 }
 
 h2 {

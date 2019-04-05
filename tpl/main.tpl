@@ -344,7 +344,7 @@
     <div class="form">
         <div class="close"></div>
         <h1>Заполните форму</h1>
-        <form id="subscribe-form" data-url="/user/subscribe">
+        <form id="subscribe-form" data-url="user">
             <div class="form-error"></div>
             <div class="form-success"></div>
             <div class="form-row">
