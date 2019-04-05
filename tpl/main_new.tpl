@@ -82,9 +82,9 @@
         </div>
 
         <div>
-            <button class="summer-link more">Подробнее</button>
+            <button onclick="sendSummer()" class="summer-link more">Подробнее</button>
             <br><br>
-            <span style="display: none;" class="summer as_link">Не интересно</span>
+            <span onclick="sendNotSummer()" style="display: none;" class="summer as_link">Не интересно</span>
         </div>
     </div>
 </div>

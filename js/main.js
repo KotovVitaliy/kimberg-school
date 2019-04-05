@@ -1,3 +1,5 @@
+let summer_state = 0;
+
 $(function(){
 
 	var scrollBarWidth = $(window).outerWidth() - $(window).innerWidth();
@@ -329,7 +331,6 @@ $(function(){
     	}
 	});
 
-	let summer_state = 0;
 	$('.summer-link.more').click(() => {
 
 		let text = '';
@@ -496,4 +497,12 @@ function sendSeeFeedback() {
 
 function sendOpenSchedule() {
     $.get('/stat/open_schedule');
+}
+
+function sendSummer() {
+    $.get('/stat/click_summer_' + summer_state.toString());
+}
+
+function sendNotSummer() {
+    $.get('/stat/click_not_summer_' + summer_state.toString());
 }
