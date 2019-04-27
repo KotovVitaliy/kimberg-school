@@ -414,6 +414,7 @@ i.necessarily {
 		padding: 10px;
 		margin-top: 10px;
 		margin-left: 5px;
+		font-size: 22px;
 	}
 	#feedback .feedback>img {
 		width: 51px;
@@ -691,6 +692,10 @@ footer {
 
 	#contents-list {
 		margin-top: 20px;
+		font-size: 18px;
+	}
+
+	#feedback .feedback {
 		font-size: 18px;
 	}
 
@@ -1032,6 +1037,10 @@ footer {
 		font-size: 16px;
 	}
 
+	#feedback .feedback {
+		font-size: 16px;
+	}
+
 	#account-contents .in-block, #faq .in-block {
 		padding-top: 30px;
 	}
@@ -1190,6 +1199,10 @@ footer {
 	}
 
 	#contents-list {
+		font-size: 14px;
+	}
+
+	#feedback .feedback {
 		font-size: 14px;
 	}
 
