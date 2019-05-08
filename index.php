@@ -127,7 +127,7 @@ function addVisitor() {
             break;
 
         default:
-            Stat::addVisitorToDB(Stat::ACTION_UNKNOWN . ": " . $action);
+            Stat::addVisitorToDB($action);
             break;
     }
 }

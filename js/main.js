@@ -274,17 +274,19 @@ $(function(){
 
 	$('.show-more-button').click(function () {
 		let $this = $(this);
-
+		let $for = $this.data('for');
 		if ($this.hasClass('show')) {
-            $this.text("Показать все вопросы");
+            $this.text("Подробнее");
 			$this.removeClass('show');
-            $('div.faq_item.show').hide(2);
+            $('.for_' + $for).hide(2);
 		} else {
-            $this.text("Скрыть все вопросы");
+            $this.text("Скрыть");
 			$this.addClass('show');
-            $('div.faq_item.show').show(2);
+            $('.for_' + $for).show(2);
 		}
     });
+
+
 
 	$('#sign-in-link').click(function(){
 		var container = $('#auth-form-container');
@@ -453,6 +455,18 @@ function sendStatVK() {
 
 function sendStatInstagram() {
     $.get('/stat/instagram');
+}
+
+function moreAboutYan() {
+    $.get('/stat/more_about_yan');
+}
+
+function moreAboutDan() {
+    $.get('/stat/more_about_dan');
+}
+
+function moreAboutNick() {
+    $.get('/stat/more_about_nick');
 }
 
 function sendStatYoutube() {

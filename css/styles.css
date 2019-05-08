@@ -316,10 +316,6 @@ i.necessarily {
 		padding: 5px;
 	}
 
-	div.faq_item.show {
-		display: none;
-	}
-
 	#start-learning, #faq-question {
 		margin: 50px 0;
 		height: 80px;
