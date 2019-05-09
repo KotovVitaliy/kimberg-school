@@ -3,7 +3,7 @@ const html = `
                 <img src="/img/progress_{gender}.svg" alt="картинка" />
             </div>
             <div class="progress_block progress_description">
-                <p class="progress_name">{name}&nbsp;({class}&nbsp;класс)</p>
+                <p class="progress_name">{name} ({class} класс)</p>
                 <ul>
                     {progress}
                 </ul>
@@ -129,7 +129,7 @@ let data = [
             'Призер олимпиады "Физтех"'
         ],
         'gender': 'M'
-    },
+    }
 ];
 
 let interval;

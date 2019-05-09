@@ -68,7 +68,7 @@ button:focus {
 	outline:0;
 }
 
-button.account-contents {
+button.alternative {
 	color: #ffcd00;
 	background-color: black;
 }
@@ -751,6 +751,10 @@ footer {
 		font-size: 18px;
 	}
 
+	#progress .carousel_wrapper > div.arrows > img {
+		width: 50px;
+	}
+
 	#progress .progress_img img {
 		width: 50px;
 	}
@@ -1105,6 +1109,10 @@ footer {
 		font-size: 16px;
 	}
 
+	#progress .carousel_wrapper > div.arrows > img {
+		width: 40px;
+	}
+
 	#progress .progress_img {
 		display: none;
 	}
@@ -1280,6 +1288,10 @@ footer {
 
 	#progress p {
 		font-size: 14px;
+	}
+
+	#progress .carousel_wrapper > div.arrows > img {
+		width: 30px;
 	}
 
 	#progress .progress_img {
