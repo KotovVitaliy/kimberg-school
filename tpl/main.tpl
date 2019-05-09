@@ -144,7 +144,7 @@
         <h2>Наши победители и призеры</h2>
         <div class="carousel_wrapper">
             <div class="arrows" id="progress_prev">
-                <img src="/img/arr_prev.png" alt="prev">
+                <img src="/img/arr_prev2.png" alt="prev">
             </div>
 
             <div class="progress_wrapper">
@@ -152,7 +152,7 @@
             </div>
 
             <div class="arrows" id="progress_next">
-                <img src="/img/arr_next.png" alt="next">
+                <img src="/img/arr_next2.png" alt="next">
             </div>
         </div>
     </div>
