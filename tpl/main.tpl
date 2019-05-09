@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <title>Школа Кимберг</title>
-    <meta name="author" content="Котов Виталий Игоревич">
+    <meta name="author" content="vinkotov@gmail.com">
     <meta name="description" content="Школа олимпиадной физики">
     <meta name="keywords" content="олимпиады физика подготовка к олимпиадам егэ сдать репититор">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -18,6 +18,7 @@
     <meta name="theme-color" content="#ffffff">
     <script src="/js/jquery-3.2.1.min.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/carousel.js"></script>
 </head>
 <body>
 <div id="first-block">
@@ -118,6 +119,7 @@
         </div>
     </div>
 </div>
+
 <div id="account-contents">
     <div class="in-block">
         <h2>В процессе обучения вас ждет:</h2>
@@ -136,6 +138,26 @@
         </div>
     </div>
 </div>
+
+<div id="progress">
+    <div class="in-block">
+        <h2>Наши победители и призеры</h2>
+        <div class="carousel_wrapper">
+            <div class="arrows" id="progress_prev">
+                <img src="/img/arr_prev.png" alt="prev">
+            </div>
+
+            <div class="progress_wrapper">
+                <p><i>Загрузка</i></p>
+            </div>
+
+            <div class="arrows" id="progress_next">
+                <img src="/img/arr_next.png" alt="next">
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="teachers" class="headed-block">
     <div class="in-block">
         <h2>Преподаватели</h2>

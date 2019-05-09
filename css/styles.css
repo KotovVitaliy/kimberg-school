@@ -68,7 +68,7 @@ button:focus {
 	outline:0;
 }
 
-button.alternative {
+button.account-contents {
 	color: #ffcd00;
 	background-color: black;
 }
@@ -351,6 +351,62 @@ i.necessarily {
 			width: 400px;
 		}
 
+#progress {}
+	#progress .carousel_wrapper {
+		width: 100%;
+		text-align: center;
+		margin: 35px 0 0;
+		display: table;
+		background-color: whitesmoke;
+		padding: 30px 10px;
+	}
+	#progress .carousel_wrapper > div.arrows {
+		vertical-align: middle;
+		cursor: pointer;
+		width: 19%;
+	}
+	#progress .carousel_wrapper > div.arrows > img {
+		width: 90px;
+	}
+	#progress .carousel_wrapper > div {
+		display: table-cell;
+		margin: 15px;
+	}
+	#progress .progress_wrapper {
+		padding: 10px;
+		border: 1px solid grey;
+		border-radius: 6px;
+		display: inline-block;
+		text-align: left;
+		width: 60%;
+	}
+	#progress .progress_block {
+		display: inherit;
+		padding: 10px;
+		height: 100%;
+		vertical-align: top;
+	}
+	#progress p.progress_name {
+		font-weight: bold;
+		margin: 0;
+	}
+	#progress p {
+		font-size: 22px;
+	}
+	#progress ul {
+		list-style-type:none;
+		font-size: 18px;
+		padding: 10px;
+		margin: 0;
+	}
+	#progress li:before {
+		content: url("/img/li.jpg");
+		padding: 0 10px 0 0;
+	}
+	#progress img {
+		width: 100px;
+		margin: 0 10px 0 0;
+	}
 
 #teachers {}
 
@@ -689,6 +745,18 @@ footer {
 	#contents-list {
 		margin-top: 20px;
 		font-size: 18px;
+	}
+
+	#progress p {
+		font-size: 18px;
+	}
+
+	#progress .progress_img img {
+		width: 50px;
+	}
+
+	#progress ul {
+		font-size: 16px;
 	}
 
 	#feedback .feedback {
@@ -1033,6 +1101,18 @@ footer {
 		font-size: 16px;
 	}
 
+	#progress p {
+		font-size: 16px;
+	}
+
+	#progress .progress_img {
+		display: none;
+	}
+
+	#progress ul {
+		font-size: 14px;
+	}
+
 	#feedback .feedback {
 		font-size: 16px;
 	}
@@ -1196,6 +1276,18 @@ footer {
 
 	#contents-list {
 		font-size: 14px;
+	}
+
+	#progress p {
+		font-size: 14px;
+	}
+
+	#progress .progress_img {
+		display: none;
+	}
+
+	#progress ul {
+		font-size: 12px;
 	}
 
 	#feedback .feedback {
