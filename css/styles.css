@@ -400,7 +400,7 @@ i.necessarily {
 		margin: 0;
 	}
 	#progress li:before {
-		content: url("/img/li.jpg");
+		content: url("/img/tick-mini.png");
 		padding: 0 10px 0 0;
 	}
 	#progress img {
