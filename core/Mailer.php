@@ -48,15 +48,15 @@ class Mailer
 
         $smena = 'нет';
         if ($data['smena'] == 1) {
-            $smena = 'Первая (9-15 июня)';
+            $smena = 'Первая смена';
         } else if ($data['smena'] == 2) {
-            $smena = 'Вторая (17-23 июня)';
+            $smena = 'Вторая смена';
         }
 
         $phone = isset($data['phone']) && $data['phone'] ? $data['phone'] : 'нет';
         $text = isset($data['question']) && $data['question'] ? ("<< " . $data['question'] . " >>") : 'нет';
 
-        $message = 'С портала Школа Кимберг пришла заявка В ЛШ:' . PHP_EOL;
+        $message = 'С портала Школа Кимберг пришла заявка на АВГУСТ:' . PHP_EOL;
         $message .= "Смена: {$smena}" . PHP_EOL;
         $message .= "Фамилия: {$surname}" . PHP_EOL;
         $message .= "Имя: {$name}" . PHP_EOL;
@@ -66,7 +66,7 @@ class Mailer
         $message .= "Номер телефона: {$phone}" . PHP_EOL;
         $message .= "Достижения: {$text}" . PHP_EOL;
         $message .= PHP_EOL . 'Не забудь связаться с человеком. Твой дружелюбный сосед, Email Robot.' . PHP_EOL;
-        $subject = 'Kimberg School - SUMMER';
+        $subject = 'Kimberg School - АВГУСТ';
         $from = self::SUBSCRIBE_EMAIL;
         $this->_sendMail("kimberg.school@gmail.com", $subject, $message, $from);
         return $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);

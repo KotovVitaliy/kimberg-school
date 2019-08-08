@@ -74,9 +74,9 @@
     </div>
 </div>
 
-<!--<div style="background-color: #f5f5f5; text-align: center;">
+<div style="background-color: #f5f5f5; text-align: center;">
     <div class="in-block" style="padding: 20px 0;">
-        <div><h3>Лето со школой Кимберг!</h3></div>
+        <div><h3>Август со Школой Кимберг</h3></div>
 
         <div style="display: none; width: 50%; height: 50px; padding: 10px 0 30px 0;" class="js_summer">
             <div class="summer_text" style="font-size: 18px;"></div>
@@ -88,7 +88,7 @@
             <span onclick="sendNotSummer()" style="display: none;" class="summer as_link">Не интересно</span>
         </div>
     </div>
-</div>-->
+</div>
 
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
@@ -456,7 +456,7 @@
                 <input name="name" type="text" value="">
             </div>
             <div class="form-row">
-                <label>Класс<i class="necessarily"></i> :</label>
+                <label>Класс в 2019-2020 учебном году<i class="necessarily"></i> :</label>
                 <select name="class">
                     <option value="">Выбрать</option>
                     <option value="7">7 класс</option>
@@ -474,8 +474,8 @@
                 <label>Смена<i class="necessarily"></i> :</label>
                 <select name="smena">
                     <option value="">Выбрать</option>
-                    <option value="1">Первая (9-15 июня)</option>
-                    <option value="2">Вторая (17-23 июня)</option>
+                    <option value="1">Первая (19-23 августа)</option>
+                    <option value="2">Вторая (26-30 августа)</option>
                 </select>
             </div>
             <div class="form-row">
