@@ -98,4 +98,31 @@ class DB
         self::$login = (string)$data->login;
         self::$name = (string)$data->name;
     }
+
+    public function logNewSubscriber($data, $type)
+    {
+        $surname = $data['surname'] ?? 'нет';
+        $name = $data['name'] ?? 'нет';
+        $class = $data['class'] ?? 'нет';
+        $email = $data['email'] ?? 'нет';
+        $phone = isset($data['phone']) && $data['phone'] ? $data['phone'] : 'нет';
+        $text = $data['question'] ?? 'нет';
+        $status = 'new';
+        $comment = isset($data['smena']) ? "Смена {$data['smena']}" : '';
+        $school = $data['school_number'] ?? 'нет';
+
+        $this->insert('subscibers', [
+            'surname' => trim($surname),
+            'name' => trim($name),
+            'class' => trim($class),
+            'email' => trim($email),
+            'phone' => trim($phone),
+            'text' => trim($text),
+            'status' => trim($status),
+            'type' => trim($type),
+            'comment' => trim($comment),
+            'school' => trim($school)
+        ]);
+
+    }
 }

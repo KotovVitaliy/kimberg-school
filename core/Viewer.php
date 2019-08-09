@@ -25,4 +25,9 @@ class Viewer
     {
         echo json_encode(['error' => 1, 'data' => $data]);
     }
+
+    public static function showSubsPage()
+    {
+        echo file_get_contents(__DIR__ . '/../tpl/subs.tpl');
+    }
 }

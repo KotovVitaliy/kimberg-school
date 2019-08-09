@@ -1,7 +1,7 @@
 <?php
-//ini_set('error_reporting', E_ALL);
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 
 header('Content-Type: text/html; charset=utf-8');
 
@@ -9,11 +9,15 @@ require_once __DIR__ . '/config/autoload.php';
 
 //session_start();
 if (isAjaxRequest()) {
-    Ajax::getInstance()->makeRequest();
+    Ajax::makeAjax($_REQUEST['action']);
 } else if (isSubscribeRequest()) {
     Mailer::getInstance()->sendSubscribeMail($_REQUEST);
+    DB::getInstance()->logNewSubscriber($_REQUEST, 'subscriber');
 } else if (isSummerRequest()) {
-    Mailer::getInstance()->sendSummerMail($_REQUEST);
+    Mailer::getInstance()->sendAugustMail($_REQUEST);
+    DB::getInstance()->logNewSubscriber($_REQUEST, 'august');
+} else if (isShowSubsRequest()) {
+    Viewer::showSubsPage();
 } else if (isConfirmRequest()) {
     $result = UserController::getInstance()->confirm();
     if (!$result) sendTo404();
@@ -44,7 +48,7 @@ function sendTo404() {
 
 function isAjaxRequest()
 {
-    return isset($_REQUEST['ajax']) && ($_REQUEST['ajax']) == 1 && ($_POST || $_GET);
+    return isset($_REQUEST['ajax']) && ($_REQUEST['ajax']) == 1 && ($_POST || $_GET) && isset($_REQUEST['action']);
 }
 
 function isConfirmRequest()
@@ -65,6 +69,11 @@ function isSummerRequest()
 function isStatRequest()
 {
     return isset($_REQUEST['stat']) && $_REQUEST['stat'];
+}
+
+function isShowSubsRequest()
+{
+    return isset($_REQUEST['subs']) && $_REQUEST['subs'] == 'view';
 }
 
 function addVisitor() {

@@ -38,7 +38,7 @@ class Mailer
         return $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
     }
 
-    public function sendSummerMail($data)
+    public function sendAugustMail($data)
     {
         $surname = $data['surname'] ?? 'нет';
         $name = $data['name'] ?? 'нет';

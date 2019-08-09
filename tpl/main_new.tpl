@@ -471,6 +471,10 @@
                 <input name="school_number" type="text" value="">
             </div>
             <div class="form-row">
+                <label>Номер школы<i class="necessarily"></i> :</label>
+                <input name="school_number" type="text" value="">
+            </div>
+            <div class="form-row">
                 <label>Смена<i class="necessarily"></i> :</label>
                 <select name="smena">
                     <option value="">Выбрать</option>
