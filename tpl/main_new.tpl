@@ -74,7 +74,7 @@
     </div>
 </div>
 
-<div style="background-color: #f5f5f5; text-align: center;">
+<!-- <div style="background-color: #f5f5f5; text-align: center;">
     <div class="in-block" style="padding: 20px 0;">
         <div><h3>Август со Школой Кимберг</h3></div>
 
@@ -88,7 +88,7 @@
             <span onclick="sendNotSummer()" style="display: none;" class="summer as_link">Не интересно</span>
         </div>
     </div>
-</div>
+</div> -->
 
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
