@@ -423,8 +423,8 @@
                 <label>Где удобно заниматься?<i class="necessarily"></i></label>
                 <select name="adds">
                     <option value="">Выбрать</option>
-                    <option value="Taganskaya">метро Таганская</option>
-                    <option value="Vernadskogo">метро Проскпект Вернадского</option>
+                    <option value="Taganskaya">м. Таганская</option>
+                    <option value="Vernadskogo">м. Проспект Вернадского</option>
                     <option value="Any">не важно</option>
                 </select>
             </div>
