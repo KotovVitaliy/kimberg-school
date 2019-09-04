@@ -178,6 +178,15 @@ $(function(){
             }
             unwarnField(field);
             return true;
+		},
+		'adds': (field) => {
+            var value = field.val();
+            if(value == '') {
+                warnField(field);
+                return 'Адрес не указан';
+            }
+            unwarnField(field);
+            return true;
 		}
 	};
 
@@ -267,8 +276,8 @@ $(function(){
 	});
 
 	$('.schedule').click(function() {
-		let container = $('#schedule-container');
-        showForm(container);
+		// let container = $('#schedule-container');
+        // showForm(container);
 		return false;
 	});
 

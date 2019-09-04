@@ -108,8 +108,12 @@ class DB
         $phone = isset($data['phone']) && $data['phone'] ? $data['phone'] : 'нет';
         $text = $data['question'] ?? 'нет';
         $status = 'new';
-        $comment = isset($data['smena']) ? "Смена {$data['smena']}" : '';
+        $comment = '';
+        $comment .= isset($data['smena']) ? "Смена: {$data['smena']} " : '';
+        $comment .= isset($data['adds']) ? "Удобный адрес: {$data['adds']} " : '';
+        $comment .= isset($data['question']) ? "Комментарий: {$data['question']} " : '';
         $school = $data['school_number'] ?? 'нет';
+
 
         $this->insert('subscibers', [
             'surname' => trim($surname),

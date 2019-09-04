@@ -19,14 +19,18 @@ class Mailer
     {
         $surname = $data['surname'] ?? 'нет';
         $name = $data['name'] ?? 'нет';
+        $school_number = $data['school_number'] ?? 'нет';
         $class = $data['class'] ?? 'нет';
         $email = $data['email'] ?? 'нет';
+        $adds = $data['adds'] ?? 'нет';
         $phone = isset($data['phone']) && $data['phone'] ? $data['phone'] : 'нет';
         $text = isset($data['question']) && $data['question'] ? ("<< " . $data['question'] . " >>") : 'нет';
 
         $message = 'С портала Школа Кимберг пришла новая заявка:' . PHP_EOL;
         $message .= "Фамилия: {$surname}" . PHP_EOL;
         $message .= "Имя: {$name}" . PHP_EOL;
+        $message .= "Удобный адрес: {$adds}" . PHP_EOL;
+        $message .= "Школа: {$school_number}" . PHP_EOL;
         $message .= "Класс: {$class}" . PHP_EOL;
         $message .= "Email: {$email}" . PHP_EOL;
         $message .= "Номер телефона: {$phone}" . PHP_EOL;
