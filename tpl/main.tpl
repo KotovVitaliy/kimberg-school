@@ -67,8 +67,7 @@
                 </div>
                 <br />
                 <div class="button-container">
-                    <button class="schedule alternative">Расписание в разработке</button>
-                            <!-- onclick="sendOpenSchedule()" -->
+                    <button onclick="sendOpenSchedule()" class="schedule alternative">Расписание</button>
                 </div>
             </div>
         </div>
@@ -517,7 +516,7 @@
 
 <div id="schedule-container" class="form-container">
     <div class="schedule-wrap">
-        <img class="schedule-img" src="/img/Schedule.png" alt="Расписание">
+        <img class="schedule-img" src="/img/Schedule2.png" alt="Расписание">
     </div>
 </div>
 

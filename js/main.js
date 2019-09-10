@@ -276,8 +276,8 @@ $(function(){
 	});
 
 	$('.schedule').click(function() {
-		// let container = $('#schedule-container');
-        // showForm(container);
+		let container = $('#schedule-container');
+        showForm(container);
 		return false;
 	});
 
