@@ -74,21 +74,22 @@
     </div>
 </div>
 
-<!-- <div style="background-color: #f5f5f5; text-align: center;">
-    <div class="in-block" style="padding: 20px 0;">
-        <div><h3>Август со Школой Кимберг</h3></div>
+<div class="promo-wrapper">
+    <div class="in-block promo_block">
+        <div><h3>Практикум в Школе Кимберг</h3></div>
 
-        <div style="display: none; width: 50%; height: 50px; padding: 10px 0 30px 0;" class="js_summer">
-            <div class="summer_text" style="font-size: 18px;"></div>
+        <div style="display: none; width: 50%; height: 50px; padding: 10px 0 30px 0;" class="js_promo">
+            <div class="promo_text" style="font-size: 18px;"></div>
         </div>
-
+        <br>
+        <br>
         <div>
-            <button onclick="sendSummer()" class="summer-link more">Подробнее</button>
+            <button onclick="sendPromo()" class="promo-link more" style="background-color: green; color: whitesmoke;">Подробнее</button>
             <br><br>
-            <span onclick="sendNotSummer()" style="display: none;" class="summer as_link">Не интересно</span>
+            <span onclick="sendNotPromo()" style="display: none;" class="promo as_link">Не интересно</span>
         </div>
     </div>
-</div> -->
+</div>
 
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
@@ -459,11 +460,11 @@
     </div>
 </div>
 
-<div id="summer-container" class="form-container">
+<div id="promo-container" class="form-container">
     <div class="form">
         <div class="close"></div>
         <h1>Заполните форму</h1>
-        <form id="subscribe-form" data-url="summer">
+        <form id="subscribe-form" data-url="promo">
             <div class="form-error"></div>
             <div class="form-success"></div>
             <div class="form-row">
@@ -489,14 +490,14 @@
                 <label>Номер школы<i class="necessarily"></i> :</label>
                 <input name="school_number" type="text" value="">
             </div>
-            <div class="form-row">
+            <!--<div class="form-row">
                 <label>Смена<i class="necessarily"></i> :</label>
                 <select name="smena">
                     <option value="">Выбрать</option>
                     <option value="1">Первая (19-23 августа)</option>
                     <option value="2">Вторая (26-30 августа)</option>
                 </select>
-            </div>
+            </div>-->
             <div class="form-row">
                 <label>E-mail<i class="necessarily"></i> :</label>
                 <input name="email" type="text" value="">

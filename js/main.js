@@ -1,4 +1,4 @@
-let summer_state = 0;
+let promo_state = 0;
 
 $(function(){
 
@@ -342,65 +342,50 @@ $(function(){
     	}
 	});
 
-	$('.summer-link.more').click(() => {
+	$('.promo-link.more').click(() => {
 
 		let text = '';
 		let button_text = 'Подробнее';
-		switch(summer_state) {
+		switch(promo_state) {
 			case 0:
-				$('span.summer.as_link').show();
-				$('.js_summer').css({display:'inline-block'});
-				button_text = 'Сколько занятий?';
-				text = 'Школа Кимберг проводит августовские интенсивы "вспомнить все" для учеников 7-11 классов по подготовке к физическим олимпиадам!';
+				$('span.promo.as_link').show();
+				$('.js_promo').css({display:'inline-block'});
+				button_text = 'Хочу!';
+				text = 'Хочешь учиться олимпиадному практикуму, но не знаешь где?';
 				break;
 
 			case 1:
-                button_text = 'Когда планируются интенсивы?';
-                text = '8 теоретических занятий (по 1,5 часа).<br>Занятия будут проходить в течение 4 дней.';
+                button_text = 'Уже можно записываться?';
+                text = 'У нас есть решение: практикум в Kimberg School!<br />Не упусти возможность развить не только мозг, но у руки!';
                 break;
 
 			case 2:
-                button_text = 'Сколько человек в группе?';
-                text = 'Первая смена 19-23 августа.<br>Вторая смена 26-30 августа.';
+                button_text = 'Записаться';
+                text = 'Заполни форму регистрации и наши преподаватели с тобой свяжутся!';
                 break;
 
 			case 3:
-                button_text = 'Где проходят занятия?';
-                text = 'В одной группе обучаются не более 6 детей.<br>Это позволяет уделить значительное внимание каждому ребенку.<br>Еще никто не уходил от нас без знаний! :)';
-                break;
-
-			case 4:
-                button_text = 'Сколько же всё это стоит?';
-                text = 'В 5 минутах пешком от м. Таганская (кольцевая)<br/>Тетеринский переулок, дом 4 стр 1';
-                break;
-
-			case 5:
-                button_text = 'Все круто! Как зарегистрироваться?';
-                text = 'Участие в одной смене стоит 8\'000&#8381;';
-                break;
-
-			case 6:
-                let container = $('#summer-container');
+                let container = $('#promo-container');
                 showForm(container);
 				break;
 		}
 
-        if (summer_state <= 5) {
-            $('div.summer_text').html(text);
-            $('button.summer-link').text(button_text);
+        if (promo_state <= 2) {
+            $('div.promo_text').html(text);
+            $('button.promo-link').text(button_text);
 		}
 
-        if (summer_state <= 6) {
-            summer_state++;
+        if (promo_state <= 3) {
+            promo_state++;
 		}
 	});
 
-	$('span.summer.as_link').click(() => {
-		summer_state = 0;
-        $('.js_summer').css({display:'none'});
-        $('span.summer.as_link').hide();
-        $('div.summer_text').text("");
-        $('button.summer-link').text("Подробнее");
+	$('span.promo.as_link').click(() => {
+		promo_state = 0;
+        $('.js_promo').css({display:'none'});
+        $('span.promo.as_link').hide();
+        $('div.promo_text').text("");
+        $('button.promo-link').text("Подробнее");
 	});
 
 	$('.form-container').scroll(function(e){
@@ -522,10 +507,10 @@ function sendOpenSchedule() {
     $.get('/stat/open_schedule');
 }
 
-function sendSummer() {
-    $.get('/stat/click_summer_' + summer_state.toString());
+function sendPromo() {
+    $.get('/stat/click_promo_' + promo_state.toString());
 }
 
-function sendNotSummer() {
-    $.get('/stat/click_not_summer_' + summer_state.toString());
+function sendNotPromo() {
+    $.get('/stat/click_not_promo_' + promo_state.toString());
 }

@@ -73,7 +73,36 @@ button.alternative {
 	background-color: black;
 }
 
-button.summer-link {
+.promo-wrapper {
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	/*border: 3px solid whitesmoke;*/
+}
+
+.promo-wrapper > .promo_block {
+	padding: 50px;
+	/*width: 50%;*/
+	/*opacity: 0.9;*/
+	/*background: whitesmoke;*/
+}
+
+.promo-wrapper::after {
+	/*background: url("/img/promo-back2.png") no-repeat;*/
+	background-color: whitesmoke;
+	background-size: 100%;
+	content: "";
+	opacity: 1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+
+}
+
+button.promo {
 	color: white;
 	background-color: #0074D9;
 }

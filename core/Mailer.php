@@ -42,7 +42,7 @@ class Mailer
         return $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
     }
 
-    public function sendAugustMail($data)
+    public function sendPromoMail($data)
     {
         $surname = $data['surname'] ?? 'нет';
         $name = $data['name'] ?? 'нет';
@@ -50,18 +50,10 @@ class Mailer
         $email = $data['email'] ?? 'нет';
         $school = $data['school_number'] ?? 'нет';
 
-        $smena = 'нет';
-        if ($data['smena'] == 1) {
-            $smena = 'Первая смена';
-        } else if ($data['smena'] == 2) {
-            $smena = 'Вторая смена';
-        }
-
         $phone = isset($data['phone']) && $data['phone'] ? $data['phone'] : 'нет';
         $text = isset($data['question']) && $data['question'] ? ("<< " . $data['question'] . " >>") : 'нет';
 
-        $message = 'С портала Школа Кимберг пришла заявка на АВГУСТ:' . PHP_EOL;
-        $message .= "Смена: {$smena}" . PHP_EOL;
+        $message = 'С портала Школа Кимберг пришла заявка на ПРАКТИКУМ:' . PHP_EOL;
         $message .= "Фамилия: {$surname}" . PHP_EOL;
         $message .= "Имя: {$name}" . PHP_EOL;
         $message .= "Класс: {$class}" . PHP_EOL;
@@ -70,7 +62,7 @@ class Mailer
         $message .= "Номер телефона: {$phone}" . PHP_EOL;
         $message .= "Достижения: {$text}" . PHP_EOL;
         $message .= PHP_EOL . 'Не забудь связаться с человеком. Твой дружелюбный сосед, Email Robot.' . PHP_EOL;
-        $subject = 'Kimberg School - АВГУСТ';
+        $subject = 'Kimberg School - ПРАКТИКУМ';
         $from = self::SUBSCRIBE_EMAIL;
         $this->_sendMail("kimberg.school@gmail.com", $subject, $message, $from);
         return $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);

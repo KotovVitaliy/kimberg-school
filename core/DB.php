@@ -111,7 +111,6 @@ class DB
         $comment = '';
         $comment .= isset($data['smena']) ? "Смена: {$data['smena']} " : '';
         $comment .= isset($data['adds']) ? "Удобный адрес: {$data['adds']} " : '';
-        $comment .= isset($data['question']) ? "Комментарий: {$data['question']} " : '';
         $school = $data['school_number'] ?? 'нет';
 
 

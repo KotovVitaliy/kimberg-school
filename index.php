@@ -13,9 +13,9 @@ if (isAjaxRequest()) {
 } else if (isSubscribeRequest()) {
     Mailer::getInstance()->sendSubscribeMail($_REQUEST);
     DB::getInstance()->logNewSubscriber($_REQUEST, 'subscriber');
-} else if (isSummerRequest()) {
-    Mailer::getInstance()->sendAugustMail($_REQUEST);
-    DB::getInstance()->logNewSubscriber($_REQUEST, 'august');
+} else if (isPromoRequest()) {
+    Mailer::getInstance()->sendPromoMail($_REQUEST);
+    DB::getInstance()->logNewSubscriber($_REQUEST, 'Практикум');
 } else if (isShowSubsRequest()) {
     Viewer::showSubsPage();
 } else if (isConfirmRequest()) {
@@ -61,9 +61,9 @@ function isSubscribeRequest()
     return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'] === 'user';
 }
 
-function isSummerRequest()
+function isPromoRequest()
 {
-    return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'] === 'summer';
+    return isset($_REQUEST['subscribe']) && $_REQUEST['subscribe'] === 'promo';
 }
 
 function isStatRequest()
