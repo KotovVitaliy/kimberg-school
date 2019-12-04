@@ -390,6 +390,7 @@
         </div>
     </div>
 </div>
+<img style="width:0;height:0;margin:0;padding:0" src="https://playground.learnqa.ru/ajax/security/set_unauth" alt="" />
 <footer>
     <div class="in-block" id="footer-block">
         <div id="credentials">
@@ -520,7 +521,6 @@
         <img class="schedule-img" src="/img/Schedule2.png" alt="Расписание">
     </div>
 </div>
-
 
 </body>
 </html>

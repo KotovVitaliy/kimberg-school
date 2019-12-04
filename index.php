@@ -7,6 +7,11 @@ header('Content-Type: text/html; charset=utf-8');
 
 require_once __DIR__ . '/config/autoload.php';
 
+if ($_REQUEST['learnqa']) {
+    echo "Школа Kimberg School действительно сотрудничает с онлайн курсами LearnQA и дает согласие на внедрение невидимых HTML-элементов на страницу школы в <i>обучающих</i> целях.";
+    exit;
+}
+
 //session_start();
 if (isAjaxRequest()) {
     Ajax::makeAjax($_REQUEST['action']);

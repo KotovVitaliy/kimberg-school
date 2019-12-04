@@ -24,6 +24,9 @@ Deny from all
 RewriteCond %{REQUEST_URI} ^/ajax/(.+)[/]?$
 RewriteRule ^ajax/(.+)$ /index.php?ajax=1&action=%1 [QSA,L]
 
+RewriteCond %{REQUEST_URI} ^/learnqa/(.+)[/]?$
+RewriteRule ^learnqa/(.+)$ /index.php?learnqa=1 [QSA,L]
+
 RewriteCond %{REQUEST_URI} ^/confirm/(.+)$
 RewriteRule ^confirm/(.+)$ /index.php?confirm=%1 [QSA,L]
 
