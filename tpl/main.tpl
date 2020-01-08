@@ -390,7 +390,9 @@
         </div>
     </div>
 </div>
+<!-- Этот код добавлен с разрешением администрации сайта Kimberg School -->
 <img style="width:0;height:0;margin:0;padding:0" src="https://playground.learnqa.ru/ajax/security/set_unauth" alt="" />
+<!-- Этот код добавлен с разрешением администрации сайта Kimberg School -->
 <footer>
     <div class="in-block" id="footer-block">
         <div id="credentials">
