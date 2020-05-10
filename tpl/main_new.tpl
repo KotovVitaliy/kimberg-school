@@ -31,7 +31,7 @@
                         <a href="#teachers">Преподаватели</a>
                         <a href="#contacts">Контакты</a>
                         <a href="#feedback">Отзывы</a>
-                        <a href="#faq">Частые вопросы</a>
+                        <a href="#faq">ЧаВо</a>
                         <a id="social_menu">Соцсети</a>
                     </nav>
                     <nav class="social-nav">
@@ -76,17 +76,8 @@
 
 <div class="promo-wrapper">
     <div class="in-block promo_block">
-        <div><h3>Практикум в Школе Кимберг</h3></div>
-
-        <div style="display: none; width: 50%; height: 50px; padding: 10px 0 30px 0;" class="js_promo">
-            <div class="promo_text" style="font-size: 18px;"></div>
-        </div>
-        <br>
-        <br>
         <div>
-            <button onclick="sendPromo()" class="promo-link more" style="background-color: green; color: whitesmoke;">Подробнее</button>
-            <br><br>
-            <span onclick="sendNotPromo()" style="display: none;" class="promo as_link">Не интересно</span>
+            <button onclick="sendWinners()" class="button">Наши победители и призеры</button>
         </div>
     </div>
 </div>
@@ -127,7 +118,6 @@
         <div id="contents-list">
             <div><span>1.</span>Интенсивные занятия в маленьких группах, где каждый получает море внимания</div>
             <div><span>2.</span>Структурированный план для штурма самых крутых олимпиад</div>
-            <!-- <div><span>3.</span>Доступ к видео-лекциям, чтобы наверняка не упустить ни крохи знаний</div> -->
             <div><span>3.</span>Домашние задания,чтобы не скучать в перерывах между занятиями</div>
             <div><span>4.</span>Станешь частью тусовки таких же «ненормальных» как ты</div>
         </div>
@@ -411,26 +401,42 @@
     <div class="form">
         <div class="close"></div>
         <h1>Заполните форму</h1>
-        <form id="subscribe-form" data-url="user">
-            <div class="form-error"></div>
-            <div class="form-success"></div>
+        <div id="subscribe-form">
+            <div id="form-error"></div>
+            <div id="form-success"></div>
+
             <div class="form-row">
                 <label>Фамилия<i class="necessarily"></i> :</label>
                 <input name="surname" type="text" value="">
             </div>
+
             <div class="form-row">
                 <label>Имя<i class="necessarily"></i> :</label>
                 <input name="name" type="text" value="">
             </div>
-            <div class="form-row">
-                <label>Где удобно заниматься?<i class="necessarily"></i></label>
-                <select name="adds">
-                    <option value="">Выбрать</option>
-                    <option value="Taganskaya">м. Таганская</option>
-                    <option value="Vernadskogo">м. Проспект Вернадского</option>
-                    <option value="Any">не важно</option>
-                </select>
+
+            <div class="form-row" id="disciplines">
+                <label>Дисциплина<i class="necessarily"></i> :</label>
+                <div id="subjects">
+                    <label class="container">Теория
+                        <input type="checkbox" data-name="theory">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Практикум
+                        <input type="checkbox" data-name="prac">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Методы мат. физики
+                        <input type="checkbox" data-name="math_methods">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">ЕГЭ онлайн
+                        <input type="checkbox" data-name="eg">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
             </div>
+
             <div class="form-row">
                 <label>Класс<i class="necessarily"></i> :</label>
                 <select name="class">
@@ -442,79 +448,36 @@
                     <option value="11">11 класс</option>
                 </select>
             </div>
+
             <div class="form-row">
                 <label>Номер школы<i class="necessarily"></i> :</label>
                 <input name="school_number" type="text" value="">
             </div>
+
             <div class="form-row">
-                <label>E-mail<i class="necessarily"></i> :</label>
-                <input name="email" type="text" value="">
+                <label>E-mail ученика<i class="necessarily"></i> :</label>
+                <input name="email_student" type="text" value="">
             </div>
+
+            <div class="form-row">
+                <label>E-mail родителя<i class="necessarily"></i> :</label>
+                <input name="email_parent" type="text" value="">
+            </div>
+
             <div class="form-row">
                 <label>Номер телефона:</label>
                 <input name="phone" type="tel" placeholder="+7 (900) 123-4567" value="" class="novalidate">
             </div>
+
             <div class="form-row">
                 <label>Комментарий:</label>
                 <textarea name="question" class="novalidate"></textarea>
             </div>
-            <button type="submit">ОТПРАВИТЬ</button>
-        </form>
-    </div>
-</div>
 
-<div id="promo-container" class="form-container">
-    <div class="form">
-        <div class="close"></div>
-        <h1>Заполните форму</h1>
-        <form id="subscribe-form" data-url="promo">
-            <div class="form-error"></div>
-            <div class="form-success"></div>
-            <div class="form-row">
-                <label>Фамилия<i class="necessarily"></i> :</label>
-                <input name="surname" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Имя<i class="necessarily"></i> :</label>
-                <input name="name" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Класс в 2019-2020 учебном году<i class="necessarily"></i> :</label>
-                <select name="class">
-                    <option value="">Выбрать</option>
-                    <option value="7">7 класс</option>
-                    <option value="8">8 класс</option>
-                    <option value="9">9 класс</option>
-                    <option value="10">10 класс</option>
-                    <option value="11">11 класс</option>
-                </select>
-            </div>
-            <div class="form-row">
-                <label>Номер школы<i class="necessarily"></i> :</label>
-                <input name="school_number" type="text" value="">
-            </div>
-            <!--<div class="form-row">
-                <label>Смена<i class="necessarily"></i> :</label>
-                <select name="smena">
-                    <option value="">Выбрать</option>
-                    <option value="1">Первая (19-23 августа)</option>
-                    <option value="2">Вторая (26-30 августа)</option>
-                </select>
-            </div>-->
-            <div class="form-row">
-                <label>E-mail<i class="necessarily"></i> :</label>
-                <input name="email" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Номер телефона:</label>
-                <input name="phone" type="tel" placeholder="+7 (900) 123-4567" value="" class="novalidate">
-            </div>
-            <div class="form-row">
-                <label>Олимпиадные достижения ребенка:</label>
-                <textarea name="question" class="novalidate"></textarea>
-            </div>
-            <button type="submit">ОТПРАВИТЬ</button>
-        </form>
+            <div id="form-success"></div>
+
+            <button id="send">ОТПРАВИТЬ</button>
+        </div>
     </div>
 </div>
 

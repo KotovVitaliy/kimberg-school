@@ -99,33 +99,52 @@ class DB
         self::$name = (string)$data->name;
     }
 
-    public function logNewSubscriber($data, $type)
+    public function logNewSubscriber($data)
     {
         $surname = $data['surname'] ?? 'нет';
         $name = $data['name'] ?? 'нет';
+
+        $subjects = $data['subjects'] ?? ['нет'];
+        $subjects = $this->replaceSubjects($subjects);
+
+        $school = $data['school'] ?? 'нет';
         $class = $data['class'] ?? 'нет';
-        $email = $data['email'] ?? 'нет';
+        $email_student = $data['email_student'] ?? 'нет';
+        $email_parent = $data['email_parent'] ?? 'нет';
         $phone = isset($data['phone']) && $data['phone'] ? $data['phone'] : 'нет';
-        $text = $data['question'] ?? 'нет';
+        $question = isset($data['question']) && $data['question'] ? ("<< " . $data['question'] . " >>") : 'нет';
         $status = 'new';
-        $comment = '';
-        $comment .= isset($data['smena']) ? "Смена: {$data['smena']} " : '';
-        $comment .= isset($data['adds']) ? "Удобный адрес: {$data['adds']} " : '';
-        $school = $data['school_number'] ?? 'нет';
 
+        foreach ($subjects as $subject) {
+            $this->insert('subscibers', [
+                'surname' => trim($surname),
+                'name' => trim($name),
+                'subject' => trim($subject),
+                'school' => trim($school),
+                'class' => trim($class),
+                'email_parent' => trim($email_parent),
+                'email_student' => trim($email_student),
+                'phone' => trim($phone),
+                'question' => trim($question),
+                'status' => trim($status),
+            ]);
+        }
+    }
 
-        $this->insert('subscibers', [
-            'surname' => trim($surname),
-            'name' => trim($name),
-            'class' => trim($class),
-            'email' => trim($email),
-            'phone' => trim($phone),
-            'text' => trim($text),
-            'status' => trim($status),
-            'type' => trim($type),
-            'comment' => trim($comment),
-            'school' => trim($school)
-        ]);
+    public function replaceSubjects(array $subjects)
+    {
+        $map = [
+            'eg' => 'ЕГЭ онлайн',
+            'theory' => 'Теория',
+            'prac' => 'Практикум',
+            'math_methods' => 'Методы мат. физики'
+        ];
 
+        $new_subjects = [];
+        foreach ($subjects as $sub) {
+            $new_subjects[] = $map[$sub] ?? 'Неизвестное значение';
+        }
+
+        return $new_subjects;
     }
 }

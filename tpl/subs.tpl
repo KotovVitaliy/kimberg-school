@@ -39,12 +39,13 @@
                 <tr>
                     <th class="table_head" id="surname">Фамилия</th>
                     <th class="table_head" id="name">Имя</th>
+                    <th class="table_head" id="subject">Дисциплина</th>
                     <th class="table_head" id="class">Класс</th>
                     <th class="table_head" id="school">Школа</th>
-                    <th class="table_head" id="email">Email</th>
-                    <th class="table_head" id="text">Текст</th>
-                    <th class="table_head" id="type">Тип</th>
-                    <th class="table_head" id="comment">Твой комментарий</th>
+                    <th class="table_head" id="email_student">Email студента</th>
+                    <th class="table_head" id="email_parent">Email родителя</th>
+                    <th class="table_head" id="phone">Телефон</th>
+                    <th class="table_head" id="question">Текст</th>
                     <th class="table_head" id="status">Статус</th>
                     <th></th>
                 </tr>

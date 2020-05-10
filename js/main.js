@@ -1,12 +1,7 @@
-let promo_state = 0;
+$(document).ready(function() {
+	let scrollBarWidth = $(window).outerWidth() - $(window).innerWidth();
 
-$(function(){
-
-	var scrollBarWidth = $(window).outerWidth() - $(window).innerWidth();
-
-	//=========================================================================
-
-	var changeHash = function(hash){
+	let changeHash = function(hash){
 		if(history.pushState) {
 			history.pushState(null, null, hash);
 		}
@@ -15,17 +10,18 @@ $(function(){
 		}
 	};
 
-	var hideForm = function(){
-		var container = $('.form-container');
+	function hideForm() {
+		let container = $('.form-container');
 		container.find('input, textarea, select').val('');
-		container.find('.form-error').empty();
-		container.find('.form-success').empty();
-		container.find('.warn').removeClass('warn');
+		container.find('[type="checkbox"]').prop("checked", false);
+		container.find('#form-error').empty();
+		$('.form-container #form-success').empty();
+		container.find('#form-success').empty();
 		container.css('display', 'none');
 		enableScrolling();
-	};
+	}
 
-	var showForm = function(container){
+	function showForm(container) {
 		container
 			.css({
 				'display': 'block',
@@ -36,217 +32,65 @@ $(function(){
 				300
 			);
 		disableScrolling();
-	};
+	}
 
-	var warnField = function(field){
-		if(field.hasClass('warn')) {
-			return;
-		}
-		field.addClass('warn');
-	};
+	function sendFormData() {
+        let url = '/subscribe/add';
 
-	var unwarnField = function(field) {
-		if(!field.hasClass('warn')) {
-			return;
-		}
-		field.removeClass('warn');
-	};
+        let surname = $('#subscribe-form input[name="surname"]').val();
+        let name = $('#subscribe-form input[name="name"]').val();
 
-	var fieldValidators = {
-		'name': function(field) {
-			var value = field.val();
-			if(value == '') {
-				warnField(field);
-				return 'Имя не указано';
-			} else if(value.length < 2) {
-				warnField(field);
-				return 'Имя слишком короткое';
+        let subject_els = $('#subscribe-form #disciplines .container input[type="checkbox"]');
+        let subjects = [];
+        subject_els.each(function(i, el) {
+        	if ($(el).prop("checked")) {
+				subjects.push($(el).data('name'));
 			}
-			unwarnField(field);
-			return true;
-		},
-		'fname': function(field) {
-			var value = field.val();
-			if(value == '') {
-				warnField(field);
-				return 'Фамилия не указано';
-			} else if(value.length < 2) {
-				warnField(field);
-				return 'Фамилия слишком короткое';
-			}
-			unwarnField(field);
-			return true;
-		},
-		'surname': function(field) {
-			var value = field.val();
-			if(value == '') {
-				warnField(field);
-				return 'Фамилия не указано';
-			} else if(value.length < 2) {
-				warnField(field);
-				return 'Фамилия слишком короткое';
-			}
-			unwarnField(field);
-			return true;
-		},
-		'class': function(field) {
-			var value = field.val();
-			if(value == '') {
-				warnField(field);
-				return 'Класс не указан';
-			}
-			unwarnField(field);
-			return true;
-		},
-		'email': function(field){
-			var value = field.val();
-			if(value == '') {
-				warnField(field);
-				return 'E-mail не указан';
-			} else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/.test(value)) {
-				warnField(field);
-				return 'E-mail указан неверно';
-			}
-			unwarnField(field);
-			return true;
-		},
-		'phone': function(field){
-			var value = field.val();
-			if(value == '') {
-				warnField(field);
-				return 'Телефон не указан';
-			} else if(value.replace(/[^0-9]+/g, '').length < 10) {
-				warnField(field);
-				return 'Телефон указан неверно';
-			}
-			unwarnField(field);
-			return true;
-		},
-		'password': function(field){
-			var value = field.val();
-			if(value == '') {
-				warnField(field);
-				return 'Введите пароль';
-			} else if (value.length < 2) {
-				warnField(field);
-				return 'Пароль должен быть длиной не менее 2 символа';
-			}
-			unwarnField(field);
-			return true;
-		},
-		'repeatPassword': function(field){
-			var value = field.val();
-			var passValue = field.parents('form')
-				.find('input[name="password"]').val();
-			if(value == '') {
-				warnField(field);
-				return 'Введите пароль ещё раз';
-			} else if(value != passValue) {
-				warnField(field);
-				return 'Пароли не совпадают';
-			}
-			unwarnField(field);
-			return true;
-		},
-		'question': function(field){
-			var value = field.val();
-			if(value == '') {
-				warnField(field);
-				return 'Вопрос не указан';
-			} else if(value.length <= 2) {
-				warnField(field);
-				return 'Вопрос слишком короткий: ' +
-					'напишите, пожалуйста, более развёрнутый вопрос';
-			}
-			unwarnField(field);
-			return true;
-		},
-		'school_number': (field) => {
-            var value = field.val();
-            if(value == '') {
-                warnField(field);
-                return 'Номер школы не указан';
-            }
-            unwarnField(field);
-            return true;
-		},
-		'smena': (field) => {
-            var value = field.val();
-            if(value == '') {
-                warnField(field);
-                return 'Смена не указана';
-            }
-            unwarnField(field);
-            return true;
-		},
-		'adds': (field) => {
-            var value = field.val();
-            if(value == '') {
-                warnField(field);
-                return 'Адрес не указан';
-            }
-            unwarnField(field);
-            return true;
-		}
-	};
+		});
 
-	var revalidateField = function(field) {
-		let fieldName = field.attr('name');
-		let value = field.val();
-		if(typeof fieldName === 'undefined' || (field.hasClass('novalidate') && value === "")) {
-			return true;
-		}
-		var result = fieldValidators[fieldName](field);
-		return result;
-	};
+        let classs = $('#subscribe-form select[name="class"]').val();
+        let school = $('#subscribe-form input[name="school_number"]').val();
+        let email_student = $('#subscribe-form input[name="email_student"]').val();
+        let email_parent = $('#subscribe-form input[name="email_parent"]').val();
+        let phone = $('#subscribe-form input[name="phone"]').val();
+        let question = $('#subscribe-form textarea[name="question"]').val();
 
-	let revalidateForm = function(form) {
-		let errorMessages = [];
-		let fields = form.find('input, textarea, select').toArray();
-		for(let i in fields) {
-			let result = revalidateField($(fields[i]));
-			if (result === true) {
-				continue;
-			}
-			errorMessages.push(result);
-		}
-		let errorsField = form.find('.form-error');
-		if ( errorMessages.length == 0) {
-			errorsField.empty();
-			return true;
-		}
-		errorsField.html(errorMessages.join('<br>'));
-		return false;
-	};
-
-	var sendFormData = function(form) {
-		let formId = form.attr('id');
-        let url = '/subscribe/' + form.data('url');
-
-		if (!revalidateForm(form)) {
+        if (!name || !surname || !classs || !school || !email_parent || !email_student) {
+			$('.form-container').find('#form-error').html(
+				"Пожалуйста, введите все необходимые поля"
+			);
 			return;
 		}
 
-		var formData = form.serialize() + "&formId=" + formId;
-        $.post(url, formData, function(response) {
-            	form.find('.form-error').html('');
-            	form.find('.form-success').html('Ваше сообщение получено.<br>Мы свяжемся с вами с ближайшее время!');
+        if (subjects.length === 0) {
+			$('.form-container').find('#form-error').html(
+				"Пожалуйста, выберите хотя бы одну дисциплину"
+			);
+			return;
+		}
+		let data = {
+        	surname:surname,
+			name:name,
+			subjects:subjects,
+			class:classs,
+			school:school,
+			email_student:email_student,
+			email_parent:email_parent,
+			phone:phone,
+			question:question
+        };
+
+		$.post(url, data, function() {
+				$('.form #form-error').html('');
+				$('.form #form-success').html('Ваше сообщение получено.<br>Мы свяжемся с вами с ближайшее время!');
 				setTimeout(hideForm, 2501);
 			}
-		).fail(function(){
-			form.find('.form-error').html(
-				'К сожалению, произошла ошибка.<br>'
-				+ 'Пожалуйста, попробуйте ещё раз!<br>'
-				+ 'Или свяжитесь с нами<br>'
-				+ 'по номеру телефона:<br>'
-				+ '+7 (926) 886-54-97'
-			);
-		});
-	};
+		);
+	}
 
-	var disableScrolling = function(){
-		var top = $('body').scrollTop();
-		var left = $('body').scrollLeft();
+	let disableScrolling = function() {
+		let top = $('body').scrollTop();
+		let left = $('body').scrollLeft();
 		$('body').css({
 		    overflow: 'hidden',
 		    height: '100%'
@@ -256,18 +100,13 @@ $(function(){
 		$('body').scrollLeft(left);
 	};
 
-	var enableScrolling = function(){
+	let enableScrolling = function() {
 		$('body').css({
 		    overflow: 'auto',
 		    height: 'auto'
 		});
 		$('body > *').css('margin-right', 0);
 	};
-
-	$('form').submit(function(e) {
-		e.preventDefault();
-		sendFormData($(this));
-	});
 
 	$('.subscribe-link').click(function() {
 		let container = $('#subscribe-container');
@@ -295,43 +134,20 @@ $(function(){
 		}
     });
 
-
-
-	$('#sign-in-link').click(function(){
-		var container = $('#auth-form-container');
-		showForm(container);
-		return false;
-	});
-
-	$('#restore-link').click(function(){
-		hideForm();
-		var container = $('#restore-form-container');
-		showForm(container);
-		return false;
-	});
-
-	$('.register-link').click(function(){
-		var container = $('#register-form-container');
-		showForm(container);
-		return false;
-	});
-
-	$('#ask-question').click(function(){
-		var container = $('#question-form-container');
-		showForm(container);
-		return false;
-	});
-
 	//Forms hiding
-	$('.form-container, .close').click(function(e){
+	$('.close').click(function(e){
 		if(e.target == this) {
 			hideForm();
 		}
 	});
 
+	$(document).on('click', '#send', () => {
+		sendFormData();
+	});
+
 	$(document).on('keyup blur change', function(event){
 		event = event || window.event;
-    	var isEscape = false;
+		let isEscape = false;
     	if ("key" in event) {
 	        isEscape = (event.key == "Escape" || event.key == "Esc");
     	} else {
@@ -342,81 +158,16 @@ $(function(){
     	}
 	});
 
-	$('.promo-link.more').click(() => {
-
-		let text = '';
-		let button_text = 'Подробнее';
-		switch(promo_state) {
-			case 0:
-				$('span.promo.as_link').show();
-				$('.js_promo').css({display:'inline-block'});
-				button_text = 'Хочу!';
-				text = 'Хочешь учиться олимпиадному практикуму, но не знаешь где?';
-				break;
-
-			case 1:
-                button_text = 'Уже можно записываться?';
-                text = 'У нас есть решение: практикум в Kimberg School!<br />Не упусти возможность развить не только мозг, но у руки!';
-                break;
-
-			case 2:
-                button_text = 'Записаться';
-                text = 'Заполни форму регистрации и наши преподаватели с тобой свяжутся!';
-                break;
-
-			case 3:
-                let container = $('#promo-container');
-                showForm(container);
-				break;
-		}
-
-        if (promo_state <= 2) {
-            $('div.promo_text').html(text);
-            $('button.promo-link').text(button_text);
-		}
-
-        if (promo_state <= 3) {
-            promo_state++;
-		}
-	});
-
-	$('span.promo.as_link').click(() => {
-		promo_state = 0;
-        $('.js_promo').css({display:'none'});
-        $('span.promo.as_link').hide();
-        $('div.promo_text').text("");
-        $('button.promo-link').text("Подробнее");
-	});
-
 	$('.form-container').scroll(function(e){
 		e.stopPropagation();
 	});
 
-	$('.form-container input, .form-container textarea').on('keyup', function(){
-		var field = $(this);
-		if(!field.hasClass('warn')) {
-			return;
-		} else {
-			if (field.hasClass('novalidate') && field.val() === "") {
-				field.removeClass('warn');
-			}
-		}
-		revalidateField(field);
-	});
-
-	$('.form-container select').on('change', function() {
-        var field = $(this);
-        if(!field.hasClass('warn')) {
-            return;
-        }
-        revalidateField(field);
-	});
 
 	//Main menu smooth scrolling
 	$('nav.common-nav a:not(#social_menu, #back_social_menu), #up-button').click(function(){
-		var hash = $(this).attr('href');
-		var topPosition = $(hash).offset().top;
-		var duration = topPosition / 4 + 300;
+		let hash = $(this).attr('href');
+		let topPosition = $(hash).offset().top;
+		let duration = topPosition / 4 + 300;
 
 		$("html, body").stop().animate(
 			{scrollTop: topPosition},
@@ -442,6 +193,7 @@ $(function(){
 
 	$('#currentYear').html((new Date()).getFullYear());
 });
+
 
 function sendStatVK() {
     $.get('/stat/vk');
@@ -507,10 +259,6 @@ function sendOpenSchedule() {
     $.get('/stat/open_schedule');
 }
 
-function sendPromo() {
-    $.get('/stat/click_promo_' + promo_state.toString());
-}
-
-function sendNotPromo() {
-    $.get('/stat/click_not_promo_' + promo_state.toString());
+function sendWinners() {
+	$.get('/stat/open_winners');
 }

@@ -176,14 +176,12 @@ function getPrevIndex() {
 
 function setNextCarousel() {
     let index = getNextIndex();
-    console.log("next ", current_data_index, index);
     setCarouselContent(data[index]);
     current_data_index = index;
 }
 
 function setPrevCarousel() {
     let index = getPrevIndex();
-    console.log("prev ", current_data_index, index);
     setCarouselContent(data[index]);
     current_data_index = index;
 }
