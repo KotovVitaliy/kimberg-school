@@ -4,11 +4,17 @@
     <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/js/subs.js"></script>
     <style>
-        .data {marging: 10px;padding:10px;}
+        .data {
+            border-spacing: 0;
+        }
         .data th, .data td {
             padding: 15px;
             width: 150px;
             text-align: left;
+            margin: 0;
+        }
+        table.data tr:nth-child(2n) {
+            background-color: gainsboro;
         }
         .data th {
             font-weight: bold;
