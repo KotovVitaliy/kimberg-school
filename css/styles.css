@@ -672,6 +672,12 @@ footer {
 		padding: 200px 0;
 	}
 
+	.results-wrap {
+		width: 400px;
+		margin: 0 auto;
+		padding: 200px 0;
+	}
+
 	.schedule-img {
 		width: 100%;
 	}
@@ -820,6 +826,12 @@ footer {
 		width: 1000px;
 		padding: 100px 0;
 	}
+
+	.results-wrap {
+		width: 300px;
+		margin: 0 auto;
+		padding: 200px 0;
+	}
 }
 
 @media screen and (max-width: 1080px)
@@ -879,6 +891,12 @@ footer {
 		width: 900px;
 		padding: 90px 0;
 	}
+
+	.results-wrap {
+		width: 260px;
+		margin: 0 auto;
+		padding: 200px 0;
+	}
 }
 
 @media screen and (max-width: 1020px)
@@ -930,6 +948,12 @@ footer {
 	.schedule-wrap {
 		width: 800px;
 		padding: 80px 0;
+	}
+
+	.results-wrap {
+		width: 250px;
+		margin: 0 auto;
+		padding: 200px 0;
 	}
 }
 
@@ -1032,6 +1056,12 @@ footer {
 	.schedule-wrap {
 		width: 800px;
 		padding: 70px 0;
+	}
+
+	.results-wrap {
+		width: 240px;
+		margin: 0 auto;
+		padding: 200px 0;
 	}
 }
 

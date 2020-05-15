@@ -6,6 +6,7 @@
     <style>
         .data {
             border-spacing: 0;
+            border: 1px solid gainsboro;
         }
         .data th, .data td {
             padding: 15px;

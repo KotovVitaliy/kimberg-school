@@ -120,6 +120,16 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$('#schedule-container, #results-container').click(function() {
+		hideForm();
+	});
+
+	$('.results_js').click(function() {
+		let container = $('#results-container');
+        showForm(container);
+		return false;
+	});
+
 	$('.show-more-button').click(function () {
 		let $this = $(this);
 		let $for = $this.data('for');
@@ -143,6 +153,10 @@ $(document).ready(function() {
 
 	$(document).on('click', '#send', () => {
 		sendFormData();
+	});
+
+	$(document).on('click', '#show_result', () => {
+
 	});
 
 	$(document).on('keyup blur change', function(event){
@@ -257,8 +271,4 @@ function sendSeeFeedback() {
 
 function sendOpenSchedule() {
     $.get('/stat/open_schedule');
-}
-
-function sendWinners() {
-	$.get('/stat/open_winners');
 }

@@ -77,7 +77,7 @@
 <div class="promo-wrapper">
     <div class="in-block promo_block">
         <div>
-            <button onclick="sendWinners()" class="button">Наши победители и призеры</button>
+            <button class="results_js button">Наши результаты</button>
         </div>
     </div>
 </div>
@@ -484,6 +484,12 @@
 <div id="schedule-container" class="form-container">
     <div class="schedule-wrap">
         <img class="schedule-img" src="/img/Schedule2.png" alt="Расписание">
+    </div>
+</div>
+
+<div id="results-container" class="form-container">
+    <div class="results-wrap">
+        <img class="schedule-img" src="/img/results.jpeg" alt="Результаты" style="height: 90%" />
     </div>
 </div>
 
