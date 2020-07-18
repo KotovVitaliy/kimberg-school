@@ -51,6 +51,7 @@ class Mailer
         $map = [
             'eg' => 'ЕГЭ онлайн',
             'theory' => 'Теория',
+            'theory_online' => 'Теория онлайн',
             'prac' => 'Практикум',
             'math_methods' => 'Методы мат. физики'
         ];

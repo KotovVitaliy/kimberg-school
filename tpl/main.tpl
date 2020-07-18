@@ -31,7 +31,7 @@
                         <a href="#teachers">Преподаватели</a>
                         <a href="#contacts">Контакты</a>
                         <a href="#feedback">Отзывы</a>
-                        <a href="#faq">Частые вопросы</a>
+                        <a href="#faq">ЧаВо</a>
                         <a id="social_menu">Соцсети</a>
                     </nav>
                     <nav class="social-nav">
@@ -76,17 +76,8 @@
 
 <div class="promo-wrapper">
     <div class="in-block promo_block">
-        <div><h3>Практикум в Школе Кимберг</h3></div>
-
-        <div style="display: none; width: 50%; height: 50px; padding: 10px 0 30px 0;" class="js_promo">
-            <div class="promo_text" style="font-size: 18px;"></div>
-        </div>
-        <br>
-        <br>
         <div>
-            <button onclick="sendPromo()" class="promo-link more" style="background-color: green; color: whitesmoke;">Подробнее</button>
-            <br><br>
-            <span onclick="sendNotPromo()" style="display: none;" class="promo as_link">Не интересно</span>
+            <button class="results_js button">Наши результаты</button>
         </div>
     </div>
 </div>
@@ -127,7 +118,6 @@
         <div id="contents-list">
             <div><span>1.</span>Интенсивные занятия в маленьких группах, где каждый получает море внимания</div>
             <div><span>2.</span>Структурированный план для штурма самых крутых олимпиад</div>
-            <!-- <div><span>3.</span>Доступ к видео-лекциям, чтобы наверняка не упустить ни крохи знаний</div> -->
             <div><span>3.</span>Домашние задания,чтобы не скучать в перерывах между занятиями</div>
             <div><span>4.</span>Станешь частью тусовки таких же «ненормальных» как ты</div>
         </div>
@@ -179,6 +169,9 @@
                             <li>Выпускник физического факультета МГУ;</li>
                             <li>Тренер сборной Москвы по физике;</li>
                             <li>Лауреат Гранта правительства Москвы в сфере образования;</li>
+                            <li>Лауреат премии города Москвы в области образования за внедрение системы развития таланта московских школьников в области физики;</li>
+                            <li>Лауреат премии Президента Российской Федерации за подготовку победителей международных олимпиад;</li>
+                            <li>Лауреат премии Российской Федерации  «Премия Лучшим Учителям»;</li>
                             <li>Руководитель сборной Москвы на Румынской физической олимпиаде (Romanian masters of Physics);</li>
                             <li>Руководитель сборной Москвы на международной Жаутыковской олимпиаде (IZho);</li>
                             <li>Руководитель сборной Москвы на международной олимпиаде по экспериментальной физике (IEpho);</li>
@@ -187,7 +180,7 @@
                             <li>Сотрудник Центра педагогического мастерства.</li>
                         </ul>
 
-                        <p>Опыт преподавания: 7 лет, в том числе в СУНЦ МГУ, школе №1329, лицее Воробьевы Горы. Подготовка Московской сборной к Всероссийской олимпиаде школьников, преподавание в олимпиадных выездных школах (Сочи, Истра, Беларусь, Иркутск).</p>
+                        <p>Опыт преподавания: 10 лет, в том числе в СУНЦ МГУ, школе №1329, лицее Воробьевы Горы. Подготовка Московской сборной к Всероссийской олимпиаде школьников, преподавание в олимпиадных выездных школах (Сочи, Истра, Беларусь, Иркутск).</p>
 
                         <p>Записывайся, стань машиной по решению задач!</p>
 
@@ -226,7 +219,7 @@
                             <li>Международной олимпиады мегаполисов.</li>
                         </ul>
 
-                        <p>Опыт преподавания: 7 лет, в том числе в СУНЦ МГУ, школе №1329, подготовка Московской сборной к Всероссийской олимпиаде школьников, преподавание в олимпиадных выездных школах (Сочи, Истра, Беларусь).</p>
+                        <p>Опыт преподавания: 9 лет, в том числе в СУНЦ МГУ, школе №1329, подготовка Московской сборной к Всероссийской олимпиаде школьников, преподавание в олимпиадных выездных школах (Сочи, Истра, Беларусь).</p>
 
                         <p><a onclick="sendStatYoutubeDan()" href="https://www.youtube.com/watch?v=1WJuQyJn6lg" target="_blank"><button class="alternative">Интервью Данила</button></a></p>
                     </div>
@@ -411,26 +404,46 @@
     <div class="form">
         <div class="close"></div>
         <h1>Заполните форму</h1>
-        <form id="subscribe-form" data-url="user">
-            <div class="form-error"></div>
-            <div class="form-success"></div>
+        <div id="subscribe-form">
+            <div id="form-error"></div>
+            <div id="form-success"></div>
+
             <div class="form-row">
                 <label>Фамилия<i class="necessarily"></i> :</label>
                 <input name="surname" type="text" value="">
             </div>
+
             <div class="form-row">
                 <label>Имя<i class="necessarily"></i> :</label>
                 <input name="name" type="text" value="">
             </div>
-            <div class="form-row">
-                <label>Где удобно заниматься?<i class="necessarily"></i></label>
-                <select name="adds">
-                    <option value="">Выбрать</option>
-                    <option value="Taganskaya">м. Таганская</option>
-                    <option value="Vernadskogo">м. Проспект Вернадского</option>
-                    <option value="Any">не важно</option>
-                </select>
+
+            <div class="form-row" id="disciplines">
+                <label>Дисциплина<i class="necessarily"></i> :</label>
+                <div id="subjects">
+                    <label class="container">Теория
+                        <input type="checkbox" data-name="theory">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Теория онлайн
+                        <input type="checkbox" data-name="theory_online">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Практикум
+                        <input type="checkbox" data-name="prac">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Методы мат. физики
+                        <input type="checkbox" data-name="math_methods">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container">ЕГЭ онлайн
+                        <input type="checkbox" data-name="eg">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
             </div>
+
             <div class="form-row">
                 <label>Класс<i class="necessarily"></i> :</label>
                 <select name="class">
@@ -442,85 +455,48 @@
                     <option value="11">11 класс</option>
                 </select>
             </div>
+
             <div class="form-row">
                 <label>Номер школы<i class="necessarily"></i> :</label>
                 <input name="school_number" type="text" value="">
             </div>
+
             <div class="form-row">
-                <label>E-mail<i class="necessarily"></i> :</label>
-                <input name="email" type="text" value="">
+                <label>E-mail ученика<i class="necessarily"></i> :</label>
+                <input name="email_student" type="text" value="">
             </div>
+
+            <div class="form-row">
+                <label>E-mail родителя<i class="necessarily"></i> :</label>
+                <input name="email_parent" type="text" value="">
+            </div>
+
             <div class="form-row">
                 <label>Номер телефона:</label>
                 <input name="phone" type="tel" placeholder="+7 (900) 123-4567" value="" class="novalidate">
             </div>
+
             <div class="form-row">
                 <label>Комментарий:</label>
                 <textarea name="question" class="novalidate"></textarea>
             </div>
-            <button type="submit">ОТПРАВИТЬ</button>
-        </form>
-    </div>
-</div>
 
-<div id="promo-container" class="form-container">
-    <div class="form">
-        <div class="close"></div>
-        <h1>Заполните форму</h1>
-        <form id="subscribe-form" data-url="promo">
-            <div class="form-error"></div>
-            <div class="form-success"></div>
-            <div class="form-row">
-                <label>Фамилия<i class="necessarily"></i> :</label>
-                <input name="surname" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Имя<i class="necessarily"></i> :</label>
-                <input name="name" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Класс в 2019-2020 учебном году<i class="necessarily"></i> :</label>
-                <select name="class">
-                    <option value="">Выбрать</option>
-                    <option value="7">7 класс</option>
-                    <option value="8">8 класс</option>
-                    <option value="9">9 класс</option>
-                    <option value="10">10 класс</option>
-                    <option value="11">11 класс</option>
-                </select>
-            </div>
-            <div class="form-row">
-                <label>Номер школы<i class="necessarily"></i> :</label>
-                <input name="school_number" type="text" value="">
-            </div>
-            <!--<div class="form-row">
-                <label>Смена<i class="necessarily"></i> :</label>
-                <select name="smena">
-                    <option value="">Выбрать</option>
-                    <option value="1">Первая (19-23 августа)</option>
-                    <option value="2">Вторая (26-30 августа)</option>
-                </select>
-            </div>-->
-            <div class="form-row">
-                <label>E-mail<i class="necessarily"></i> :</label>
-                <input name="email" type="text" value="">
-            </div>
-            <div class="form-row">
-                <label>Номер телефона:</label>
-                <input name="phone" type="tel" placeholder="+7 (900) 123-4567" value="" class="novalidate">
-            </div>
-            <div class="form-row">
-                <label>Олимпиадные достижения ребенка:</label>
-                <textarea name="question" class="novalidate"></textarea>
-            </div>
-            <button type="submit">ОТПРАВИТЬ</button>
-        </form>
+            <div id="form-success"></div>
+
+            <button id="send">ОТПРАВИТЬ</button>
+        </div>
     </div>
 </div>
 
 <div id="schedule-container" class="form-container">
     <div class="schedule-wrap">
         <img class="schedule-img" src="/img/Schedule2.png" alt="Расписание">
+    </div>
+</div>
+
+<div id="results-container" class="form-container">
+    <div class="results-wrap">
+        <img class="schedule-img" src="/img/results.jpeg" alt="Результаты" style="height: 90%" />
     </div>
 </div>
 
