@@ -74,14 +74,6 @@
     </div>
 </div>
 
-<div class="promo-wrapper">
-    <div class="in-block promo_block">
-        <div>
-            <button class="results_js button">Наши результаты</button>
-        </div>
-    </div>
-</div>
-
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
         <h2>Как начать обучение</h2>
@@ -266,6 +258,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="promo-wrapper">
+    <div class="in-block promo_block">
+        <div>
+            <button class="results_js button">Наши результаты</button>
         </div>
     </div>
 </div>

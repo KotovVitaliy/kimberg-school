@@ -470,7 +470,9 @@ i.necessarily {
 			width: 400px;
 		}
 
-#progress {}
+#progress {
+	margin-top: 25px;
+}
 	#progress .carousel_wrapper {
 		width: 100%;
 		text-align: center;

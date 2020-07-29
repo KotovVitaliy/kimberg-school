@@ -27,7 +27,7 @@ if (isAjaxRequest()) {
     if (isset($_COOKIE['new_tpl'])) {
         echo file_get_contents(__DIR__ . '/tpl/main_new.tpl');
     } else {
-        echo file_get_contents(__DIR__ . '/tpl/main_new.tpl');
+        echo file_get_contents(__DIR__ . '/tpl/main.tpl');
     }
 }
 
