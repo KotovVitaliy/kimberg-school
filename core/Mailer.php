@@ -16,6 +16,10 @@ class Mailer
 
     public function sendSubscribeMail($data)
     {
+        if (isset($data['format']) && isset($data['smena'])) {
+            return $this->sendIntensiveMail($data);
+        }
+
         $surname = $data['surname'] ?? 'нет';
         $name = $data['name'] ?? 'нет';
 
@@ -41,6 +45,36 @@ class Mailer
         $message .= "Сообщение: {$question}" . PHP_EOL;
         $message .= PHP_EOL . 'Не забудь связаться с человеком. Твой дружелюбный сосед, Email Robot.' . PHP_EOL;
         $subject = 'Kimberg School - Subscribe';
+        $from = self::SUBSCRIBE_EMAIL;
+        $this->_sendMail("kimberg.school@gmail.com", $subject, $message, $from);
+        return $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
+    }
+
+    public function sendIntensiveMail($data)
+    {
+        $surname = $data['surname'] ?? 'нет';
+        $name = $data['name'] ?? 'нет';
+
+        $class = $data['class'] ?? 'нет';
+        $email_student = $data['email_student'] ?? 'нет';
+        $email_parent = $data['email_parent'] ?? 'нет';
+        $phone = isset($data['phone']) && $data['phone'] ? $data['phone'] : 'нет';
+        $format = $data['format'] ?? 'нет';
+        $smena = $data['smena'] ?? 'нет';
+        $question = isset($data['question']) && $data['question'] ? ("<< " . $data['question'] . " >>") : 'нет';
+
+        $message = 'С портала Школа Кимберг пришла новая заявка:' . PHP_EOL;
+        $message .= "Фамилия: {$surname}" . PHP_EOL;
+        $message .= "Имя: {$name}" . PHP_EOL;
+        $message .= "Класс: {$class}" . PHP_EOL;
+        $message .= "Смена: {$smena}" . PHP_EOL;
+        $message .= "Email ученика: {$email_student}" . PHP_EOL;
+        $message .= "Email родителя: {$email_parent}" . PHP_EOL;
+        $message .= "Номер телефона: {$phone}" . PHP_EOL;
+        $message .= "Формат: {$format}" . PHP_EOL;
+        $message .= "Сообщение: {$question}" . PHP_EOL;
+        $message .= PHP_EOL . 'Не забудь связаться с человеком. Твой дружелюбный сосед, Email Robot.' . PHP_EOL;
+        $subject = 'Kimberg School - Интенсивы';
         $from = self::SUBSCRIBE_EMAIL;
         $this->_sendMail("kimberg.school@gmail.com", $subject, $message, $from);
         return $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);

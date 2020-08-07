@@ -34,7 +34,7 @@ $(document).ready(function() {
 		disableScrolling();
 	}
 
-	function sendFormData() {
+	function sendSubscribeFormData() {
         let url = '/subscribe/add';
 
         let surname = $('#subscribe-form input[name="surname"]').val();
@@ -68,6 +68,7 @@ $(document).ready(function() {
 			);
 			return;
 		}
+
 		let data = {
         	surname:surname,
 			name:name,
@@ -80,13 +81,52 @@ $(document).ready(function() {
 			question:question
         };
 
+		sendForm(url, data)
+	}
+
+	function sendIntensiveFormData() {
+		let url = '/subscribe/add';
+
+		let surname = $('#intensive-form input[name="surname"]').val();
+		let name = $('#intensive-form input[name="name"]').val();
+		let classs = $('#intensive-form select[name="class"]').val();
+		let smena = $('#intensive-form select[name="smena"]').val();
+		let email_student = $('#intensive-form input[name="email_student"]').val();
+		let email_parent = $('#intensive-form input[name="email_parent"]').val();
+		let phone = $('#intensive-form input[name="phone"]').val();
+		let format = $('#intensive-form select[name="format"]').val();
+		let question = $('#intensive-form textarea[name="question"]').val();
+
+		if (!name || !surname || !classs || !smena || !email_parent || !email_student) {
+			$('.form-container').find('#form-error').html(
+				"Пожалуйста, введите все необходимые поля"
+			);
+			return;
+		}
+
+		let data = {
+			surname:surname,
+			name:name,
+			class:classs,
+			smena:smena,
+			email_student:email_student,
+			email_parent:email_parent,
+			phone:phone,
+			format:format,
+			question:question
+		};
+
+		sendForm(url, data)
+	}
+
+	let sendForm = function (url, data) {
 		$.post(url, data, function() {
 				$('.form #form-error').html('');
 				$('.form #form-success').html('Ваше сообщение получено.<br>Мы свяжемся с вами с ближайшее время!');
 				setTimeout(hideForm, 2501);
 			}
 		);
-	}
+	};
 
 	let disableScrolling = function() {
 		let top = $('body').scrollTop();
@@ -130,6 +170,12 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$('.intensives_js').click(() => {
+		let container = $('#intensive-container');
+		showForm(container);
+		return false;
+	});
+
 	$('.show-more-button').click(function () {
 		let $this = $(this);
 		let $for = $this.data('for');
@@ -151,8 +197,12 @@ $(document).ready(function() {
 		}
 	});
 
-	$(document).on('click', '#send', () => {
-		sendFormData();
+	$(document).on('click', '#subscribe-form #send', () => {
+		sendSubscribeFormData();
+	});
+
+	$(document).on('click', '#intensive-form #send', () => {
+		sendIntensiveFormData();
 	});
 
 	$(document).on('click', '#show_result', () => {

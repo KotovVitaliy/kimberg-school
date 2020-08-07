@@ -104,17 +104,38 @@ class DB
         $surname = $data['surname'] ?? 'нет';
         $name = $data['name'] ?? 'нет';
 
-        $subjects = $data['subjects'] ?? ['нет'];
-        $subjects = $this->replaceSubjects($subjects);
+        if (isset($data['subjects'])) {
+            $subjects = $this->replaceSubjects($data['subjects']);
+        } else if (isset($data['smena'])) {
+            $subjects = ['Интенсивы'];
+        } else {
+            $subjects = ['нет'];
+        }
 
         $school = $data['school'] ?? 'нет';
+
         $class = $data['class'] ?? 'нет';
         $email_student = $data['email_student'] ?? 'нет';
         $email_parent = $data['email_parent'] ?? 'нет';
         $phone = isset($data['phone']) && $data['phone'] ? $data['phone'] : 'нет';
-        $question = isset($data['question']) && $data['question'] ? ("<< " . $data['question'] . " >>") : 'нет';
-        $status = 'new';
 
+        if (isset($data['question'])) {
+            $question = $data['question'] ? $data['question'] : 'нет';
+            if (isset($data['smena']) && isset($data['format'])) {
+                $question = join(
+                    "<br/>",
+                    [
+                        "Смена: " . $data['smena'],
+                        "Формат: " . $data['format'],
+                        "Комментарий: " . $question
+                    ]
+                );
+            }
+        } else {
+            $question = 'нет';
+        }
+
+        $status = 'new';
         foreach ($subjects as $subject) {
             $this->insert('subscibers', [
                 'surname' => trim($surname),

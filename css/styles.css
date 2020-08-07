@@ -732,7 +732,7 @@ footer {
 			border-radius: 5px 5px 0 0;
 		}
 
-		.form div#subscribe-form {
+		.form div#subscribe-form, .form div#intensive-form {
 			background-color: white;
 			border-radius: 0 0 5px 5px;
 			padding: 20px 20px 25px;
