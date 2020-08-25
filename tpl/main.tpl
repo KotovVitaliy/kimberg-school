@@ -74,7 +74,7 @@
     </div>
 </div>
 
-<div class="promo-wrapper">
+<!--<div class="promo-wrapper">
     <div class="in-block promo_block">
         <h2>Август со Школой Кимберг</h2>
         <p style="font-size: 22px">Школа Кимберг проводит августовские интенсивы "вспомнить все" для учеников 7-11 классов по подготовке к физическим олимпиадам!</p>
@@ -101,7 +101,7 @@
             <button class="intensives_js button" style="background-color: #0099FF; color: whitesmoke;">Августовские интенсивы</button>
         </div>
     </div>
-</div>
+</div>-->
 
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
@@ -288,6 +288,41 @@
                 </div>
             </div>
         </div>
+
+        <div class="teacher-container right-oriented">
+            <div class="photo-container">
+                <!-- Фотография должна быть квадратная, размером не менее 165*165px -->
+                <img src="/img/photo_roma.jpeg" alt="Роман Алексеев" />
+                <div class="photo-mask"></div>
+            </div>
+            <div class="text-container">
+                <h3>Роман Алексеев</h3>
+                <div class="description">
+                    <p>Моя задача &ndash; подтолкнуть к пониманию физических основ. Если разобраться с физикой, то вам открыт мир во все естественные науки – химия, биология и даже психология. Добавьте к пониманию физических явлений крепкое знания математики и перед вами открыт весь мир!</p>
+
+                    <div class="for_roma" style="display: none;">
+                        <p>Немного о себе:
+                        <ul>
+                            <li>Выпускник физического факультета МГУ;</li>
+                            <li>Научный сотрудник ИФЗ РАН. Автор более 10 научных публикаций;</li>
+                            <li>Тренер сборной Москвы по физике;</li>
+                            <li>Лауреат Гранта правительства Москвы в сфере образования;</li>
+                            <li>Руководитель сборной Москвы на международной олимпиаде по экспериментальной физике (IEpho);</li>
+                            <li>Член жюри международной экспериментальной физической олимпиады (IEPhO);</li>
+                            <li>Член жюри региональных этапов ВсОШ и олимпиады «Максвелл»;</li>
+                            <li>Член жюри Московской городской олимпиады.</li>
+                        </ul>
+
+                        <p>Опыт преподавания: 10 лет, в том числе в ГАИШ МГУ, школе №1329, школа №444, школа №2030, подготовка Московской сборной к Всероссийской олимпиаде школьников, преподавание в олимпиадных выездных школах (Сочи, Истра, Беларусь, Иркутск, Вологда).</p>
+                    </div>
+
+                    <div>
+                        <button onclick="moreAboutRome()" class="show-more-button" data-for="roma">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -343,13 +378,13 @@
             <div class="faq_item">
                 <div><span>Q.</span>Где территориально проходят занятия?</div>
                 <br>
-                <div>Адреса два. При записи можно выбрать наиболее удобный Вам.</div>
+                <div>Адреса два.</div>
                 <br>
-                <div>Тетеринский пер. 4, стр. 1, офис 402. Рядом со станцией метро Таганская кольцевая.</div>
-                <div><a class="black-link bold" target="_blank" href="https://yandex.ru/maps/213/moscow/?ll=37.654256%2C55.743607&z=17&mode=search&text=%D0%A2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D0%B5%D1%80.%204%2C%20%D1%81%D1%82%D1%80.%201&sll=37.620393%2C55.753960&sspn=1.689148%2C0.662947">Открыть на карте</a>.</div>
+                <div>Улица Рабочая 33. Рядом со станцией метро Римская.</div>
+                <div><a class="black-link bold" target="_blank" href="https://yandex.ru/maps/213/moscow/house/rabochaya_ulitsa_33/Z04YcA9lQUYCQFtvfXt1c39hZQ==/?ll=37.685835%2C55.742321&z=17.31">Открыть на карте</a>.</div>
                 <br>
-                <div>Улица Кравченко, дом 10, вход со двора. Рядом со станцией метро Проспект Вернадского.</div>
-                <div><a class="black-link bold" target="_blank" href="https://yandex.ru/maps/213/moscow/?ll=37.519314%2C55.677819&mode=search&sll=37.519755%2C55.677118&sspn=0.015407%2C0.006069&text=Кравченко%2010&z=17">Открыть на карте</a>.</div>
+                <div>Улица Наметкина 11. Рядом со станцией метро Новые Черемушки.</div>
+                <div><a class="black-link bold" target="_blank" href="https://yandex.ru/maps/213/moscow/house/ulitsa_namyotkina_11/Z04YcwJjT0EPQFtvfXp3cn1mYg==/?ll=37.553648%2C55.663157&z=17.32">Открыть на карте</a>.</div>
             </div>
 
             <div class="faq_item">

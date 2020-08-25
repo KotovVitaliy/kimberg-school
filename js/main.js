@@ -279,6 +279,10 @@ function moreAboutNick() {
     $.get('/stat/more_about_nick');
 }
 
+function moreAboutRome() {
+    $.get('/stat/more_about_roma');
+}
+
 function sendStatYoutube() {
     $.get('/stat/youtube');
 }
