@@ -16,7 +16,7 @@ class Mailer
 
     public function sendSubscribeMail($data)
     {
-        if (isset($data['format']) && isset($data['smena'])) {
+        if (isset($data['a']) && $data['a'] == "intensive") {
             return $this->sendIntensiveMail($data);
         }
 

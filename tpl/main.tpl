@@ -38,6 +38,7 @@
                         <a onclick="sendStatVK()" href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"> ВКонтакте</a>
                         <a onclick="sendStatInstagram()" href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"> Instagram</a>
                         <a onclick="sendStatYoutube()" href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"> YouTube</a>
+                        <a href="https://t.me/kimbergSchool" target="_blank"><img src="/img/tg.png" alt="TG"> Telegram</a>
 
                         <a id="back_social_menu">Меню</a>
                     </nav>
@@ -74,34 +75,34 @@
     </div>
 </div>
 
-<!--<div class="promo-wrapper">
+<div class="promo-wrapper">
     <div class="in-block promo_block">
-        <h2>Август со Школой Кимберг</h2>
-        <p style="font-size: 22px">Школа Кимберг проводит августовские интенсивы "вспомнить все" для учеников 7-11 классов по подготовке к физическим олимпиадам!</p>
+        <h2>Новый год со Школой Кимберг</h2>
+        <p style="font-size: 22px">Школа Кимберг проводит январские интенсивы для учеников 7-11 классов по подготовке к региональному этапу ВсОШ</p>
         <div style="text-align: left; padding-left: 25px;font-size: 22px">
             <div class="faq_item" style="margin-top: 10px">
                 <div><span style="font-weight: bold">Q.</span> Когда планируются интенсивы?</div>
-                <div><span style="font-weight: bold">A.</span> Первая смена 17-21 августа. Вторая смена 24-28 августа.</div>
+                <div><span style="font-weight: bold">A.</span> 4,5 и 7,8 января</div>
             </div>
             <div class="faq_item" style="margin-top: 10px">
-                <div><span style="font-weight: bold">Q.</span> Сколько человек в группе?</div>
-                <div><span style="font-weight: bold">A.</span> В одной группе обучаются не более 6 детей. Это позволяет уделить значительное внимание каждому ребенку. Еще никто не уходил от нас без знаний! :)</div>
+                <div><span style="font-weight: bold">Q.</span> Что будет на занятиях?</div>
+                <div><span style="font-weight: bold">A.</span> Теоретические и экспериментальные пары(подготовка к псевдоэксперименту). 8 пар по 1,5 часа.</div>
             </div>
-            <div class="faq_item" style="margin-top: 10px">
-                <div><span style="font-weight: bold">Q.</span> Сколько занятий?</div>
-                <div><span style="font-weight: bold">A.</span> 8 теоретических занятий (по 1,5 часа). Занятия будут проходить в течение 4 дней.</div>
+            <div class="faq_item" style="margin-top: 10px"  >
+                <div><span style="font-weight: bold">Q.</span> Где будут проходить занятия?</div>
+                <div><span style="font-weight: bold">A.</span> Пары будут в очном режиме, но есть возможность подключиться онлайн.</div>
             </div>
             <div class="faq_item" style="margin-top: 10px"  >
                 <div><span style="font-weight: bold">Q.</span> Сколько же всё это стоит?</div>
-                <div><span style="font-weight: bold">A.</span> Участие в одной смене стоит 8,000 рублей</div>
+                <div><span style="font-weight: bold">A.</span> Участие в интенсиве стоит 10,000 рублей</div>
             </div>
         </div>
 
         <div style="margin-top: 20px">
-            <button class="intensives_js button" style="background-color: #0099FF; color: whitesmoke;">Августовские интенсивы</button>
+            <button class="intensives_js button" style="background-color: #0099FF; color: whitesmoke;">Записаться</button>
         </div>
     </div>
-</div>-->
+</div>
 
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
@@ -464,6 +465,7 @@
             <a onclick="sendStatVK()" href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"></a>
             <a onclick="sendStatInstagram()" href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"></a>
             <a onclick="sendStatYoutube()" href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"></a>
+            <a href="https://t.me/kimbergSchool" target="_blank"><img style="width: 32px"  src="/img/tg.png" alt="TG"></a>
             <a href="#first-block" id="up-button" title="Наверх"><img src="/img/arrow-up-2.png" alt="Наверх"></a>
         </div>
     </div>
@@ -587,14 +589,14 @@
                 </select>
             </div>
 
-            <div class="form-row">
+            <!--<div class="form-row">
                 <label>Смена<i class="necessarily"></i> :</label>
                 <select name="smena">
                     <option value="">Выбрать</option>
                     <option value="1">Смена I</option>
                     <option value="2">Смена II</option>
                 </select>
-            </div>
+            </div>-->
 
             <div class="form-row">
                 <label>E-mail ученика<i class="necessarily"></i> :</label>

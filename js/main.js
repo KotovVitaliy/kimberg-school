@@ -90,14 +90,15 @@ $(document).ready(function() {
 		let surname = $('#intensive-form input[name="surname"]').val();
 		let name = $('#intensive-form input[name="name"]').val();
 		let classs = $('#intensive-form select[name="class"]').val();
-		let smena = $('#intensive-form select[name="smena"]').val();
+		// let smena = $('#intensive-form select[name="smena"]').val();
 		let email_student = $('#intensive-form input[name="email_student"]').val();
 		let email_parent = $('#intensive-form input[name="email_parent"]').val();
 		let phone = $('#intensive-form input[name="phone"]').val();
 		let format = $('#intensive-form select[name="format"]').val();
 		let question = $('#intensive-form textarea[name="question"]').val();
 
-		if (!name || !surname || !classs || !smena || !email_parent || !email_student) {
+		// if (!name || !surname || !classs || !smena || !email_parent || !email_student) {
+		if (!name || !surname || !classs || !email_parent || !email_student) {
 			$('.form-container').find('#form-error').html(
 				"Пожалуйста, введите все необходимые поля"
 			);
@@ -108,12 +109,13 @@ $(document).ready(function() {
 			surname:surname,
 			name:name,
 			class:classs,
-			smena:smena,
+			// smena:smena,
 			email_student:email_student,
 			email_parent:email_parent,
 			phone:phone,
 			format:format,
-			question:question
+			question:question,
+			a:'intensive'
 		};
 
 		sendForm(url, data)
