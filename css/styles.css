@@ -223,7 +223,7 @@ i.necessarily {
 
 /* Screen widths from 320px to 1260px */
 .in-block {
-	max-width: 1250px;
+	max-width: 1500px;
 	min-width: 260px;
 	margin: 0 auto;
 	padding: 0 40px;
@@ -238,12 +238,13 @@ i.necessarily {
 }
 
 #first-block {
-	background-image: url('/img/bg3.jpg');
+	background-image: url('/img/bg5.jpg');
 	background-size: cover;
 }
 
 	#menu-block {
-		background-image: url('/img/menu-bg.png');
+		/*background-image: url('/img/menu-bg.png');*/
+		background-image: url('/img/intro-bg.png');
 		height: 100px;
 	}
 
@@ -302,7 +303,7 @@ i.necessarily {
 					}
 
 	#intro-block {
-		background-image: url('/img/intro-bg.png');
+		/*background-image: url('/img/intro-bg.png');*/
 	}
 
 		#intro-container {
@@ -686,7 +687,7 @@ footer {
 	.schedule-wrap {
 		width: 1200px;
 		margin: 0 auto;
-		padding: 200px 0;
+		padding: 50px 0;
 	}
 
 	.results-wrap {
@@ -1165,6 +1166,20 @@ footer {
 
 @media screen and (max-width: 680px)
 {
+	button {
+		background-color: #ffcd00;
+		border: 0;
+		cursor: pointer;
+		color: black;
+		font-size: 12px;
+		font-weight: bold;
+		padding: 12px 50px;
+		border-radius: 3px;
+		-webkit-box-shadow: 3px 3px 8px 2px rgba(0,0,0,0.15);
+		-moz-box-shadow: 3px 3px 8px 2px rgba(0,0,0,0.15);
+		box-shadow: 3px 3px 8px 2px rgba(0,0,0,0.15);
+	}
+
 	nav {
 		font-size: 16px;
 		width: auto;
@@ -1311,6 +1326,11 @@ footer {
 
 @media screen and (max-width: 480px)
 {
+	#first-block {
+		background-image: url('/img/bg7.jpg');
+		background-size: cover;
+	}
+
 	.in-block {
 		padding: 0 30px;
 		min-width: 240px;
@@ -1364,7 +1384,12 @@ footer {
 	}
 
 	#menu-block {
+		background-image: none;
 		height: auto;
+	}
+
+	#intro-block {
+		background-image: none;
 	}
 
 	#nav-container {
