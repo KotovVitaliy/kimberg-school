@@ -29,11 +29,21 @@ class Ajax
 
     public static function getAllSubs()
     {
+        sleep(3);
+
         $order_by = $_REQUEST['order_by'] ?? 'id';
         $order = $_REQUEST['order'] ?? 'asc';
+        $years = $_REQUEST['years'] ?? '2021 - 2022';
+
+        $years = explode(" - ", $years);
+        $year1 = $years[0];
+        $year2 = $years[1] ?? '2022';
+
         $order_by = str_replace([',', ';', '"', "'", "`", "+", " "], "", $order_by);
-        $data = DB::getInstance()->selectAsAssoc("select * from `subscibers` where `delete`='0' order by {$order_by} {$order}");
-        self::echo(['result' => $data]);
+
+        $q = "select * from `subscibers` where `delete`='0' and timestamp between '{$year1}-05-01 00:00:00' and '{$year2}-04-30 23:59:59' order by {$order_by} {$order}";
+        $data = DB::getInstance()->selectAsAssoc($q);
+        self::echo(['result' => $data, 'q' => $q]);
     }
 
     public static function deleteSub()

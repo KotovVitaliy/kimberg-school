@@ -516,7 +516,7 @@
             </div>
 
             <div class="form-row">
-                <label>Класс<i class="necessarily"></i> :</label>
+                <label>Класс 2021-2022 учебного года<i class="necessarily"></i> :</label>
                 <select name="class">
                     <option value="">Выбрать</option>
                     <option value="7">7 класс</option>
@@ -579,7 +579,7 @@
             </div>
 
             <div class="form-row">
-                <label>Класс<i class="necessarily"></i> :</label>
+                <label>Класс 2021-2022 учебного года<i class="necessarily"></i> :</label>
                 <select name="class">
                     <option value="">Выбрать</option>
                     <option value="7">7 класс</option>
