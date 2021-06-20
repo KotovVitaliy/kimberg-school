@@ -75,7 +75,7 @@
     </div>
 </div>
 
-<div class="promo-wrapper">
+<!--<div class="promo-wrapper">
     <div class="in-block promo_block">
         <h2>Новый год со Школой Кимберг</h2>
         <p style="font-size: 22px">Школа Кимберг проводит январские интенсивы для учеников 7-11 классов по подготовке к региональному этапу ВсОШ</p>
@@ -102,7 +102,7 @@
             <button class="intensives_js button" style="background-color: #0099FF; color: whitesmoke;">Записаться</button>
         </div>
     </div>
-</div>
+</div>-->
 
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
@@ -553,6 +553,7 @@
             </div>
 
             <div id="form-success"></div>
+            <div id="form-error"></div>
 
             <button id="send">ОТПРАВИТЬ</button>
         </div>
@@ -627,6 +628,7 @@
             </div>
 
             <div id="form-success"></div>
+            <div id="form-error"></div>
 
             <button id="send">ОТПРАВИТЬ</button>
         </div>
@@ -641,7 +643,7 @@
 
 <div id="results-container" class="form-container">
     <div class="results-wrap">
-        <img class="schedule-img" src="/img/results.jpeg" alt="Результаты" style="height: 90%;" />
+        <img class="schedule-img" src="/img/results2.jpeg" alt="Результаты" style="height: 90%;" />
     </div>
 </div>
 

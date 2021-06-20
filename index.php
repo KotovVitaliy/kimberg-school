@@ -16,7 +16,7 @@ if ($_REQUEST['learnqa']) {
 if (isAjaxRequest()) {
     Ajax::makeAjax($_REQUEST['action']);
 } else if (isSubscribeRequest()) {
-    Mailer::getInstance()->sendSubscribeMail($_REQUEST);
+    Mailer::getInstance()->sendMail($_REQUEST);
     DB::getInstance()->logNewSubscriber($_REQUEST);
 } else if (isShowSubsRequest()) {
     Viewer::showSubsPage();

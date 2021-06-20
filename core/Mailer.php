@@ -14,12 +14,17 @@ class Mailer
         return self::$instance;
     }
 
-    public function sendSubscribeMail($data)
+    public function sendMail($data)
     {
         if (isset($data['a']) && $data['a'] == "intensive") {
-            return $this->sendIntensiveMail($data);
+            $this->sendIntensiveMail($data);
+        } else {
+            $this->sendSubscribeMail($data);
         }
+    }
 
+    public function sendSubscribeMail($data)
+    {
         $surname = $data['surname'] ?? 'нет';
         $name = $data['name'] ?? 'нет';
 
@@ -47,7 +52,8 @@ class Mailer
         $subject = 'Kimberg School - Subscribe';
         $from = self::SUBSCRIBE_EMAIL;
         $this->_sendMail("kimberg.school@gmail.com", $subject, $message, $from);
-        return $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
+        $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
+        $this->sendConfirmMail($email_student, $email_parent);
     }
 
     public function sendIntensiveMail($data)
@@ -77,7 +83,20 @@ class Mailer
         $subject = 'Kimberg School - Интенсивы';
         $from = self::SUBSCRIBE_EMAIL;
         $this->_sendMail("kimberg.school@gmail.com", $subject, $message, $from);
-        return $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
+        $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
+        $this->sendConfirmMail($email_student, $email_parent);
+    }
+
+    public function sendConfirmMail($email_student, $email_parent)
+    {
+        $subject = "Welcome to Kimberg School";
+        $from = self::SUBSCRIBE_EMAIL;
+
+        $message = "Доброго времени суток." . PHP_EOL . PHP_EOL;
+        $message .= "Ваша заявка принята! Спасибо, что выбрали нас.";
+
+        $this->_sendMail($email_student, $subject, $message, $from);
+        $this->_sendMail($email_parent, $subject, $message, $from);
     }
 
     public function replaceSubjects(array $subjects)
@@ -107,13 +126,13 @@ class Mailer
 
     private function _prepareHeaders($from)
     {
-        $add_headers = 'From: Школа Кимберг <' . $from . '>' . "\r\n";
+        $add_headers = 'From: Kimberg School <' . $from . '>' . "\r\n";
         $add_headers .= 'Reply-To: ' . self::NO_REPLY_EMAIL . "\r\n";
         return $add_headers;
     }
 
     private function _addSign($message)
     {
-        return $message . "\n\n------\nШкола Кимберг\nhttp://kimberg-school.com";
+        return $message . "\n\n------\nKimberg School\nhttp://kimberg-school.com";
     }
 }
