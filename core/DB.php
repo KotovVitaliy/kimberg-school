@@ -159,12 +159,13 @@ class DB
             'theory' => 'Теория',
             'theory_online' => 'Теория онлайн',
             'prac' => 'Практикум',
-            'math_methods' => 'Методы мат. физики'
+            'math_methods' => 'Методы мат. физики',
+            'individual' => 'Индивидуальные занятия',
         ];
 
         $new_subjects = [];
         foreach ($subjects as $sub) {
-            $new_subjects[] = $map[$sub] ?? 'Неизвестное значение';
+            $new_subjects[] = $map[$sub] ?? 'Неизвестное значение ' . $sub;
         }
 
         return $new_subjects;

@@ -43,6 +43,13 @@ class Ajax
 
         $q = "select * from `subscibers` where `delete`='0' and timestamp between '{$year1}-05-01 00:00:00' and '{$year2}-04-30 23:59:59' order by {$order_by} {$order}";
         $data = DB::getInstance()->selectAsAssoc($q);
+
+        foreach ($data as $k => $v) {
+            foreach ($data[$k] as &$v1) {
+                $v1 = str_replace(["<", ">"], ["&lt;", "&gt;"], $v1);
+            }
+        }
+
         self::echo(['result' => $data, 'q' => $q]);
     }
 

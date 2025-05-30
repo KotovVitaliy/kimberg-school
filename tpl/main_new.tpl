@@ -36,8 +36,8 @@
                     </nav>
                     <nav class="social-nav">
                         <a onclick="sendStatVK()" href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"> ВКонтакте</a>
-                        <a onclick="sendStatInstagram()" href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"> Instagram</a>
                         <a onclick="sendStatYoutube()" href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"> YouTube</a>
+                        <a href="https://t.me/kimbergSchool" target="_blank"><img src="/img/tg.png" alt="TG"> Telegram</a>
 
                         <a id="back_social_menu">Меню</a>
                     </nav>
@@ -67,41 +67,71 @@
                 </div>
                 <br />
                 <div class="button-container">
-                    <button onclick="sendOpenSchedule()" class="schedule alternative">Расписание</button>
+                    <button onclick="sendOpenSchedule()" class="schedule">Расписание</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="promo-wrapper">
+
+<!--<div class="promo-wrapper">
     <div class="in-block promo_block">
         <h2>Август со Школой Кимберг</h2>
         <p style="font-size: 22px">Школа Кимберг проводит августовские интенсивы "вспомнить все" для учеников 7-11 классов по подготовке к физическим олимпиадам!</p>
         <div style="text-align: left; padding-left: 25px;font-size: 22px">
             <div class="faq_item" style="margin-top: 10px">
                 <div><span style="font-weight: bold">Q.</span> Когда планируются интенсивы?</div>
-                <div><span style="font-weight: bold">A.</span> Первая смена 17-21 августа. Вторая смена 24-28 августа.</div>
-            </div>
-            <div class="faq_item" style="margin-top: 10px">
-                <div><span style="font-weight: bold">Q.</span> Сколько человек в группе?</div>
-                <div><span style="font-weight: bold">A.</span> В одной группе обучаются не более 6 детей. Это позволяет уделить значительное внимание каждому ребенку. Еще никто не уходил от нас без знаний! :)</div>
+                <div><span style="font-weight: bold">A.</span> Первая смена 15-19 августа. Вторая смена 22-26 августа.</div>
             </div>
             <div class="faq_item" style="margin-top: 10px">
                 <div><span style="font-weight: bold">Q.</span> Сколько занятий?</div>
                 <div><span style="font-weight: bold">A.</span> 8 теоретических занятий (по 1,5 часа). Занятия будут проходить в течение 4 дней.</div>
             </div>
+            <div class="faq_item" style="margin-top: 10px">
+                <div><span style="font-weight: bold">Q.</span> Где проходят занятия?</div>
+                <div><span style="font-weight: bold">A.</span> ул. Волгоградский проспект 32/к5. Метро Волгоградский проспект (1 выход)</div>
+            </div>
             <div class="faq_item" style="margin-top: 10px"  >
                 <div><span style="font-weight: bold">Q.</span> Сколько же всё это стоит?</div>
-                <div><span style="font-weight: bold">A.</span> Участие в одной смене стоит 8,000 рублей</div>
+                <div><span style="font-weight: bold">A.</span> Участие в одной смене стоит 10,000 рублей</div>
             </div>
         </div>
 
         <div style="margin-top: 20px">
-            <button class="intensives_js button" style="background-color: #0099FF; color: whitesmoke;">Августовские интенсивы</button>
+            <a target="_blank" href="https://forms.gle/YeLmmnYDtVVWhQCr7"><button class="button" style="background-color: #0099FF; color: whitesmoke;">Августовские интенсивы</button></a>
         </div>
     </div>
-</div>
+</div>-->
+
+<!--<div class="promo-wrapper">
+    <div class="in-block promo_block">
+        <h2>Новый год со Школой Кимберг</h2>
+        <p style="font-size: 22px">Школа Кимберг проводит январские интенсивы для учеников 7-11 классов по подготовке к региональному этапу ВсОШ</p>
+        <div style="text-align: left; padding-left: 100px;font-size: 22px">
+            <div class="faq_item" style="margin-top: 10px">
+                <div><span style="font-weight: bold">Q.</span> Когда планируются интенсивы?</div>
+                <div><span style="font-weight: bold">A.</span> 5,6 и 8,9 января</div>
+            </div>
+            <div class="faq_item" style="margin-top: 10px">
+                <div><span style="font-weight: bold">Q.</span> Что будет на занятиях?</div>
+                <div><span style="font-weight: bold">A.</span> Теоретические пары и пары по подготовке к эксперименту. 8 пар по 1,5 часа.</div>
+            </div>
+            <div class="faq_item" style="margin-top: 10px"  >
+                <div><span style="font-weight: bold">Q.</span> Где будут проходить занятия?</div>
+                <div><span style="font-weight: bold">A.</span> Пары будут в очном режиме, но есть возможность подключиться онлайн.</div>
+            </div>
+            <div class="faq_item" style="margin-top: 10px"  >
+                <div><span style="font-weight: bold">Q.</span> Сколько же всё это стоит?</div>
+                <div><span style="font-weight: bold">A.</span> Участие в интенсиве стоит 10,000 рублей</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px">
+            <a target="_blank" href="https://forms.gle/qJ1SGMb21vQrXYeX9"><button class="button" style="background-color: #0099FF; color: whitesmoke;">Записаться</button></a>
+        </div>
+    </div>
+</div>-->
 
 <div id="how-to-start" class="headed-block">
     <div class="in-block">
@@ -151,7 +181,7 @@
     </div>
 </div>
 
-<div id="progress">
+<!--<div id="progress">
     <div class="in-block">
         <h2>Наши победители и призеры</h2>
         <div class="carousel_wrapper">
@@ -168,7 +198,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 <div id="teachers" class="headed-block">
     <div class="in-block">
@@ -256,30 +286,28 @@
         <div class="teacher-container left-oriented">
             <div class="photo-container">
                 <!-- Фотография должна быть квадратная, размером не менее 165*165px -->
-                <img src="/img/photo_trushinikov.jpg" alt="Николай Трушников" />
+                <img src="/img/photo_fedor.jpg" alt="Федор Цыбров" />
                 <div class="photo-mask"></div>
             </div>
             <div class="text-container">
-                <h3>Николай Трушников</h3>
+                <h3>Федор Цыбров</h3>
                 <div class="description">
-                    <p>В изучении физики главное &ndash; не зазубрить сотню-другую формул, случаи их применения и варианты ответов, ведь с этим всегда лучше справится компьютер. Главное &ndash; осознать, что все явления вокруг нас взаимосвязаны, научиться видеть эти связи и описывать даже самые сложные процессы наиболее простыми методами.</p>
-
-                    <p>Моя цель &ndash; помочь ученику «глубоко» разобраться в теме, научить осознанно решать разнообразные задачи и, как следствие, добиться хороших результатов на олимпиадах и экзаменах.</p>
+                    <p>Физика &ndash; идеальная наука для изучения. С одной стороны, в физике не нужно учить огромное количество непонятных и несвязанных фактов. С другой – в физике можно простить строгость в доказательствах и пользоваться общим пониманием. Разобравшись в основе физических явлений можно успешно сдавать экзамены и участвовать в олимпиадах.</p>
 
                     <div class="for_nick" style="display: none;">
-                        <p>Немного о себе:
+                        <p>Учиться решать задачи по физике стоит не только для того, чтобы набрать 100 баллов на ЕГЭ и выиграть олимпиаду для поступления. Физика - это здравый смысл, умение работать с новым, и самые общие представления об окружающем нас мире. Всегда полезно знать, как безопасно пользоваться 5G, какую гомеопатию лучше выбрать, и когда уже человечество наконец раскроет великую тайну воды :)</p>
+                        <p>Коротко о себе:
                         <ul>
-                            <li>Окончил физический факультет МГУ;</li>
-                            <li>Тренер сборной г. Москвы;</li>
-                            <li>Член жюри и автор задач МОШ по физике;</li>
-                            <li>Член жюри региональных этапов ВсОШ и олимпиады «Максвелл»;</li>
-                            <li>Член жюри Азиатской физической олимпиады (APhO);</li>
-                            <li>Член жюри международной экспериментальной физической олимпиады (IEPhO);</li>
-                            <li>Член жюри и автор задач международной олимпиады Мегаполисов.</li>
+                            <li>Выпускник ФОПФ МФТИ;</li>
+                            <li>Призёр всероссийских олимпиад школьников по физике (2009-2011);</li>
+                            <li>Золотая медаль на международной олимпиаде Туймаада-2011;</li>
+                            <li>Член жюри Всероссийской олимпиады школьников;</li>
+                            <li>Международной олимпиады по экспериментальной физике (IEPhO);</li>
+                            <li>Международной олимпиады мегаполисов;</li>
+                            <li>Член тренерского штаба команды России на Международную (IPhO) и Азиатскую (APhO) Физические олимпиады.</li>
                         </ul>
 
-                        <p>Записывайтесь, увидимся на занятиях!</p>
-                        <p><a onclick="sendStatYoutubeNick()" href="https://www.youtube.com/watch?v=e3FmWhuqspo" target="_blank"><button class="alternative">Интервью Николая</button></a></p>
+                        <p>Опыт преподавания с 2012 года: подготовка Московской сборной к Всероссийской олимпиаде школьников, преподавание в олимпиадных выездных школах (Сочи, Истра, Беларусь), образовательном центре «Сириус», Московском Физико-Техническом Институте.</p>
                     </div>
 
                     <div>
@@ -318,6 +346,37 @@
 
                     <div>
                         <button onclick="moreAboutRome()" class="show-more-button" data-for="roma">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="teacher-container left-oriented">
+            <div class="photo-container">
+                <!-- Фотография должна быть квадратная, размером не менее 165*165px -->
+                <img width="165" height="165" src="/img/photo_alex.jpg" alt="Бычков Алексей" />
+                <div class="photo-mask"></div>
+            </div>
+            <div class="text-container">
+                <h3>Бычков Алексей</h3>
+                <div class="description">
+                    <p>Бывало ли так, что Вы бились над какой-нибудь задачей или проблемой часами, днями или неделями и в итоге смогли самостоятельно нащупать нить Ариадны? Если да, то согласитесь, в такие моменты ощущаешь, что произошёл качественный скачок в развитии. Физика и математика - кладезь задач и проблем. Давайте вместе заглянем туда и посмотрим, насколько далеко мы сможем зайти!</p>
+
+                    <div class="for_alex" style="display: none;">
+                        <p>Немного о себе:
+                        <ul>
+                            <li>Выпускник физического факультета МГУ;</li>
+                            <li>Кандидат физ-мат наук;</li>
+                            <li>Автор задач ВсОШ по физике; МОШ по физике и Туймаада;</li>
+                            <li>Член жюри ВсОШ по физике;</li>
+                            <li>Методист и автор онлайн-курсов по электричеству и электростатике в совместном проекте ЦПМ и образовательного центра Сириус;</li>
+                            <li>Лауреат Гранта Правительства Москвы в сфере образования (2013-2014, 2014-2015, 2015-2016, 2016-2017, 2018-2019);</li>
+                            <li>Дипломант в номинации «Молодой Учитель» всероссийского конкурса учителей фонда Зимина «Династия» (2014, 2015).</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <button class="show-more-button" data-for="alex">Подробнее</button>
                     </div>
                 </div>
             </div>
@@ -378,13 +437,8 @@
             <div class="faq_item">
                 <div><span>Q.</span>Где территориально проходят занятия?</div>
                 <br>
-                <div>Адреса два.</div>
-                <br>
-                <div>Улица Рабочая 33. Рядом со станцией метро Римская.</div>
-                <div><a class="black-link bold" target="_blank" href="https://yandex.ru/maps/213/moscow/house/rabochaya_ulitsa_33/Z04YcA9lQUYCQFtvfXt1c39hZQ==/?ll=37.685835%2C55.742321&z=17.31">Открыть на карте</a>.</div>
-                <br>
-                <div>Улица Наметкина 11. Рядом со станцией метро Новые Черемушки.</div>
-                <div><a class="black-link bold" target="_blank" href="https://yandex.ru/maps/213/moscow/house/ulitsa_namyotkina_11/Z04YcwJjT0EPQFtvfXp3cn1mYg==/?ll=37.553648%2C55.663157&z=17.32">Открыть на карте</a>.</div>
+                <div><span>A.</span>ул. Новослободская, д. 3</div>
+                <div><a class="black-link bold" target="_blank" href="https://yandex.com.ge/maps/213/moscow/house/novoslobodskaya_ulitsa_3/Z04YcAdgTEwDQFtvfXt2eH1mYQ==/?ll=37.600594%2C55.779155&mode=search&sctx=ZAAAAAgAEAAaKAoSCUBoPXyZZkZAEU890uC22ERAEhIJU%2BdR8X9HKkARpMSu7e0GHEAiBgABAgMEBSgKOABAkE5IAWoCdWGdAc3MTD2gAQCoAQC9AZiK68zCARkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6gEA8gEA%2BAEAggIp0YPQuy4g0J3QvtCy0L7RgdC70L7QsdC%2B0LTRgdC60LDRjywg0LQuIDOKAgCSAgCaAgxkZXNrdG9wLW1hcHM%3D&sll=37.600594%2C55.779155&sspn=0.011565%2C0.004638&text=%D1%83%D0%BB.%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%BB%D0%BE%D0%B1%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D1%8F%2C%20%D0%B4.%203&z=17.15">Открыть на карте</a></div>
             </div>
 
             <div class="faq_item">
@@ -463,8 +517,8 @@
         </div>
         <div id="social-links">
             <a onclick="sendStatVK()" href="https://vk.com/club160387658" target="_blank"><img src="/img/vk.png" alt="VK"></a>
-            <a onclick="sendStatInstagram()" href="https://www.instagram.com/kimberg.school/" target="_blank"><img src="/img/instagram.png" alt="INSTAGRAM"></a>
             <a onclick="sendStatYoutube()" href="https://www.youtube.com/channel/UC5CPHWez8h8XZZH_RxcoNOg" target="_blank"><img src="/img/youtube.png" alt="YOUTUBE"></a>
+            <a href="https://t.me/kimbergSchool" target="_blank"><img style="width: 32px"  src="/img/tg.png" alt="TG"></a>
             <a href="#first-block" id="up-button" title="Наверх"><img src="/img/arrow-up-2.png" alt="Наверх"></a>
         </div>
     </div>
@@ -499,15 +553,19 @@
                         <input type="checkbox" data-name="theory_online">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="container">Практикум
-                        <input type="checkbox" data-name="prac">
+                    <label class="container">Индивидуальные занятия
+                        <input type="checkbox" data-name="individual">
                         <span class="checkmark"></span>
                     </label>
+                    <!--<label class="container">Практикум
+                        <input type="checkbox" data-name="prac">
+                        <span class="checkmark"></span>
+                    </label>-->
                     <label class="container">Методы мат. физики
                         <input type="checkbox" data-name="math_methods">
                         <span class="checkmark"></span>
                     </label>
-                    <label class="container">ЕГЭ онлайн
+                    <label class="container">ЕГЭ
                         <input type="checkbox" data-name="eg">
                         <span class="checkmark"></span>
                     </label>
@@ -515,7 +573,7 @@
             </div>
 
             <div class="form-row">
-                <label>Класс<i class="necessarily"></i> :</label>
+                <label>Класс 2022-2023 учебного года<i class="necessarily"></i> :</label>
                 <select name="class">
                     <option value="">Выбрать</option>
                     <option value="7">7 класс</option>
@@ -552,6 +610,7 @@
             </div>
 
             <div id="form-success"></div>
+            <div id="form-error"></div>
 
             <button id="send">ОТПРАВИТЬ</button>
         </div>
@@ -577,7 +636,7 @@
             </div>
 
             <div class="form-row">
-                <label>Класс<i class="necessarily"></i> :</label>
+                <label>Класс 2021-2022 учебного года<i class="necessarily"></i> :</label>
                 <select name="class">
                     <option value="">Выбрать</option>
                     <option value="7">7 класс</option>
@@ -626,6 +685,7 @@
             </div>
 
             <div id="form-success"></div>
+            <div id="form-error"></div>
 
             <button id="send">ОТПРАВИТЬ</button>
         </div>
@@ -634,13 +694,13 @@
 
 <div id="schedule-container" class="form-container">
     <div class="schedule-wrap">
-        <img class="schedule-img" src="/img/Schedule2.png" alt="Расписание">
+        <img class="schedule-img" src="/img/schedule2022.jpg" alt="Расписание">
     </div>
 </div>
 
 <div id="results-container" class="form-container">
     <div class="results-wrap">
-        <img class="schedule-img" src="/img/results.jpeg" alt="Результаты" style="height: 90%" />
+        <img class="schedule-img" src="/img/results2.jpeg" alt="Результаты" style="height: 90%;" />
     </div>
 </div>
 

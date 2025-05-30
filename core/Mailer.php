@@ -52,6 +52,7 @@ class Mailer
         $subject = 'Kimberg School - Subscribe';
         $from = self::SUBSCRIBE_EMAIL;
         $this->_sendMail("kimberg.school@gmail.com", $subject, $message, $from);
+        $this->_sendMail("estoniez@mail.ru", $subject, $message, $from);
         $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
         $this->sendConfirmMail($email_student, $email_parent);
     }
@@ -83,6 +84,7 @@ class Mailer
         $subject = 'Kimberg School - Интенсивы';
         $from = self::SUBSCRIBE_EMAIL;
         $this->_sendMail("kimberg.school@gmail.com", $subject, $message, $from);
+        $this->_sendMail("estoniez@mail.ru", $subject, $message, $from);
         $this->_sendMail("nizkopal@mail.ru", $subject, $message, $from);
         $this->sendConfirmMail($email_student, $email_parent);
     }
@@ -106,12 +108,13 @@ class Mailer
             'theory' => 'Теория',
             'theory_online' => 'Теория онлайн',
             'prac' => 'Практикум',
-            'math_methods' => 'Методы мат. физики'
+            'math_methods' => 'Методы мат. физики',
+            'individual' => 'Индивидуальные занятия',
         ];
 
         $new_subjects = [];
         foreach ($subjects as $sub) {
-            $new_subjects[] = $map[$sub] ?? 'Неизвестное значение';
+            $new_subjects[] = $map[$sub] ?? 'Неизвестное значение ' . $sub;
         }
 
         return $new_subjects;
@@ -121,7 +124,8 @@ class Mailer
     {
         $headers = $this->_prepareHeaders($from);
         $message = $this->_addSign($message);
-        return mail($to, $subject, $message, $headers, "-f{$from}");
+        $result = mail($to, $subject, $message, $headers, "-f{$from}");
+        return $result;
     }
 
     private function _prepareHeaders($from)
